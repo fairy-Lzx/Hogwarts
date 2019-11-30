@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_UI", "1_UI", "{A8B8FF56-F331-4C47-BC65-8831E4366D01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_Service", "2_Service", "{70AB2BEF-D741-4015-A353-DF77BF010681}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3_Repository", "3_Repository", "{F99B844F-E0D3-4E64-BCA2-00CCBBA0B335}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4_Model", "4_Model", "{A0549176-F03A-4AED-9CB9-353FD9114969}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5_Data", "5_Data", "{95C6D937-210E-4BF8-9E99-E437343CB4C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6_Infrastructure", "6_Infrastructure", "{461418CE-3F1A-40B4-9A84-9C5E6B19BF63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7_Test", "7_Test", "{AB65579B-A111-448F-A458-5E7ED65A84FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwarts.Admin", "UI\Hogwarts.Admin\Hogwarts.Admin.csproj", "{19846573-CD92-4FAC-A72E-CC5316512708}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19846573-CD92-4FAC-A72E-CC5316512708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19846573-CD92-4FAC-A72E-CC5316512708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19846573-CD92-4FAC-A72E-CC5316512708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19846573-CD92-4FAC-A72E-CC5316512708}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19846573-CD92-4FAC-A72E-CC5316512708} = {A8B8FF56-F331-4C47-BC65-8831E4366D01}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D7AE5B5-2DA2-4B78-8E98-AFFA5C09E220}
+	EndGlobalSection
+EndGlobal
