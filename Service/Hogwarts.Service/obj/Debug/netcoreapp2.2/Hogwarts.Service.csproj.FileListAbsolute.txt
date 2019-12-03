@@ -1,0 +1,7 @@
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.Service.deps.json
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.Service.dll
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.Service.pdb
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Service\Hogwarts.Service\obj\Debug\netcoreapp2.2\Hogwarts.Service.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Service\Hogwarts.Service\obj\Debug\netcoreapp2.2\Hogwarts.Service.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Service\Hogwarts.Service\obj\Debug\netcoreapp2.2\Hogwarts.Service.dll
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Service\Hogwarts.Service\obj\Debug\netcoreapp2.2\Hogwarts.Service.pdb
