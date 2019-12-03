@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace SPY.IRepository
+namespace Hogwarts.IRepository
 {
     /// <summary>
     /// 增删改查分页，公共接口

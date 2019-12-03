@@ -1,9 +1,9 @@
-﻿using SPY.Data;
+﻿using Hogwarts.Data;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace SPY.Repository.SqlServer
+namespace Hogwarts.Repository.SqlServer
 {
     /// <summary>
     /// 公共增删改查方法实现类

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SPY.DB.Model;
+using Hogwarts.DB.Model;
 
-namespace SPY.Data
+namespace Hogwarts.Data
 {
     public class ApplicationDbContext : DbContext
     {
