@@ -16,7 +16,10 @@ namespace Hogwarts.Admin.Controllers
         {
             return View();
         }
-
+        public IActionResult Main()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

@@ -19,19 +19,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7_Test", "7_Test", "{AB6557
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hogwarts.Admin", "UI\Hogwarts.Admin\Hogwarts.Admin.csproj", "{19846573-CD92-4FAC-A72E-CC5316512708}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwarts.Data", "Data\Hogwarts.Data\Hogwarts.Data.csproj", "{22EF9141-0550-4DF9-AFDD-6595E06AEB77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hogwarts.Data", "Data\Hogwarts.Data\Hogwarts.Data.csproj", "{22EF9141-0550-4DF9-AFDD-6595E06AEB77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwarts.DB.Model", "Model\Hogwarts.DB.Model\Hogwarts.DB.Model.csproj", "{F39A449F-F435-46D2-BE45-20347B6AFFF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hogwarts.DB.Model", "Model\Hogwarts.DB.Model\Hogwarts.DB.Model.csproj", "{F39A449F-F435-46D2-BE45-20347B6AFFF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwarts.View.Model", "Model\Hogwarts.View.Model\Hogwarts.View.Model.csproj", "{BDE5181B-9FC0-45B9-A507-B99BE1201C55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hogwarts.View.Model", "Model\Hogwarts.View.Model\Hogwarts.View.Model.csproj", "{BDE5181B-9FC0-45B9-A507-B99BE1201C55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwarts.IRepository", "Repository\Hogwarts.IRepository\Hogwarts.IRepository.csproj", "{E65A177D-07CD-435A-85D2-4FE0C8B66BF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hogwarts.IRepository", "Repository\Hogwarts.IRepository\Hogwarts.IRepository.csproj", "{E65A177D-07CD-435A-85D2-4FE0C8B66BF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwarts.Repository", "Repository\Hogwarts.Repository\Hogwarts.Repository.csproj", "{5DF2CD32-008D-4C42-A43E-54730BA4BCBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hogwarts.Repository", "Repository\Hogwarts.Repository\Hogwarts.Repository.csproj", "{5DF2CD32-008D-4C42-A43E-54730BA4BCBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwarts.IService", "Service\Hogwarts.IService\Hogwarts.IService.csproj", "{8608BAF1-4399-479D-A0CF-72B15215EC39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hogwarts.IService", "Service\Hogwarts.IService\Hogwarts.IService.csproj", "{8608BAF1-4399-479D-A0CF-72B15215EC39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwarts.Service", "Service\Hogwarts.Service\Hogwarts.Service.csproj", "{F8611231-94D5-4DF9-AB96-FDB157113033}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hogwarts.Service", "Service\Hogwarts.Service\Hogwarts.Service.csproj", "{F8611231-94D5-4DF9-AB96-FDB157113033}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwarts.Core", "Infrastructure\Hogwarts.Core\Hogwarts.Core.csproj", "{5013942A-635A-4FA3-A833-DEC0B02DB4AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{F8611231-94D5-4DF9-AB96-FDB157113033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8611231-94D5-4DF9-AB96-FDB157113033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8611231-94D5-4DF9-AB96-FDB157113033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5013942A-635A-4FA3-A833-DEC0B02DB4AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5013942A-635A-4FA3-A833-DEC0B02DB4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5013942A-635A-4FA3-A833-DEC0B02DB4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5013942A-635A-4FA3-A833-DEC0B02DB4AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{5DF2CD32-008D-4C42-A43E-54730BA4BCBB} = {F99B844F-E0D3-4E64-BCA2-00CCBBA0B335}
 		{8608BAF1-4399-479D-A0CF-72B15215EC39} = {70AB2BEF-D741-4015-A353-DF77BF010681}
 		{F8611231-94D5-4DF9-AB96-FDB157113033} = {70AB2BEF-D741-4015-A353-DF77BF010681}
+		{5013942A-635A-4FA3-A833-DEC0B02DB4AD} = {461418CE-3F1A-40B4-9A84-9C5E6B19BF63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D7AE5B5-2DA2-4B78-8E98-AFFA5C09E220}

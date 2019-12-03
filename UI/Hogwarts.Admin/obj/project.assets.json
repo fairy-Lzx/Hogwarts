@@ -4446,6 +4446,19 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "Hogwarts.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.2.0"
+        },
+        "compile": {
+          "bin/placeholder/Hogwarts.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hogwarts.Core.dll": {}
+        }
+      },
       "Hogwarts.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
@@ -4473,6 +4486,16 @@
         },
         "runtime": {
           "bin/placeholder/Hogwarts.DB.Model.dll": {}
+        }
+      },
+      "Hogwarts.View.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/Hogwarts.View.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hogwarts.View.Model.dll": {}
         }
       }
     }
@@ -12247,6 +12270,11 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "Hogwarts.Core/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/Hogwarts.Core/Hogwarts.Core.csproj",
+      "msbuildProject": "../../Infrastructure/Hogwarts.Core/Hogwarts.Core.csproj"
+    },
     "Hogwarts.Data/1.0.0": {
       "type": "project",
       "path": "../../Data/Hogwarts.Data/Hogwarts.Data.csproj",
@@ -12256,11 +12284,18 @@
       "type": "project",
       "path": "../../Model/Hogwarts.DB.Model/Hogwarts.DB.Model.csproj",
       "msbuildProject": "../../Model/Hogwarts.DB.Model/Hogwarts.DB.Model.csproj"
+    },
+    "Hogwarts.View.Model/1.0.0": {
+      "type": "project",
+      "path": "../../Model/Hogwarts.View.Model/Hogwarts.View.Model.csproj",
+      "msbuildProject": "../../Model/Hogwarts.View.Model/Hogwarts.View.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Hogwarts.Core >= 1.0.0",
       "Hogwarts.Data >= 1.0.0",
+      "Hogwarts.View.Model >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -12295,6 +12330,12 @@
           "projectReferences": {
             "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj": {
               "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj"
+            },
+            "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\Hogwarts.Core.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\Hogwarts.Core.csproj"
+            },
+            "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Model\\Hogwarts.View.Model\\Hogwarts.View.Model.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Model\\Hogwarts.View.Model\\Hogwarts.View.Model.csproj"
             }
           }
         }

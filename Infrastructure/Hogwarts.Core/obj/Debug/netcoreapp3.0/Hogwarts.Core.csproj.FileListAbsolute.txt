@@ -1,0 +1,5 @@
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\bin\Debug\netcoreapp3.0\Hogwarts.Core.deps.json
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\bin\Debug\netcoreapp3.0\Hogwarts.Core.dll
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp3.0\Hogwarts.Core.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp3.0\Hogwarts.Core.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp3.0\Hogwarts.Core.AssemblyInfo.cs
