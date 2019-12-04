@@ -30,13 +30,13 @@ $(function () {
             beforeSend: function (res) {
             },
             success: function (res) {
-                if (res.msg == "登陆成功") {
-                    clearInterval(t);
-                    $(".form-login .loading>p").html("登陆成功");
-                } else {
-                    clearInterval(t);
-                    $(".form-login .loading>p").html("登陆失败");
-                }
+                //if (res.msg == "登陆成功") {
+                //    clearInterval(t);
+                //    $(".form-login .loading>p").html("登陆成功");
+                //} else {
+                //    clearInterval(t);
+                //    $(".form-login .loading>p").html("登陆失败");
+                //}
             }
         });
     })
@@ -67,14 +67,14 @@ $(function () {
             beforeSend: function (res) {
             },
             success: function (res) {
-                window.location.href = "/Home/Index";
-                if (res.msg == "登陆成功") {
-                    clearInterval(t);
-                    $(".form-register .loading>p").html("注册成功");
-                } else {
-                    clearInterval(t);
-                    $(".form-register .loading>p").html("注册失败");
-                }
+                //window.location.href = "/Home/Index";
+                //if (res.msg == "登陆成功") {
+                //    clearInterval(t);
+                //    $(".form-register .loading>p").html("注册成功");
+                //} else {
+                //    clearInterval(t);
+                //    $(".form-register .loading>p").html("注册失败");
+                //}
             }
         });
     })
