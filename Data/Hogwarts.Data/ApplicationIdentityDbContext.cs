@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Hogwarts.Data
 {
-    public class ApplicationIdentityDbContext: IdentityDbContext<Teacher, Role, string>
+    public class ApplicationIdentityDbContext: IdentityDbContext<Teacher, ApplicationIdentityRole, string>
     {
         public ApplicationIdentityDbContext(DbContextOptions option):base(option)
         {
@@ -14,12 +14,14 @@ namespace Hogwarts.Data
             base.OnModelCreating(builder);
             builder.Entity<Teacher>(b =>
             {
-                b.ToTable("Teacher");
+                b.ToTable("IdentityUser");
             });
-            builder.Entity<Role>(b =>
+            builder.Entity<ApplicationIdentityRole>(b =>
             {
                 b.ToTable("IdentityRole");
             });
         }
+        public DbSet<Teacher> Teachers;
+
     }
 }

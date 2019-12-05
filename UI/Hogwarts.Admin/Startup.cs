@@ -46,7 +46,7 @@ namespace Hogwarts.Admin
                     b => b.MigrationsAssembly("Hogwarts.Data"));
             });
 
-            services.AddIdentity<Teacher, Role>(options => { }).AddEntityFrameworkStores<ApplicationIdentityDbContext>();
+            services.AddIdentity<Teacher, ApplicationIdentityRole>(options => { }).AddEntityFrameworkStores<ApplicationIdentityDbContext>();
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;

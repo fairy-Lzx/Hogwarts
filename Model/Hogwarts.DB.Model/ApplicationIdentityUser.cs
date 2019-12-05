@@ -5,7 +5,9 @@ using System.Text;
 
 namespace Hogwarts.DB.Model
 {
-    public class Role:IdentityRole
+    public class ApplicationIdentityUser:IdentityUser
     {
+        public int Tid { get; set; }
+        public Teacher Teacher { get; set; }
     }
 }

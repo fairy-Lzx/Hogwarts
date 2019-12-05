@@ -1,13 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Hogwarts.DB.Model
+namespace Hogwarts.Admin.Models.DataModels
 {
-    public partial class Teacher
+    public partial class TbTeacher
     {
-        public Teacher()
+        public TbTeacher()
         {
             Tc = new HashSet<Tc>();
         }
@@ -17,7 +15,7 @@ namespace Hogwarts.DB.Model
         public string Sex { get; set; }
         public DateTime? Birthday { get; set; }
         public string Cno { get; set; }
+
         public virtual ICollection<Tc> Tc { get; set; }
-        public ApplicationIdentityUser Identityuser { get; set; }
     }
 }
