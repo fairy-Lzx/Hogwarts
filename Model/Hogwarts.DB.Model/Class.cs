@@ -10,7 +10,7 @@ namespace Hogwarts.DB.Model
             TbStudent = new HashSet<Student>();
         }
 
-        public int CId { get; set; }
+        public int ClassId { get; set; }
         public string CName { get; set; }
         public string Dean { get; set; }
 

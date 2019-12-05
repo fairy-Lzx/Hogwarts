@@ -12,9 +12,9 @@ namespace Hogwarts.Admin.Controllers
 {
     public class AccountController:Controller
     {
-        private readonly SignInManager<Teacher> _signInManager;
-        private readonly UserManager<Teacher> _userManager;
-        public AccountController(SignInManager<Teacher> signInManager,UserManager<Teacher> userManager)
+        private readonly SignInManager<ApplicationIdentityUser> _signInManager;
+        private readonly UserManager<ApplicationIdentityUser> _userManager;
+        public AccountController(SignInManager<ApplicationIdentityUser> signInManager,UserManager<ApplicationIdentityUser> userManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
@@ -69,7 +69,7 @@ namespace Hogwarts.Admin.Controllers
             var user = await _userManager.FindByNameAsync(viewModel.UserName);
             if (user == null)
             {
-                user = new Teacher
+                user = new ApplicationIdentityUser
                 {
                     UserName = viewModel.UserName,
                 };

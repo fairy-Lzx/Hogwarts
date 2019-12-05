@@ -26,4 +26,9 @@
     <ProjectReference Include="..\..\Model\Hogwarts.View.Model\Hogwarts.View.Model.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

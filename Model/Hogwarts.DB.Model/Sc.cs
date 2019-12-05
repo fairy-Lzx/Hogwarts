@@ -5,7 +5,7 @@ namespace Hogwarts.DB.Model
 {
     public partial class Sc
     {
-        public string Sno { get; set; }
+        public int Sno { get; set; }
         public int Cno { get; set; }
         public string Score { get; set; }
 

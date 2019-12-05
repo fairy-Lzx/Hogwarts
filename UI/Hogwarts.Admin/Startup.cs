@@ -37,16 +37,12 @@ namespace Hogwarts.Admin
 
             services.AddDbContextPool<ApplicationDbContext>(options =>
             {
-                options.EnableSensitiveDataLogging(true);//打开敏感数据记录
-                options.UseSqlServer(Configuration.GetConnectionString("SqlServerConnectionString"));
-            });
-            services.AddDbContextPool<ApplicationIdentityDbContext>(options =>
-            {
                 options.UseSqlServer(Configuration.GetConnectionString("SqlServerConnectionString"),
                     b => b.MigrationsAssembly("Hogwarts.Data"));
+                options.EnableSensitiveDataLogging(true);//打开敏感数据记录
             });
 
-            services.AddIdentity<Teacher, ApplicationIdentityRole>(options => { }).AddEntityFrameworkStores<ApplicationIdentityDbContext>();
+            services.AddIdentity<ApplicationIdentityUser, ApplicationIdentityRole>(options => { }).AddEntityFrameworkStores<ApplicationDbContext>();
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;

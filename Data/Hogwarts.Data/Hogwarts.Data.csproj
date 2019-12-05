@@ -5,8 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20191203071130_init.cs" />
-    <Compile Remove="Migrations\20191203071130_init.Designer.cs" />
+    <Compile Remove="Migrations\20191205143444_ini2.cs" />
+    <Compile Remove="Migrations\20191205143444_ini2.Designer.cs" />
+    <Compile Remove="Migrations\20191205143908_init.cs" />
+    <Compile Remove="Migrations\20191205143908_init.Designer.cs" />
+    <Compile Remove="Migrations\20191205144502_init0.cs" />
+    <Compile Remove="Migrations\20191205144502_init0.Designer.cs" />
+    <Compile Remove="Migrations\20191205144625_init.cs" />
+    <Compile Remove="Migrations\20191205144625_init.Designer.cs" />
+    <Compile Remove="Migrations\20191205144759_init1.cs" />
+    <Compile Remove="Migrations\20191205144759_init1.Designer.cs" />
+    <Compile Remove="Migrations\20191205152832_init2.cs" />
+    <Compile Remove="Migrations\20191205152832_init2.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
