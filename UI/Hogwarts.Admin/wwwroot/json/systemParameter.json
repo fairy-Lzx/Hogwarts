@@ -1,7 +1,7 @@
 {
 	"cmsName": "Hogwarts教务管理系统",
 	"version": "v2.0",
-	"author": "黄建南，潘梦娜，黄精越，沈平元",
+	"author": "黄建南，潘梦娜，黄靖越，沈平元",
 	"homePage": "/Home/Index",
 	"server": "Linux/CentOS 7.x",
 	"dataBase": "SQL Server 2017 On Windows",

@@ -49,7 +49,7 @@ namespace Hogwarts.Admin.Controllers
                 return JsonHelper.StandardJsonResult(0, 0, "登陆成功", new List<object>());
             }
             //return View("Login", userLoginView);
-            return JsonHelper.StandardJsonResult(1, 0, "登陆失败", new List<object>());
+            return JsonHelper.StandardJsonResult(1, 0, "密码错误", new List<object>());
         }
         public IActionResult Register()
         {
@@ -87,7 +87,7 @@ namespace Hogwarts.Admin.Controllers
             }
             else
             {
-                return JsonHelper.StandardJsonResult(1, 0, "用户已经存在，注册失败", new List<object> { });
+                return JsonHelper.StandardJsonResult(1, 0, "用户已经存在", new List<object> { });
             }
         }
         public async Task<IActionResult> LogOutApi()

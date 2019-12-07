@@ -32,9 +32,9 @@ layui.use(['form','jquery',"layer"],function() {
             id: 'LAY_layuipro',
             btn: ['火速围观'],
             moveType: 1,
-            content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;">' +
+            content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;">' + '<div style="text-align:center;text-indent: 0;"><img style="height:120px" src="/images/logo.png"/></div>' +
                 '<p class="layui-red">重要通知都会通过这个公告给出，请使用Hogwarts管理系统前请务必仔细阅读本公告，以免造成不必要的麻烦</p></pclass></p>' +
-                '<p>Hogwarts后台教务管理系统，用户注册界面需要一个管理系统秘钥，通过注册界面注册的用户都是管理员，学校所有的老师或者校长等其他非管理员只能通过管理员获得账号，目前已有的管理员有:黄建南，潘梦娜，黄精越，沈平元</p><p class="layui-red">最终解释权归Hogwarts所有</p></div>',
+                '<p>Hogwarts后台教务管理系统，用户注册界面需要一个管理系统秘钥，通过注册界面注册的用户都是管理员，学校所有的老师或者校长等其他非管理员只能通过管理员获得账号，目前已有的管理员有:黄建南，潘梦娜，黄靖越，沈平元</p><p class="layui-red">最终解释权归Hogwarts所有</p></div>',
             success: function(layero){
                 var btn = layero.find('.layui-layer-btn');
                 btn.css('text-align', 'center');

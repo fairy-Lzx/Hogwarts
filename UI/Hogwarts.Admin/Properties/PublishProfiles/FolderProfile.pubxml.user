@@ -6,6 +6,11 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\docker\public</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\SPY24\Desktop\public</_PublishTargetUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="SqlServerConnectionString">
+      <Value>Data Source=129.211.76.135%3bInitial Catalog=db_Hogwarts%3bUser ID=spy%3bPassword=Aa2439739932%3bConnect Timeout=30%3bEncrypt=False%3bTrustServerCertificate=False%3bApplicationIntent=ReadWrite%3bMultiSubnetFailover=False</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
 </Project>

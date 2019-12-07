@@ -1,0 +1,8 @@
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\bin\Release\netcoreapp2.2\Hogwarts.Core.deps.json
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\bin\Release\netcoreapp2.2\Hogwarts.Core.dll
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\bin\Release\netcoreapp2.2\Hogwarts.Core.pdb
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Release\netcoreapp2.2\Hogwarts.Core.csprojAssemblyReference.cache
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Release\netcoreapp2.2\Hogwarts.Core.AssemblyInfoInputs.cache
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Release\netcoreapp2.2\Hogwarts.Core.AssemblyInfo.cs
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Release\netcoreapp2.2\Hogwarts.Core.dll
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Release\netcoreapp2.2\Hogwarts.Core.pdb

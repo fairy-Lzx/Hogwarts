@@ -24,7 +24,9 @@
     ".NETCoreApp,Version=v2.2": {
       "Hogwarts.Admin/1.0.0": {
         "dependencies": {
+          "Hogwarts.Core": "1.0.0",
           "Hogwarts.Data": "1.0.0",
+          "Hogwarts.View.Model": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
@@ -235,6 +237,17 @@
           }
         }
       },
+      "Hogwarts.Core/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.2.0"
+        },
+        "runtime": {
+          "Hogwarts.Core.dll": {}
+        },
+        "compile": {
+          "Hogwarts.Core.dll": {}
+        }
+      },
       "Hogwarts.Data/1.0.0": {
         "dependencies": {
           "Hogwarts.DB.Model": "1.0.0",
@@ -258,6 +271,14 @@
         },
         "compile": {
           "Hogwarts.DB.Model.dll": {}
+        }
+      },
+      "Hogwarts.View.Model/1.0.0": {
+        "runtime": {
+          "Hogwarts.View.Model.dll": {}
+        },
+        "compile": {
+          "Hogwarts.View.Model.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3451,12 +3472,22 @@
       "path": "system.text.encoding.codepages/4.5.0",
       "hashPath": "system.text.encoding.codepages.4.5.0.nupkg.sha512"
     },
+    "Hogwarts.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Hogwarts.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "Hogwarts.DB.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Hogwarts.View.Model/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

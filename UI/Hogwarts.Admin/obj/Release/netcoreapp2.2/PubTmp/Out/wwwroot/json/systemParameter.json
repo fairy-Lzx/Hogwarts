@@ -1,0 +1,14 @@
+{
+	"cmsName": "Hogwarts教务管理系统",
+	"version": "v2.0",
+	"author": "黄建南，潘梦娜，黄精越，沈平元",
+	"homePage": "/Home/Index",
+	"server": "Linux/CentOS 7.x",
+	"dataBase": "SQL Server 2017 On Windows",
+	"maxUpload": "2M",
+	"userRights": "超级管理员",
+	"description": "这是一套完整的教务管理系统的后台管理",
+	"powerby": "copyright @2019 数据库第四小组",
+	"record": "京ICP备号-1",
+	"keywords": "Harry potter"
+}
