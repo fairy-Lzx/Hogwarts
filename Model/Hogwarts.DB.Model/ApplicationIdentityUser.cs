@@ -7,7 +7,7 @@ namespace Hogwarts.DB.Model
 {
     public class ApplicationIdentityUser:IdentityUser
     {
-        public int Tid { get; set; }
+        public int TId { get; set; }
         public Teacher Teacher { get; set; }
     }
 }

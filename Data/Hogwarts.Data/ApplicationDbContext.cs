@@ -20,7 +20,7 @@ namespace Hogwarts.Data
             {
                 b.ToTable("IdentityRole");
             });
-            builder.Entity<ApplicationIdentityUser>().HasOne(l => l.Teacher).WithOne(l => l.Identityuser).HasForeignKey<ApplicationIdentityUser>(l => l.Tid);
+            builder.Entity<ApplicationIdentityUser>().HasOne(l => l.Teacher).WithOne(l => l.IdentityUser).HasForeignKey<ApplicationIdentityUser>(l => l.TId);
 
             builder.Entity<Class>(entity =>
             {
@@ -29,11 +29,11 @@ namespace Hogwarts.Data
                 entity.ToTable("tb_class");
 
                 entity.Property(e => e.ClassId)
-                    .HasColumnName("c_id")
+                    .HasColumnName("classId")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.CName)
-                    .HasColumnName("c_name")
+                entity.Property(e => e.ClassName)
+                    .HasColumnName("className")
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
@@ -107,7 +107,7 @@ namespace Hogwarts.Data
                     .HasMaxLength(40)
                     .IsUnicode(false);
 
-                entity.Property(e => e.ClassId).HasColumnName("ClassId");
+                entity.Property(e => e.ClassId).HasColumnName("classId");
 
                 entity.Property(e => e.Pwd)
                     .HasColumnName("pwd")
@@ -138,9 +138,7 @@ namespace Hogwarts.Data
 
                 entity.ToTable("tb_teacher");
 
-                entity.Property(e => e.TId)
-                    .HasColumnName("t_id")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.TId);
 
                 entity.Property(e => e.Birthday)
                     .HasColumnName("birthday")

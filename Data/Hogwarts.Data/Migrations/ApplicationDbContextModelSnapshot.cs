@@ -76,7 +76,7 @@ namespace Hogwarts.Data.Migrations
 
                     b.Property<string>("SecurityStamp");
 
-                    b.Property<int>("Tid");
+                    b.Property<int>("TId");
 
                     b.Property<bool>("TwoFactorEnabled");
 
@@ -93,7 +93,7 @@ namespace Hogwarts.Data.Migrations
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.HasIndex("Tid")
+                    b.HasIndex("TId")
                         .IsUnique();
 
                     b.ToTable("IdentityUser");
@@ -102,10 +102,10 @@ namespace Hogwarts.Data.Migrations
             modelBuilder.Entity("Hogwarts.DB.Model.Class", b =>
                 {
                     b.Property<int>("ClassId")
-                        .HasColumnName("c_id");
+                        .HasColumnName("classId");
 
-                    b.Property<string>("CName")
-                        .HasColumnName("c_name")
+                    b.Property<string>("ClassName")
+                        .HasColumnName("className")
                         .HasMaxLength(50)
                         .IsUnicode(false);
 
@@ -169,7 +169,7 @@ namespace Hogwarts.Data.Migrations
                         .IsUnicode(false);
 
                     b.Property<int?>("ClassId")
-                        .HasColumnName("ClassId");
+                        .HasColumnName("classId");
 
                     b.Property<string>("Pwd")
                         .HasColumnName("pwd")
@@ -214,7 +214,8 @@ namespace Hogwarts.Data.Migrations
             modelBuilder.Entity("Hogwarts.DB.Model.Teacher", b =>
                 {
                     b.Property<int>("TId")
-                        .HasColumnName("t_id");
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime?>("Birthday")
                         .HasColumnName("birthday")
@@ -327,8 +328,8 @@ namespace Hogwarts.Data.Migrations
             modelBuilder.Entity("Hogwarts.DB.Model.ApplicationIdentityUser", b =>
                 {
                     b.HasOne("Hogwarts.DB.Model.Teacher", "Teacher")
-                        .WithOne("Identityuser")
-                        .HasForeignKey("Hogwarts.DB.Model.ApplicationIdentityUser", "Tid")
+                        .WithOne("IdentityUser")
+                        .HasForeignKey("Hogwarts.DB.Model.ApplicationIdentityUser", "TId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

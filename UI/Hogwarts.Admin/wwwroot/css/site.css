@@ -69,10 +69,12 @@ body {
     margin-top: -100px;
     margin-left: -200px;
     transition: 1s all;
+    text-align:left;
 }
     .loading p {
         font-weight: 900;
         line-height: 90px;
         font-size: 40px;
         color: aqua;
+        margin-left: 100px;
     }

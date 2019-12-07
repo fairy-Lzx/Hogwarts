@@ -28,28 +28,28 @@ namespace Hogwarts.Admin.Controllers
         {
             if(userLoginView==null)
             {
-                return View("Login",userLoginView);
-                //return JsonHelper.StandardJsonResult(1, 0, "数据上传失败", new List<object> { });
+                //return View("Login",userLoginView);
+                return JsonHelper.StandardJsonResult(1, 0, "数据上传失败", new List<object> { });
             }
             if(userLoginView.UserName==null||userLoginView.Password==null)
             {
-                return View("Login", userLoginView);
-                //return JsonHelper.StandardJsonResult(1, 0, "用户名或密码上传失败", new List<object> { });
+                //return View("Login", userLoginView);
+                return JsonHelper.StandardJsonResult(1, 0, "用户名或密码上传失败", new List<object> { });
             }
             var user =await _userManager.FindByNameAsync(userLoginView.UserName);
             if(user==null)
             {
-                return View("Login", userLoginView);
-                //JsonHelper.StandardJsonResult(1, 0, "用户不存在", new List<object>());
+                //return View("Login", userLoginView);
+                return JsonHelper.StandardJsonResult(1, 0, "用户不存在", new List<object>());
             }
             var result =await _signInManager.PasswordSignInAsync(user, userLoginView.Password,false,false);
             if (result.Succeeded)
             {
-                return Redirect("/Home/Index");
-                //return JsonHelper.StandardJsonResult(0, 0, "登陆成功", new List<object>());
+                //return RedirectToAction("Index", "Home");
+                return JsonHelper.StandardJsonResult(0, 0, "登陆成功", new List<object>());
             }
-            return View("Login", userLoginView);
-            //return JsonHelper.StandardJsonResult(1, 0, "登陆失败", new List<object>());
+            //return View("Login", userLoginView);
+            return JsonHelper.StandardJsonResult(1, 0, "登陆失败", new List<object>());
         }
         public IActionResult Register()
         {
@@ -66,33 +66,34 @@ namespace Hogwarts.Admin.Controllers
             {
                 return JsonHelper.StandardJsonResult(1, 0, "用户名或密码上传失败", new List<object> { });
             }
-            var user = await _userManager.FindByNameAsync(viewModel.UserName);
-            if (user == null)
+            var identityUser = await _userManager.FindByNameAsync(viewModel.UserName);
+            Teacher teacher = new Teacher();
+            if (identityUser == null)
             {
-                user = new ApplicationIdentityUser
+                identityUser = new ApplicationIdentityUser
                 {
                     UserName = viewModel.UserName,
+                    Teacher = teacher,
                 };
-                var result =await _userManager.CreateAsync(user, viewModel.Password);
+                var result =await _userManager.CreateAsync(identityUser, viewModel.Password);
                 if(result.Succeeded)
                 {
                     return JsonHelper.StandardJsonResult(0, 0, "注册成功", new List<object> { });
                 }
                 else
                 {
-                    JsonHelper.StandardJsonResult(1, 0, "注册失败", new List<object> { });
+                    return JsonHelper.StandardJsonResult(1, 0, "注册失败", new List<object> { });
                 }
             }
             else
             {
                 return JsonHelper.StandardJsonResult(1, 0, "用户已经存在，注册失败", new List<object> { });
             }
-            return JsonHelper.StandardJsonResult(1, 0, "失败", new List<object> { });
         }
         public async Task<IActionResult> LogOutApi()
         {
             await _signInManager.SignOutAsync();
-            return JsonHelper.StandardJsonResult(0, 0, "登出失败", new List<object>());
+            return RedirectToAction("Login", "Account");
         }
     }
 }

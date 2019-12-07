@@ -30,13 +30,16 @@ $(function () {
             beforeSend: function (res) {
             },
             success: function (res) {
-                //if (res.msg == "登陆成功") {
-                //    clearInterval(t);
-                //    $(".form-login .loading>p").html("登陆成功");
-                //} else {
-                //    clearInterval(t);
-                //    $(".form-login .loading>p").html("登陆失败");
-                //}
+                if (res.code == 0) {
+                   clearInterval(t);
+                    $(".form-login .loading>p").html("登陆成功");
+                    setTimeout(' window.location.href = "/Home/Index"', 1000);
+                   // window.location.href = "/Home/Index";
+                } else {
+                    clearInterval(t);
+                    $(".form-login .loading>p").html(res.msg);
+                    setTimeout('$(".form-login .loading").css("display", "none")', 2000);
+                }
             }
         });
     })
@@ -62,19 +65,20 @@ $(function () {
                 UserName: $(".form-register #username").val(),
                 Password: $(".form-register #password").val(),
             },
-            asycn: false,
             dataType: "text",
             beforeSend: function (res) {
             },
             success: function (res) {
                 //window.location.href = "/Home/Index";
-                //if (res.msg == "登陆成功") {
-                //    clearInterval(t);
-                //    $(".form-register .loading>p").html("注册成功");
-                //} else {
-                //    clearInterval(t);
-                //    $(".form-register .loading>p").html("注册失败");
-                //}
+                if (res.code == 0) {
+                    clearInterval(t);
+                    $(".form-register .loading>p").html("注册成功");
+                    setTimeout(' window.location.href = "/Account/Login"', 1000);
+                } else {
+                    clearInterval(t);
+                    $(".form-register .loading>p").html("用户已存在");
+                    setTimeout('$(".form-register .loading").css("display", "none")', 2000);
+                }
             }
         });
     })

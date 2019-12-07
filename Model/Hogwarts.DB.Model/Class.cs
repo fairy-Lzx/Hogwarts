@@ -11,7 +11,7 @@ namespace Hogwarts.DB.Model
         }
 
         public int ClassId { get; set; }
-        public string CName { get; set; }
+        public string ClassName { get; set; }
         public string Dean { get; set; }
 
         public virtual ICollection<Student> TbStudent { get; set; }
