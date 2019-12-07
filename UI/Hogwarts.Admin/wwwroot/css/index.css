@@ -70,7 +70,7 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 .top_menu{ background-color:inherit !important; position:absolute; right:0;top:0; }
 .layui-layout-admin .layui-side{ left:0; overflow:hidden;}
 .user-photo{width: 200px; height: 120px; padding:15px 0 5px;}
-.user-photo a.img{ display: block; width:80px; height:80px; margin: 0 auto 10px;}
+.user-photo a.img{ display: block; width:120px; height:120px; margin: 0 auto 10px;}
 .user-photo a.img img{ display: block; border: none; width: 100%; height: 100%; border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; border: 4px solid #44576b; box-sizing:border-box;}
 .user-photo p{ display: block; width: 100%; height: 25px; color: #ffffff; text-align: center; font-size: 12px; white-space: nowrap;line-height: 25px; overflow: hidden;}
 /*左侧导航重定义*/
