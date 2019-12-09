@@ -156,3 +156,10 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 .header .layui-nav .layui-nav-item,.header .layui-nav .layui-nav-item>a,.header,.logo{ line-height:50px !important; max-height:50px; !important;}
 .mobileTopLevelMenus{ float:left;}
 .hideMenu{ margin-top: 10px;}
+.topLevelMenus li{
+	text-align:center;
+}
+.topLevelMenus li a {
+	width: 110px;
+	padding: 0px 15px !important;
+}

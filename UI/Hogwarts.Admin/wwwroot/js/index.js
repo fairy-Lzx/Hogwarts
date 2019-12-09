@@ -17,17 +17,17 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 	//通过顶部菜单获取左侧二三级菜单   注：此处只做演示之用，实际开发中通过接口传参的方式获取导航数据
 	function getData(json){
 		$.getJSON(tab.tabConfig.url,function(data){
-			if (json == "contentManagement") {
+			if (json == "classManagement") {
 				bodyTab
-				dataStr = data.contentManagement;
+				dataStr = data.classManagement;
 				//重新渲染左侧菜单
 				tab.render();
-			}else if(json == "memberCenter"){
-				dataStr = data.memberCenter;
+			} else if (json == "courseManagement"){
+				dataStr = data.courseManagement;
 				//重新渲染左侧菜单
 				tab.render();
-			}else if(json == "systemeSttings"){
-				dataStr = data.systemeSttings;
+			} else if (json == "schoolrollManagement"){
+				dataStr = data.schoolrollManagement;
 				//重新渲染左侧菜单
 				tab.render();
 			}else if(json == "seraphApi"){
