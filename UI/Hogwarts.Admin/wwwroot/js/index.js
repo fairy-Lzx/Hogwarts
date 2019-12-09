@@ -37,10 +37,6 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 				dataStr = data.searchStudentInfoManagement;
 				//重新渲染左侧菜单
 				tab.render();
-			} else if (json == "searchStudentGrade") {
-				dataStr = data.searchStudentGrade;
-				//重新渲染左侧菜单
-				tab.render();
 			} else if (json == "userManagement") {
 				dataStr = data.userManagement;
 				//重新渲染左侧菜单

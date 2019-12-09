@@ -8,7 +8,7 @@ layui.use(['form','layer','table','laytpl'],function(){
     //用户列表
     var tableIns = table.render({
         elem: '#userList',
-        url : '/Account/Index',
+        url : '/Account/Users',
         cellMinWidth : 95,
         page : true,
         height : "full-125",
@@ -16,15 +16,17 @@ layui.use(['form','layer','table','laytpl'],function(){
         limit : 20,
         id : "userListTable",
         cols : [[
-            {type: "checkbox", fixed:"left", width:50},
-            {field: 'nickName', title: '昵称', minWidth:100, align:"center"},
-            {field: 'userName', title: '用户名', minWidth:100, align:"center"},
-            {field: 'userEmail', title: '用户邮箱', minWidth:200, align:'center',templet:function(d){
-                return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
-            }
-            },
+            { type: "checkbox", fixed: "left", width: 50 },
+            { field: "rowId", title: 'ID', width: 60, fixed: "left", sort: "true", align: 'center', edit: 'text' },
+            //{field: 'nickName', title: '昵称', minWidth:100, align:"center"},
+            {field: 'userName', title: '账号', minWidth:100, align:"center"},
+            //{field: 'userEmail', title: '用户邮箱', minWidth:200, align:'center',templet:function(d){
+            //    return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
+            //}
+            { field: 'realName', title: '名字', minWidth: 100, align: "center" },
+            { field: 'englishName', title: '英文名', minWidth: 100, align: "center" },
             {
-                field: 'userSex', title: '用户性别',width:120, align: 'center', templet: function (d) {
+                field: 'sex', title: '用户性别',width:120, align: 'center', templet: function (d) {
                     if (d.userSex == null) return "就不告诉你";
                     return d.userSex;
                 }
@@ -32,8 +34,8 @@ layui.use(['form','layer','table','laytpl'],function(){
             {field: 'userStatus', title: '用户状态',  align:'center',templet:function(d){
                 return d.userStatus == true ? "正常使用" : "限制使用";
             }},
-            {field: 'userGrade', title: '用户等级', align:'center'},
-            {field: 'userEndTime', title: '最后登录时间', align:'center',minWidth:150},
+            {field: 'role', title: '职位', align:'center'},
+            //{field: 'userEndTime', title: '最后登录时间', align:'center',minWidth:150},
             {title: '操作', minWidth:175, templet:'#userListBar',fixed:"right",align:"center"}
         ]]
     });
