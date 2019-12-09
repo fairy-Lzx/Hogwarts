@@ -18,7 +18,6 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 	function getData(json){
 		$.getJSON(tab.tabConfig.url,function(data){
 			if (json == "classManagement") {
-				bodyTab
 				dataStr = data.classManagement;
 				//重新渲染左侧菜单
 				tab.render();
@@ -30,11 +29,23 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 				dataStr = data.schoolrollManagement;
 				//重新渲染左侧菜单
 				tab.render();
-			}else if(json == "seraphApi"){
-                dataStr = data.seraphApi;
+			} else if (json == "gradeManagement"){
+				dataStr = data.gradeManagement;
                 //重新渲染左侧菜单
                 tab.render();
-            }
+			} else if (json == "searchStudentInfoManagement") {
+				dataStr = data.searchStudentInfoManagement;
+				//重新渲染左侧菜单
+				tab.render();
+			} else if (json == "searchStudentGrade") {
+				dataStr = data.searchStudentGrade;
+				//重新渲染左侧菜单
+				tab.render();
+			} else if (json == "userManagement") {
+				dataStr = data.userManagement;
+				//重新渲染左侧菜单
+				tab.render();
+			}
 		})
 	}
 	//页面加载时判断左侧菜单是否显示
@@ -64,7 +75,7 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 	})
 
 	//通过顶部菜单获取左侧二三级菜单   注：此处只做演示之用，实际开发中通过接口传参的方式获取导航数据
-	getData("contentManagement");
+	getData("classManagement");
 
 	//手机设备的简单适配
     $('.site-tree-mobile').on('click', function(){

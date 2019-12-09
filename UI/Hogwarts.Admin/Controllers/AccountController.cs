@@ -95,5 +95,14 @@ namespace Hogwarts.Admin.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }
+        [HttpGet]
+        public IActionResult UserList()
+        {
+            return View();
+        }
+        public IActionResult RoleList()
+        {
+            return View();
+        }
     }
 }

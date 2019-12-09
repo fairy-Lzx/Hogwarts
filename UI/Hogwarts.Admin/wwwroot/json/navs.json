@@ -1,7 +1,7 @@
 {
 	"classManagement": [
 		{
-			"title": "文章列表",
+			"title": "学院列表",
 			"icon": "icon-text",
 			"href": "page/news/newsList.html",
 			"spread": false
@@ -76,19 +76,19 @@
 	],
 	"gradeManagement": [
 		{
-			"title": "三级联动模块",
+			"title": "成绩录入与修改",
 			"icon": "icon-mokuai",
 			"href": "page/doc/addressDoc.html",
 			"spread": false
 		},
 		{
-			"title": "bodyTab模块",
+			"title": "成绩录入与修改",
 			"icon": "icon-mokuai",
 			"href": "page/doc/bodyTabDoc.html",
 			"spread": false
 		},
 		{
-			"title": "三级菜单",
+			"title": "成绩录入与修改",
 			"icon": "icon-mokuai",
 			"href": "page/doc/navDoc.html",
 			"spread": false
@@ -136,21 +136,15 @@
 	],
 	"userManagement": [
 		{
-			"title": "三级联动模块",
-			"icon": "icon-mokuai",
-			"href": "page/doc/addressDoc.html",
+			"title": "用户中心",
+			"icon": "&#xe630;",
+			"href": "/Account/UserList",
 			"spread": false
 		},
 		{
-			"title": "bodyTab模块",
+			"title": "用户职位",
 			"icon": "icon-mokuai",
-			"href": "page/doc/bodyTabDoc.html",
-			"spread": false
-		},
-		{
-			"title": "三级菜单",
-			"icon": "icon-mokuai",
-			"href": "page/doc/navDoc.html",
+			"href": "/Account/RoleList",
 			"spread": false
 		}
 	]

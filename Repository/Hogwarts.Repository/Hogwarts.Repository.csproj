@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Data\Hogwarts.Data\Hogwarts.Data.csproj" />
+    <ProjectReference Include="..\Hogwarts.IRepository\Hogwarts.IRepository.csproj" />
   </ItemGroup>
 
 </Project>
