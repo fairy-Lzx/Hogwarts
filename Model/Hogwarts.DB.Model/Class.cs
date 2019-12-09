@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Hogwarts.DB.Model
 {
@@ -9,7 +10,7 @@ namespace Hogwarts.DB.Model
         {
             TbStudent = new HashSet<Student>();
         }
-
+        [Key]
         public int ClassId { get; set; }
         public string ClassName { get; set; }
         public string Dean { get; set; }

@@ -104,7 +104,9 @@ namespace Hogwarts.Data.Migrations
             modelBuilder.Entity("Hogwarts.DB.Model.Class", b =>
                 {
                     b.Property<int>("ClassId")
-                        .HasColumnName("classId");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("classId")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ClassName")
                         .HasColumnName("className")
@@ -125,6 +127,8 @@ namespace Hogwarts.Data.Migrations
                 {
                     b.Property<int>("Cno")
                         .HasColumnName("cno");
+
+                    b.Property<string>("CScore");
 
                     b.Property<string>("Cname")
                         .HasColumnName("cname")
@@ -198,21 +202,6 @@ namespace Hogwarts.Data.Migrations
                     b.ToTable("tb_student");
                 });
 
-            modelBuilder.Entity("Hogwarts.DB.Model.Tc", b =>
-                {
-                    b.Property<int>("TId")
-                        .HasColumnName("t_id");
-
-                    b.Property<int>("Cno")
-                        .HasColumnName("cno");
-
-                    b.HasKey("TId", "Cno");
-
-                    b.HasIndex("Cno");
-
-                    b.ToTable("tb_TC");
-                });
-
             modelBuilder.Entity("Hogwarts.DB.Model.Teacher", b =>
                 {
                     b.Property<int>("TId")
@@ -223,7 +212,7 @@ namespace Hogwarts.Data.Migrations
                         .HasColumnName("birthday")
                         .HasColumnType("datetime");
 
-                    b.Property<string>("Cno")
+                    b.Property<int>("Cno")
                         .HasColumnName("cno")
                         .HasMaxLength(10);
 
@@ -239,6 +228,8 @@ namespace Hogwarts.Data.Migrations
                         .IsUnicode(false);
 
                     b.HasKey("TId");
+
+                    b.HasIndex("Cno");
 
                     b.ToTable("tb_teacher");
                 });
@@ -358,17 +349,12 @@ namespace Hogwarts.Data.Migrations
                         .HasConstraintName("FK_tb_student_tb_class");
                 });
 
-            modelBuilder.Entity("Hogwarts.DB.Model.Tc", b =>
+            modelBuilder.Entity("Hogwarts.DB.Model.Teacher", b =>
                 {
-                    b.HasOne("Hogwarts.DB.Model.Course", "CnoNavigation")
-                        .WithMany("Tc")
+                    b.HasOne("Hogwarts.DB.Model.Course", "Course")
+                        .WithMany("Teachers")
                         .HasForeignKey("Cno")
-                        .HasConstraintName("FK_tb_TC_tb_course");
-
-                    b.HasOne("Hogwarts.DB.Model.Teacher", "T")
-                        .WithMany("Tc")
-                        .HasForeignKey("TId")
-                        .HasConstraintName("FK_tb_TC_tb_teacher");
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

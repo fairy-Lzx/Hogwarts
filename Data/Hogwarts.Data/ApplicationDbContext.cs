@@ -21,7 +21,7 @@ namespace Hogwarts.Data
                 b.ToTable("IdentityRole");
             });
             builder.Entity<ApplicationIdentityUser>().HasOne(l => l.Teacher).WithOne(l => l.IdentityUser).HasForeignKey<ApplicationIdentityUser>(l => l.TId);
-
+            builder.Entity<Teacher>().HasOne(l => l.Course).WithMany(l => l.Teachers).HasForeignKey(l => l.Cno);
             builder.Entity<Class>(entity =>
             {
                 entity.HasKey(e => e.ClassId);
@@ -29,8 +29,7 @@ namespace Hogwarts.Data
                 entity.ToTable("tb_class");
 
                 entity.Property(e => e.ClassId)
-                    .HasColumnName("classId")
-                    .ValueGeneratedNever();
+                    .HasColumnName("classId");
 
                 entity.Property(e => e.ClassName)
                     .HasColumnName("className")
@@ -157,36 +156,11 @@ namespace Hogwarts.Data
                     .HasMaxLength(30)
                     .IsUnicode(false);
             });
-
-            builder.Entity<Tc>(entity =>
-            {
-                entity.HasKey(e => new { e.TId, e.Cno });
-
-                entity.ToTable("tb_TC");
-
-                entity.Property(e => e.TId).HasColumnName("t_id");
-
-                entity.Property(e => e.Cno).HasColumnName("cno");
-
-                entity.HasOne(d => d.CnoNavigation)
-                    .WithMany(p => p.Tc)
-                    .HasForeignKey(d => d.Cno)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tb_TC_tb_course");
-
-                entity.HasOne(d => d.T)
-                    .WithMany(p => p.Tc)
-                    .HasForeignKey(d => d.TId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tb_TC_tb_teacher");
-            });
-
         }
         public virtual DbSet<Class> Classes { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<Sc> Sc { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
-        public virtual DbSet<Tc> Tc { get; set; }
     }
 }

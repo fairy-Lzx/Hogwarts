@@ -1,4 +1,5 @@
 ﻿using Hogwarts.IRepository;
+using Hogwarts.View.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -24,7 +25,7 @@ namespace Hogwarts.Admin.Controllers
             var classes =await _classManager.GetAllEntities().Select(x=>new
             {
                 x.ClassName,
-                x.Dean
+                ClassDean=x.Dean
             }).ToListAsync();
             List<object> datas = new List<object>();
             for (int i = 0; i < classes.Count; i++)
@@ -33,7 +34,7 @@ namespace Hogwarts.Admin.Controllers
                 {
                     RowId = i + 1,
                     classes[i].ClassName,
-                    classes[i].Dean
+                    classes[i].ClassDean
                 }) ;
             }
             if (classes != null)
@@ -42,9 +43,46 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
         }
+        [HttpGet]
         public IActionResult AddClass()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult AddClass(ClassAddViewModel classAdd)
+        {
+            if (classAdd == null)
+            {
+                return Json("FALSE");
+            }
+            var cla = _classManager.LoadEntities(x => x.ClassName == classAdd.ClassName).FirstOrDefault();
+            if (cla != null)
+            {
+                return Json("FALSE");
+            }
+            var result = _classManager.AddEntity(new DB.Model.Class { ClassName = classAdd.ClassName, Dean = classAdd.ClassDean });
+            if (result != null)
+            {
+                return Json("SUCCEED");
+            }
+            return Json("FALSE");
+        }
+        [HttpPost]
+        public IActionResult DeleteClass(string className)
+        {
+            if (className == null)
+            {
+                return Json("FALSE");
+            }
+            var cla = _classManager.LoadEntities(x => x.ClassName == className).FirstOrDefault();
+            if (cla != null)
+            {
+                if (_classManager.DeleteEntity(cla))
+                {
+                    return Json("SUCCEED");
+                }
+            }
+            return Json("FALSE");
         }
     }
 }

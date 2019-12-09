@@ -8,13 +8,13 @@ namespace Hogwarts.DB.Model
         public Course()
         {
             Sc = new HashSet<Sc>();
-            Tc = new HashSet<Tc>();
+            Teachers = new HashSet<Teacher>();
         }
 
         public int Cno { get; set; }
         public string Cname { get; set; }
-
+        public string CScore { get; set; }
         public virtual ICollection<Sc> Sc { get; set; }
-        public virtual ICollection<Tc> Tc { get; set; }
+        public virtual ICollection<Teacher> Teachers { get; set; }
     }
 }
