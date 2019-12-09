@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Hogwarts.Admin.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         public IActionResult Index()

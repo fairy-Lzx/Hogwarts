@@ -3,6 +3,7 @@ using Hogwarts.DB.Model;
 using Hogwarts.View.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -100,9 +101,57 @@ namespace Hogwarts.Admin.Controllers
         {
             return View();
         }
-        public IActionResult RoleList()
+        public async Task<IActionResult> Users()
         {
-            return View();
+            var users = await _userManager.Users.Select(x=>new {
+                x.UserName,
+                RealName=x.Teacher.TName,
+                x.Teacher.EnglishName,
+                x.Teacher.Sex,
+                x.RoleName
+            }).ToListAsync();
+            if (users != null)
+            {
+                List<UserListInfoViewModel> userInfoViews = new List<UserListInfoViewModel>();
+                for (int i = 0; i < users.Count; i++)
+                {
+                    userInfoViews.Add(new UserListInfoViewModel
+                    {
+                        RowId = i + 1,
+                        EnglishName=users[i].EnglishName,
+                        RealName=users[i].RealName,
+                        RoleName=users[i].RoleName,
+                        Sex=users[i].Sex,
+                        UserName=users[i].UserName
+                    }) ;
+                }
+                return Json(new { code = 0, msg = "SUCCEED", count = users.Count, data = userInfoViews });
+            }
+            return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+        }
+        public async Task<IActionResult> AddUser(string userName)
+        {
+            UserInfoViewModel userInfoViewModel;
+            if (userName != null)
+            {
+                var user = await _userManager.FindByNameAsync(userName);
+                if (user != null)
+                {
+                    userInfoViewModel = new UserInfoViewModel
+                    {
+                        //NickName = user.NickName,
+                        //UserDesc = user.UserDescription,
+                        //UserEmail = user.Email,
+                        //UserGrade = user.RoleName,
+                        //UserSex = user.Sex,
+                        //UserName = user.UserName,
+                        //UserStatus = user.IsInUsing
+                    };
+                    return View(userInfoViewModel);
+                }
+            }
+            userInfoViewModel = new UserInfoViewModel();
+            return View(userInfoViewModel);
         }
     }
 }
