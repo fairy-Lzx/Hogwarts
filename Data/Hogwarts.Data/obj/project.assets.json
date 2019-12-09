@@ -4419,11 +4419,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj",
+      "projectUniqueName": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj",
       "projectName": "Hogwarts.Data",
-      "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj",
+      "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj",
       "packagesPath": "C:\\Users\\SPY24\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\obj\\",
+      "outputPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SPY24\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4439,8 +4439,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj": {
-              "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj"
+            "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj": {
+              "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj"
             }
           }
         }

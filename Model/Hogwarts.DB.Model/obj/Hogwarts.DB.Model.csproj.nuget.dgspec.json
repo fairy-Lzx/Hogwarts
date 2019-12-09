@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj": {}
+    "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj": {
+    "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj",
+        "projectUniqueName": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj",
         "projectName": "Hogwarts.DB.Model",
-        "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj",
+        "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj",
         "packagesPath": "C:\\Users\\SPY24\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\obj\\",
+        "outputPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SPY24\\AppData\\Roaming\\NuGet\\NuGet.Config",

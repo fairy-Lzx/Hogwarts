@@ -4005,11 +4005,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\Hogwarts.Core.csproj",
+      "projectUniqueName": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\Hogwarts.Core.csproj",
       "projectName": "Hogwarts.Core",
-      "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\Hogwarts.Core.csproj",
+      "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\Hogwarts.Core.csproj",
       "packagesPath": "C:\\Users\\SPY24\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\obj\\",
+      "outputPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SPY24\\AppData\\Roaming\\NuGet\\NuGet.Config",

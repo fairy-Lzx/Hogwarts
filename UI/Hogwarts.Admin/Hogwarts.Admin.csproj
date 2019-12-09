@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\**" />
+    <Content Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Controllers\HomeController.cs" />
   </ItemGroup>
 
@@ -24,11 +31,6 @@
     <ProjectReference Include="..\..\Data\Hogwarts.Data\Hogwarts.Data.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Hogwarts.Core\Hogwarts.Core.csproj" />
     <ProjectReference Include="..\..\Model\Hogwarts.View.Model\Hogwarts.View.Model.csproj" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
