@@ -7,14 +7,14 @@
 
     //用户列表
     var tableIns = table.render({
-        elem: '#classList',
-        url: '/Class/Classes',
+        elem: '#courseList',
+        url: '/Course/Courses',
         cellMinWidth: 95,
         page: true,
         height: "full-125",
         limits: [10, 15, 20, 25],
         limit: 20,
-        id: "classListTable",
+        id: "courseListTable",
         cols: [[
             { type: "checkbox", fixed: "left", width: 50 },
             { field: "rowId", title: 'ID', width: 60, fixed: "left", sort: "true", align: 'center', edit: 'text' },
@@ -24,8 +24,8 @@
             //    return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
             { field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
             { field: 'courseScore', title: '课程学分', minWidth: 100, align: "center" },
-            { field: 'courseClass', title: '开课院系', minWidth: 100, align: "center" },
-            { field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
+            //{ field: 'courseClass', title: '开课院系', minWidth: 100, align: "center" },
+            //{ field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
             //}
             //{ field: 'realName', title: '名字', minWidth: 100, align: "center" },
             //{ field: 'englishName', title: '英文名', minWidth: 100, align: "center" },
@@ -42,11 +42,11 @@
             //},
             //{ field: 'roleName', title: '职位', align: 'center' },
             //{field: 'userEndTime', title: '最后登录时间', align:'center',minWidth:150},
-            { title: '操作', minWidth: 175, templet: '#classListBar', fixed: "right", align: "center" }
+            { title: '操作', minWidth: 175, templet: '#courseListBar', fixed: "right", align: "center" }
         ]]
     });
 
-    table.on('tool(classList)', function (obj) {
+    table.on('tool(courseList)', function (obj) {
         var layEvent = obj.event,
             data = obj.data;
 
@@ -73,7 +73,7 @@
                 layer.close(index);
             });
         } else if (layEvent === 'del') { //删除
-            layer.confirm('确定删除此学院？', { icon: 3, title: '提示信息' }, function (index) {
+            layer.confirm('确定删除此课程？', { icon: 3, title: '提示信息' }, function (index) {
                 //$.get("/Account/DeleteUser",{
                 //    newsId : data.newsId  //将需要删除的newsId作为参数传入
                 //},function(data){
@@ -82,12 +82,12 @@
                 // })
                 var index = top.layer.msg('数据提交中，请稍候', { icon: 16, time: false, shade: 0.8 });
                 $.ajax({
-                    url: "/Class/DeleteClass",
+                    url: "/Class/DeleteCourse",
                     type: "POST",
                     data: {
-                        ClassName: data.className
+                        CourseId: data.courseId
                     },
-                    dataType: "text",
+                    dataType: "json",
                     success: function (res) {
                         tableIns.reload();
                         layer.close(index);
@@ -122,7 +122,7 @@
         var index = layui.layer.open({
             title: "添加用户",
             type: 2,
-            content: "/Class/AddClass" + para,
+            content: "/Class/AddCourse" + para,
             success: function (layero, index) {
                 var body = layui.layer.getChildFrame('body', index);
                 //if (edit) {
@@ -155,7 +155,7 @@
 
     //批量删除
     $(".delAll_btn").click(function () {
-        var checkStatus = table.checkStatus('userListTable'),
+        var checkStatus = table.checkStatus('courseListTable'),
             data = checkStatus.data,
             newsId = [];
         if (data.length > 0) {

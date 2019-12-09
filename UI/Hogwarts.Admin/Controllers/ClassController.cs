@@ -27,6 +27,10 @@ namespace Hogwarts.Admin.Controllers
                 x.ClassName,
                 ClassDean=x.Dean
             }).ToListAsync();
+            if (classes == null)
+            {
+                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
             List<object> datas = new List<object>();
             for (int i = 0; i < classes.Count; i++)
             {
@@ -35,13 +39,9 @@ namespace Hogwarts.Admin.Controllers
                     RowId = i + 1,
                     classes[i].ClassName,
                     classes[i].ClassDean
-                }) ;
+                });
             }
-            if (classes != null)
-            {
-                return Json(new { code = 0, msg = "SUCCEED", count = classes.Count, data = datas });
-            }
-            return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
         }
         [HttpGet]
         public IActionResult AddClass()
