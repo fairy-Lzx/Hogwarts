@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Hogwarts.Data;
 using Hogwarts.DB.Model;
+using Hogwarts.IRepository;
+using Hogwarts.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -53,6 +55,10 @@ namespace Hogwarts.Admin
                 options.Password.RequiredUniqueChars = 1;
 
             });
+            services.AddScoped<IClassManager, ClassManager>();
+            services.AddScoped<ICourseManager, CourseManager>();
+            services.AddScoped<IStudentManager, StudentManager>();
+            services.AddScoped<IGradeManager, GradeManager>();
             services.ConfigureApplicationCookie(options =>
             {
                 // Cookie settings

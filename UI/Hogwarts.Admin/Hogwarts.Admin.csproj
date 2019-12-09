@@ -31,6 +31,8 @@
     <ProjectReference Include="..\..\Data\Hogwarts.Data\Hogwarts.Data.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Hogwarts.Core\Hogwarts.Core.csproj" />
     <ProjectReference Include="..\..\Model\Hogwarts.View.Model\Hogwarts.View.Model.csproj" />
+    <ProjectReference Include="..\..\Repository\Hogwarts.IRepository\Hogwarts.IRepository.csproj" />
+    <ProjectReference Include="..\..\Repository\Hogwarts.Repository\Hogwarts.Repository.csproj" />
   </ItemGroup>
 
 </Project>
