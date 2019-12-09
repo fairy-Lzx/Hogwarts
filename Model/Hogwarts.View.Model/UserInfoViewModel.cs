@@ -14,6 +14,7 @@ namespace Hogwarts.View.Model
         public bool UserStatus { get; set; }
         public string UserGrade { get; set; }
         public string UserEndTime { get; set; }
+        public string EnglishName { get; set; }
         public string UserDesc { get; set; }
         /// <summary>
         /// 家庭地址/省

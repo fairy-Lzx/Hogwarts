@@ -146,6 +146,12 @@ namespace Hogwarts.Admin.Controllers
                         //UserSex = user.Sex,
                         //UserName = user.UserName,
                         //UserStatus = user.IsInUsing
+                        BirthDate = user.Teacher.Birthday.ToString(),
+                        RealName=user.Teacher.TName,
+                        EnglishName=user.Teacher.EnglishName,
+                        UserSex=user.Teacher.Sex,
+                        UserGrade=user.RoleName,
+                        UserName=user.UserName,
                     };
                     return View(userInfoViewModel);
                 }
