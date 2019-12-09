@@ -15,6 +15,7 @@ namespace Hogwarts.DB.Model
         [Key]
         public int TId { get; set; }
         public string TName { get; set; }
+        public string EnglishName { get; set; }
         public string Sex { get; set; }
         public DateTime? Birthday { get; set; }
         public string Cno { get; set; }

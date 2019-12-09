@@ -1307,19 +1307,6 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
-      },
-      "Hogwarts.DB.Model/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0"
-        },
-        "compile": {
-          "bin/placeholder/Hogwarts.DB.Model.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Hogwarts.DB.Model.dll": {}
-        }
       }
     }
   },
@@ -4397,16 +4384,10 @@
         "system.threading.tasks.4.0.11.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
-    },
-    "Hogwarts.DB.Model/1.0.0": {
-      "type": "project",
-      "path": "../../Model/Hogwarts.DB.Model/Hogwarts.DB.Model.csproj",
-      "msbuildProject": "../../Model/Hogwarts.DB.Model/Hogwarts.DB.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "Hogwarts.DB.Model >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 2.2.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.2.6",
@@ -4438,11 +4419,7 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {
-            "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj": {
-              "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
