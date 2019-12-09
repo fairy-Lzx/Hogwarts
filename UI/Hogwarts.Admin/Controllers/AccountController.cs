@@ -208,7 +208,7 @@ namespace Hogwarts.Admin.Controllers
                         var roleresult = await _roleManager.CreateAsync(role);
                         if (roleresult.Succeeded)
                         {
-                            role = await _roleManager.FindByNameAsync(role.Name);
+                            role = await _roleManager.FindByIdAsync(addUserViewModel.RoleId);
                             if (role != null)
                             {
                                 var addToRoleResult = await _userManager.AddToRoleAsync(user, role.Name);
@@ -229,10 +229,19 @@ namespace Hogwarts.Admin.Controllers
             }
             else
             {
-                user.UserName = addUserViewModel.UserName;
+                //user.UserName = addUserViewModel.UserName;
                 //user.Email = addUserViewModel.Email;
                 //user.NickName = addUserViewModel.NickName;
                 //user.IsInUsing = addUserViewModel.IsInUsing;
+                var userOldRole =await _userManager.GetRolesAsync(user);
+                if(userOldRole.Count>0)
+                {
+                    var deleteFromRoleResult = await _userManager.RemoveFromRolesAsync(user, userOldRole);
+                    if(!deleteFromRoleResult.Succeeded)
+                    {
+                        return Json("FALSE");
+                    }
+                }
                 user.RoleName = addUserViewModel.RoleName;
                 user.Teacher = new Teacher
                 {
@@ -265,7 +274,7 @@ namespace Hogwarts.Admin.Controllers
                         var addToRoleResult = await _userManager.AddToRoleAsync(user, role.Name);
                         if (addToRoleResult.Succeeded)
                         {
-                            return Json("成功");
+                            return Json("SUCCEED");
                         }
                     }
                 }

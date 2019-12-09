@@ -21,17 +21,17 @@ layui.use(['form','layer'],function(){
                 IsInUsing: data.field.userStatus,
                 UserDescription: data.field.userdescription
             },
-            dataType: "text",
+            dataType: "json",
             success: function (res) {
                 if (res == "SUCCEED") {
                     top.layer.close(index);
-                    top.layer.msg("用户添加成功！");
+                    top.layer.msg("用户添加或修改成功！");
                     layer.closeAll("iframe");
                     //刷新父页面
                     parent.location.reload();
                 } else {
                     top.layer.close(index);
-                    top.layer.msg("用户添加失败！");
+                    top.layer.msg("用户添加或修改成功！");
                     layer.closeAll("iframe");
                     //刷新父页面
                     parent.location.reload();
