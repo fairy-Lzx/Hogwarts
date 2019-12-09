@@ -33,4 +33,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Model\Hogwarts.DB.Model\Hogwarts.DB.Model.csproj" />
+  </ItemGroup>
+
 </Project>
