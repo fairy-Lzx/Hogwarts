@@ -9,14 +9,3 @@ C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts - 副本\Hogwarts\Data\Hogwarts.Data\obj\Debug\netcoreapp2.2\Hogwarts.Data.csproj.CopyComplete
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts - 副本\Hogwarts\Data\Hogwarts.Data\obj\Debug\netcoreapp2.2\Hogwarts.Data.dll
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts - 副本\Hogwarts\Data\Hogwarts.Data\obj\Debug\netcoreapp2.2\Hogwarts.Data.pdb
-C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\bin\Debug\netcoreapp2.2\Hogwarts.Data.deps.json
-C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\bin\Debug\netcoreapp2.2\Hogwarts.Data.dll
-C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\bin\Debug\netcoreapp2.2\Hogwarts.Data.pdb
-C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.dll
-C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.pdb
-C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\obj\Debug\netcoreapp2.2\Hogwarts.Data.csprojAssemblyReference.cache
-C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\obj\Debug\netcoreapp2.2\Hogwarts.Data.AssemblyInfoInputs.cache
-C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\obj\Debug\netcoreapp2.2\Hogwarts.Data.AssemblyInfo.cs
-C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\obj\Debug\netcoreapp2.2\Hogwarts.Data.csproj.CopyComplete
-C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\obj\Debug\netcoreapp2.2\Hogwarts.Data.dll
-C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\obj\Debug\netcoreapp2.2\Hogwarts.Data.pdb
