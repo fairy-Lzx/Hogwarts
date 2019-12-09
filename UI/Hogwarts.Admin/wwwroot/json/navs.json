@@ -3,7 +3,7 @@
     {
       "title": "学院列表",
       "icon": "icon-text",
-      "href": "page/news/newsList.html",
+      "href": "/Class/ClassList",
       "spread": false
     },
     {

@@ -281,5 +281,23 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json("FALSE");
         }
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(string userName)
+        {
+            if (userName == null)
+            {
+                return Json("FALSE");
+            }
+            var user = await _userManager.FindByNameAsync(userName);
+            if (user != null)
+            {
+                var result = await _userManager.DeleteAsync(user);
+                if (result.Succeeded)
+                {
+                    return Json("SUCCEED");
+                }
+            }
+            return Json("FALSE");
+        }
     }
 }
