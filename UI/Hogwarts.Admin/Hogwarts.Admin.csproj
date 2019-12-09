@@ -15,6 +15,20 @@
     <None Remove="Models\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Views\Account\AddUser.cshtml" />
+    <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Account\Register.cshtml" />
+    <None Include="Views\Account\UserList.cshtml" />
+    <None Include="Views\Course\CourseList.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\main.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Role\RoleAdd.cshtml" />
+    <None Include="Views\Role\RoleList.cshtml" />
+    <None Include="Views\Student\SchoolRollList.cshtml" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
