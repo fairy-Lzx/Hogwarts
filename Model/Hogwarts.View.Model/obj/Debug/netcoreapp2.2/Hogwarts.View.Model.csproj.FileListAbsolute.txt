@@ -1,0 +1,8 @@
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.deps.json
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.dll
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.pdb
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.csprojAssemblyReference.cache
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.AssemblyInfoInputs.cache
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.AssemblyInfo.cs
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.dll
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.pdb

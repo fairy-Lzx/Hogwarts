@@ -1,0 +1,11 @@
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Repository\Hogwarts.IRepository\bin\Debug\netcoreapp2.2\Hogwarts.IRepository.deps.json
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Repository\Hogwarts.IRepository\bin\Debug\netcoreapp2.2\Hogwarts.IRepository.dll
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Repository\Hogwarts.IRepository\bin\Debug\netcoreapp2.2\Hogwarts.IRepository.pdb
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Repository\Hogwarts.IRepository\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.dll
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Repository\Hogwarts.IRepository\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.pdb
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Repository\Hogwarts.IRepository\obj\Debug\netcoreapp2.2\Hogwarts.IRepository.csprojAssemblyReference.cache
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Repository\Hogwarts.IRepository\obj\Debug\netcoreapp2.2\Hogwarts.IRepository.AssemblyInfoInputs.cache
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Repository\Hogwarts.IRepository\obj\Debug\netcoreapp2.2\Hogwarts.IRepository.AssemblyInfo.cs
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Repository\Hogwarts.IRepository\obj\Debug\netcoreapp2.2\Hogwarts.IRepository.csproj.CopyComplete
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Repository\Hogwarts.IRepository\obj\Debug\netcoreapp2.2\Hogwarts.IRepository.dll
+C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Repository\Hogwarts.IRepository\obj\Debug\netcoreapp2.2\Hogwarts.IRepository.pdb

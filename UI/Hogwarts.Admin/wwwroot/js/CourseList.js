@@ -82,7 +82,7 @@
                 // })
                 var index = top.layer.msg('数据提交中，请稍候', { icon: 16, time: false, shade: 0.8 });
                 $.ajax({
-                    url: "/Class/DeleteCourse",
+                    url: "/Course/DeleteCourse",
                     type: "POST",
                     data: {
                         CourseId: data.courseId
@@ -122,7 +122,7 @@
         var index = layui.layer.open({
             title: "添加用户",
             type: 2,
-            content: "/Class/AddCourse" + para,
+            content: "/Course/AddCourse" + para,
             success: function (layero, index) {
                 var body = layui.layer.getChildFrame('body', index);
                 //if (edit) {

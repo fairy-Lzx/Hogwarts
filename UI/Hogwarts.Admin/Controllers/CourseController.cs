@@ -1,4 +1,6 @@
-﻿using Hogwarts.IRepository;
+﻿using Hogwarts.DB.Model;
+using Hogwarts.IRepository;
+using Hogwarts.View.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -52,6 +54,30 @@ namespace Hogwarts.Admin.Controllers
                 return Json("FALSE");
             }
             if(_courseManager.DeleteEntity(course))
+            {
+                return Json("SUCCEED");
+            }
+            return Json("FALSE");
+        }
+        public IActionResult AddCourse()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddCourse(CourseAddViewModel viewModel)
+        {
+            if (viewModel == null)
+            {
+                return Json("FALSE");
+            }
+            Course course = new Course
+            {
+                Cno = viewModel.CourseId,
+                Cname = viewModel.CourseName,
+                CScore = viewModel.CourseScore
+            };
+            var result = _courseManager.AddEntity(course);
+            if(result!=null)
             {
                 return Json("SUCCEED");
             }
