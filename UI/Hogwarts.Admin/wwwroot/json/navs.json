@@ -155,7 +155,7 @@
     {
       "title": "学生信息查询",
       "icon": "icon-mokuai",
-      "href": "page/doc/addressDoc.html",
+      "href": "/Student/SearchStudent",
       "spread": false
     },
     {

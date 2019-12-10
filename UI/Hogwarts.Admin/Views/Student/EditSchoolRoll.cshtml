@@ -32,19 +32,19 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">学号</label>
                 <div class="layui-input-block">
-                    <input type="text" name="studentId" value="@Model.StudentId" disabled class="layui-input">
+                    <input type="text" name="studentId" value="@Model.StudentId" disabled class="layui-input layui-disabled">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">密码</label>
                 <div class="layui-input-block">
-                    <input type="password" name="password" value="@Model.Password" disabled class="layui-input layui-disabled">
+                    <input type="password" name="password" value="@Model.Password" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">名字</label>
                 <div class="layui-input-block">
-                    <input type="text" name="studentName" value="@Model.StudentName" placeholder="请输入中文名" class="layui-input layui-disabled">
+                    <input type="text" name="studentName" value="@Model.StudentName" placeholder="请输入中文名" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -132,33 +132,6 @@
                     </select>
                 </div>
             </div>
-            @*<div class="layui-form-item">
-            <label class="layui-form-label">掌握技术</label>
-            <div class="layui-input-block userHobby">
-                <input type="checkbox" name="like[javascript]" title="Javascript">
-                <input type="checkbox" name="like[C#]" title="C#">
-                <input type="checkbox" name="like[php]" title="PHP">
-                <input type="checkbox" name="like[html]" title="HTML(5)">
-                <input type="checkbox" name="like[css]" title="CSS(3)">
-                <input type="checkbox" name="like[.net]" title=".net">
-                <input type="checkbox" name="like[ASP]" title="ASP">
-                <input type="checkbox" name="like[Angular]" title="Angular">
-                <input type="checkbox" name="like[VUE]" title="VUE">
-                <input type="checkbox" name="like[XML]" title="XML">
-            </div>
-        </div>*@
-            @*<div class="layui-form-item">
-            <label class="layui-form-label">邮箱</label>
-            <div class="layui-input-block">
-                <input type="text" name="email" value="@Model.UserEmail" placeholder="请输入邮箱" lay-verify="email" class="layui-input userEmail">
-            </div>
-        </div>*@
-            @*<div class="layui-form-item">
-            <label class="layui-form-label">我的简介</label>
-            <div class="layui-input-block">
-                <textarea name="userDescription" placeholder="请输入内容" class="layui-textarea myself">@Model.UserDesc</textarea>
-            </div>
-        </div>*@
             <div class="layui-form-item">
                 <div class="layui-input-block">
                     <button class="layui-btn" lay-submit="" lay-filter="changeSchoolRoll">立即提交</button>

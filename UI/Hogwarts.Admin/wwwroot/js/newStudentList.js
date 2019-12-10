@@ -68,13 +68,13 @@
             success: function (res) {
                 if (res == "SUCCEED") {
                     top.layer.close(index);
-                    top.layer.msg("用户添加成功！");
+                    top.layer.msg("学生添加成功！");
                     layer.closeAll("iframe");
                     //刷新父页面
                     tableIns.reload();
                 } else {
                     top.layer.close(index);
-                    top.layer.msg("用户添加失败！");
+                    top.layer.msg("学生添加失败！");
                     layer.closeAll("iframe");
                     //刷新父页面
                     //parent.location.reload();
@@ -111,7 +111,7 @@
                 layer.close(index);
             });
         } else if (layEvent === 'del') { //删除
-            layer.confirm('确定删除此课程？', { icon: 3, title: '提示信息' }, function (index) {
+            layer.confirm('确定删除此学生？', { icon: 3, title: '提示信息' }, function (index) {
                 //$.get("/Account/DeleteUser",{
                 //    newsId : data.newsId  //将需要删除的newsId作为参数传入
                 //},function(data){
@@ -120,10 +120,10 @@
                 // })
                 var index = top.layer.msg('数据提交中，请稍候', { icon: 16, time: false, shade: 0.8 });
                 $.ajax({
-                    url: "/Course/DeleteCourse",
+                    url: "/Student/DeleteStudent",
                     type: "POST",
                     data: {
-                        CourseId: data.courseId
+                        StudentId: data.studentId
                     },
                     dataType: "json",
                     success: function (res) {
@@ -138,6 +138,7 @@
     //搜索【此功能需要后台配合，所以暂时没有动态效果演示】
     $(".search_btn").on("click", function () {
         if ($(".searchVal").val() != '') {
+
             table.reload("newStudentListTable", {
                 page: {
                     curr: 1 //重新从第 1 页开始
