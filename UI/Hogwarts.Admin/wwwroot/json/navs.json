@@ -90,13 +90,13 @@
     {
       "title": "成绩录入与修改",
       "icon": "icon-mokuai",
-      "href": "page/doc/addressDoc.html",
+      "href": "/Grade/GradeList",
       "spread": false
     },
     {
       "title": "学生成绩查询",
       "icon": "&#xe612;",
-      "href": "page/doc/bodyTabDoc.html",
+      "href": "/Grade/SearchGrade",
       "spread": false
     },
     {

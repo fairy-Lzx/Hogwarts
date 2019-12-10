@@ -279,5 +279,18 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
         }
+        public IActionResult GetStudent(int studentId)
+        {
+            if (studentId == 0)
+            {
+                return Json(new { code = 1, msg = "FALSE", count = 0, data =string.Empty });
+            }
+            var student = _studentManager.LoadEntities(x => x.Sno == studentId).FirstOrDefault();
+            if (student == null)
+            {
+                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
+            return Json(new { code = 0, msg = "SUCCEED", count = 1, data = new { StudentName = student.Sname } });
+        }
     }
 }
