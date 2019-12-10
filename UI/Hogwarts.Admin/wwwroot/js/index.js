@@ -41,6 +41,10 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 				dataStr = data.userManagement;
 				//重新渲染左侧菜单
 				tab.render();
+			} else if (json == "newStudentManagement") {
+				dataStr = data.newStudentManagement;
+				//重新渲染左侧菜单
+				tab.render();
 			}
 		})
 	}

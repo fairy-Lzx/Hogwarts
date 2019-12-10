@@ -51,7 +51,7 @@ namespace Hogwarts.Repository.SqlServer
             totalCount = tem.Count();
             if (isAsc)
             {
-                tem = tem.OrderBy(orderByLambdaExpression).Skip(pageIndex).Take(pageSize);
+                tem = tem.OrderBy(orderByLambdaExpression).Skip((pageIndex-1)*pageSize).Take(pageSize);
             }else
             {
                 tem = tem.OrderByDescending(orderByLambdaExpression).Skip(pageIndex).Take(pageSize);

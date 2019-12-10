@@ -135,6 +135,8 @@ namespace Hogwarts.Data.Migrations
                         .HasMaxLength(50)
                         .IsUnicode(false);
 
+                    b.Property<string>("EnglishName");
+
                     b.HasKey("Cno");
 
                     b.ToTable("tb_course");
@@ -165,6 +167,8 @@ namespace Hogwarts.Data.Migrations
                     b.Property<int>("Sno")
                         .HasColumnName("sno");
 
+                    b.Property<string>("Area");
+
                     b.Property<DateTime?>("Birthday")
                         .HasColumnName("birthday")
                         .HasColumnType("datetime");
@@ -174,10 +178,14 @@ namespace Hogwarts.Data.Migrations
                         .HasMaxLength(40)
                         .IsUnicode(false);
 
+                    b.Property<string>("City");
+
                     b.Property<int?>("ClassId")
                         .HasColumnName("classId");
 
                     b.Property<string>("EnglishName");
+
+                    b.Property<string>("Province");
 
                     b.Property<string>("Pwd")
                         .HasColumnName("pwd")

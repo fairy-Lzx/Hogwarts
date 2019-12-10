@@ -13,6 +13,7 @@ namespace Hogwarts.DB.Model
 
         public int Cno { get; set; }
         public string Cname { get; set; }
+        public string EnglishName { get; set; }
         public string CScore { get; set; }
         public virtual ICollection<Sc> Sc { get; set; }
         public virtual ICollection<Teacher> Teachers { get; set; }

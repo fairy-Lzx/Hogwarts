@@ -1,4 +1,5 @@
-﻿using Hogwarts.IRepository;
+﻿using Hogwarts.DB.Model;
+using Hogwarts.IRepository;
 using Hogwarts.View.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,7 @@ namespace Hogwarts.Admin.Controllers
         }
         public async Task<IActionResult> SchoolRolls(int page,int limit)
         {
+            var students = _studentManager.GetAllEntities().ToList();
             var schoolRolls =await _studentManager.LoadPageEntities(page, limit, out int totalCount, x => true, x => x.Sno, true).Select(x => new
             {
                 StudentId=x.Sno,
@@ -117,6 +119,95 @@ namespace Hogwarts.Admin.Controllers
                 return Json("SUCCEED");
             }
             return Json("FALSE");
+        }
+        public IActionResult NewStudentList()
+        {
+            return View();
+        }
+        public async Task<IActionResult> NewStudents(int page,int limit)
+        {
+            var students =await _studentManager.LoadPageEntities(page, limit, out int totalCount, x => x.Year==DateTime.Now.Year, x => x.Sno, true).Select(x => new
+            {
+                StudentId = x.Sno,
+                StudentName = x.Sname,
+                EnglishName = x.EnglishName,
+                Sex = x.Sex,
+                Birthday = x.Birthday,
+                Year = x.Year,
+                ClassName = x.ClassNavigation.ClassName,
+                Character = x.Character,
+            }).ToListAsync();
+            if (students == null)
+            {
+                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
+            List<object> datas = new List<object>();
+            for (int i = 0; i < students.Count; i++)
+            {
+                datas.Add(new
+                {
+                    RowId = i + 1,
+                    students[i].StudentId,
+                    students[i].StudentName,
+                    students[i].EnglishName,
+                    students[i].Sex,
+                    students[i].Birthday,
+                    students[i].Year,
+                    students[i].ClassName,
+                    students[i].Character,
+                });
+            }
+            return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
+        }
+        public IActionResult AddStudent(AddStudentViewModel viewModel)
+        {
+            string StudentId;
+            int ClassId = 0;
+            switch (viewModel.Character)
+            {
+                case "正直":
+                    ClassId = 1;
+                    break;
+                case "博学":
+                    ClassId = 2;
+                    break;
+                case "理智":
+                    ClassId = 3;
+                    break;
+                case "勇敢":
+                    ClassId = 4;
+                    break;
+            }
+            string yearNow= DateTime.Now.Year.ToString();
+            var lastStudent = _studentManager.LoadEntities(x => x.Year == DateTime.Now.Year && x.ClassId == ClassId).LastOrDefault();
+            if (lastStudent == null)
+            {
+                StudentId = yearNow +"0"+ ClassId + "01";
+            }
+            else
+            {
+                StudentId = (lastStudent.Sno + 1).ToString();
+            }
+            Student student = new Student
+            {
+                Sno = Convert.ToInt32(StudentId),
+                ClassId = ClassId,
+                EnglishName = viewModel.EnglishName,
+                Sname = viewModel.StudentName,
+                Pwd = StudentId,
+                Character = viewModel.Character,
+                Year = DateTime.Now.Year,
+                Sex = viewModel.Sex,
+            };
+            var result = _studentManager.AddEntity(student);
+            if (result!=null)
+            {
+                return Json("SUCCEED");
+            }
+            else
+            {
+                return Json("FALSE");
+            }
         }
     }
 }
