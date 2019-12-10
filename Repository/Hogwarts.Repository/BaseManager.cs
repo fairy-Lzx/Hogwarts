@@ -47,7 +47,16 @@ namespace Hogwarts.Repository.SqlServer
         }
         public IQueryable<T> LoadPageEntities<S>(int pageIndex, int pageSize, out int totalCount, Expression<Func<T, bool>> whereLambdaExpression, Expression<Func<T, S>> orderByLambdaExpression, bool isAsc)
         {
-            throw new NotImplementedException();
+            var tem = _dbContext.Set<T>().Where(whereLambdaExpression);
+            totalCount = tem.Count();
+            if (isAsc)
+            {
+                tem = tem.OrderBy(orderByLambdaExpression).Skip(pageIndex).Take(pageSize);
+            }else
+            {
+                tem = tem.OrderByDescending(orderByLambdaExpression).Skip(pageIndex).Take(pageSize);
+            }
+            return tem;
         }
     }
 }

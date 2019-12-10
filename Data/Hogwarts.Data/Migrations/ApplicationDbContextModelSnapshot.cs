@@ -177,6 +177,8 @@ namespace Hogwarts.Data.Migrations
                     b.Property<int?>("ClassId")
                         .HasColumnName("classId");
 
+                    b.Property<string>("EnglishName");
+
                     b.Property<string>("Pwd")
                         .HasColumnName("pwd")
                         .HasMaxLength(36)
