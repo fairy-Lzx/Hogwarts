@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="~/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="~/lib/layui/css/layui.css" media="all" />
     <link rel="stylesheet" href="~/css/public.css" media="all" />
 </head>
 <body class="childrenBody">
@@ -27,7 +27,7 @@
                 <img src=@Model.UserFaceImgUrl class="layui-upload-img layui-circle userFaceBtn userFace" id="userFace">
             </div>
             <button type="button" class="layui-btn layui-btn-primary userFaceBtn"><i class="layui-icon">&#xe67c;</i> 掐指一算，我要换一个头像了</button>
-            <p>一路单行，只为更强</p>
+            <p>Hogwarts用户头像</p>
         </div>
         <div class="layui-col-md6 layui-col-xs12">
             <div class="layui-form-item">
@@ -37,13 +37,13 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">用户名</label>
+                <label class="layui-form-label">账号</label>
                 <div class="layui-input-block">
                     <input type="text" name="userName" value="@Model.UserName" disabled class="layui-input layui-disabled">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">会员级别</label>
+                <label class="layui-form-label">职位</label>
                 <div class="layui-input-block">
                     <input type="text" value="@Model.UserGrade" disabled class="layui-input layui-disabled">
                 </div>
@@ -52,6 +52,18 @@
                 <label class="layui-form-label">真实姓名</label>
                 <div class="layui-input-block">
                     <input type="text" name="realName" value="@Model.RealName" placeholder="请输入真实姓名" lay-verify="required" class="layui-input realName">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">英文名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="englishName" value="@Model.EnglishName" placeholder="Please Input English Name" lay-verify="required" class="layui-input englishName">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">授课</label>
+                <div class="layui-input-block">
+                    <input type="text" name="courseName" value="@Model.CourseName" placeholder="教授的课程" lay-verify="" class="layui-input courseName">
                 </div>
             </div>
             <div class="layui-form-item" pane="">
@@ -115,21 +127,6 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">掌握技术</label>
-                <div class="layui-input-block userHobby">
-                    <input type="checkbox" name="like[javascript]" title="Javascript">
-                    <input type="checkbox" name="like[C#]" title="C#">
-                    <input type="checkbox" name="like[php]" title="PHP">
-                    <input type="checkbox" name="like[html]" title="HTML(5)">
-                    <input type="checkbox" name="like[css]" title="CSS(3)">
-                    <input type="checkbox" name="like[.net]" title=".net">
-                    <input type="checkbox" name="like[ASP]" title="ASP">
-                    <input type="checkbox" name="like[Angular]" title="Angular">
-                    <input type="checkbox" name="like[VUE]" title="VUE">
-                    <input type="checkbox" name="like[XML]" title="XML">
-                </div>
-            </div>
-            <div class="layui-form-item">
                 <label class="layui-form-label">邮箱</label>
                 <div class="layui-input-block">
                     <input type="text" name="email" value="@Model.UserEmail" placeholder="请输入邮箱" lay-verify="email" class="layui-input userEmail">
@@ -150,7 +147,7 @@
         </div>
     </form>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="~/layui/layui.js"></script>
+    <script type="text/javascript" src="~/lib/layui/layui.js"></script>
     <script type="text/javascript" src="~/js/userInfo.js"></script>
     <script type="text/javascript" src="~/js/cacheUserInfo.js"></script>
     <script type="text/javascript">

@@ -406,5 +406,18 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json("失败");
         }
+        public async Task<IActionResult> UserFaceImage(string userName)
+        {
+            if (userName == null)
+            {
+                return Content("失败");
+            }
+            var user = await _userManager.FindByNameAsync(userName);
+            if (user != null)
+            {
+                return Content(user.UserFaceImgUrl);
+            }
+            return Content("失败");
+        }
     }
 }

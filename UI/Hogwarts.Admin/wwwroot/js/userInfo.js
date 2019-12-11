@@ -63,6 +63,7 @@ layui.use(['form','layer','upload','laydate',"address"],function(){
             data: {
                 NickName: data.field.nickName,
                 UserName: data.field.userName,
+                EnglishName: data.field.englishName,
                 UserEmail:data.field.email,
                 UserSex:data.field.sex,
                 Province:data.field.province,
@@ -74,13 +75,21 @@ layui.use(['form','layer','upload','laydate',"address"],function(){
                 UserDesc: data.field.userDescription,
                 UserFaceImgUrl:$('.userFace').attr('src'),
             },
-            dataType: "text",
+            dataType: "json",
             success: function (res) {
-                top.layer.close(index);
-                top.layer.msg("信息修改成功！");
-                layer.closeAll("iframe");
-                //刷新父页面
-                parent.location.reload();
+                if (res == "SUCCEED") {
+                    top.layer.close(index);
+                    top.layer.msg("信息修改成功！");
+                    layer.closeAll("iframe");
+                    //刷新父页面
+                    parent.location.reload();
+                } else {
+                    top.layer.close(index);
+                    top.layer.msg("信息修改失败！");
+                    layer.closeAll("iframe");
+                    //刷新父页面
+                    parent.location.reload();
+                }
             }
         })
         //将填写的用户信息存到session以便下次调取
