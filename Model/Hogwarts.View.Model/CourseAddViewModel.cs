@@ -8,7 +8,7 @@ namespace Hogwarts.View.Model
     {
         public int CourseId { get; set; }
         public string CourseName { get; set; }
-
+        public string EnglishName { get; set; }
         public string CourseScore { get; set; }
     }
 }

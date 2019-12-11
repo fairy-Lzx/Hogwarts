@@ -33,18 +33,27 @@
         </div>*@
         <div class="layui-form-item layui-row layui-col-xs12">
             <label class="layui-form-label">课程号</label>
-            <div class="layui-input-block">
+            <div class="layui-input-inline">
                 <input type="text" class="layui-input courseId" value="" name="courseId" lay-verify="required" placeholder="请输入课程号">
             </div>
+            <div class="layui-form-mid layui-word-aux" id="courseIdLabel">课程号</div>
         </div>
         <div class="layui-form-item layui-row layui-col-xs12">
             <label class="layui-form-label">课程名</label>
-            <div class="layui-input-block">
+            <div class="layui-input-inline">
                 <input type="text" class="layui-input courseName" name="courseName" lay-verify="required" placeholder="请输入课程名">
             </div>
+            <div class="layui-form-mid layui-word-aux" id="courseNameLabel">课程名</div>
         </div>
         <div class="layui-form-item layui-row layui-col-xs12">
-            <label class="layui-form-label">课程学分</label>
+            <label class="layui-form-label">英文名</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input englishName" name="englishName" lay-verify="required" placeholder="Please Input English Name">
+            </div>
+            <div class="layui-form-mid layui-word-aux" id="englishNameLabel">英文名</div>
+        </div>
+        <div class="layui-form-item layui-row layui-col-xs12">
+            <label class="layui-form-inline">课程学分</label>
             <div class="layui-input-block">
                 <input type="text" class="layui-input courseScore" name="courseScore" lay-verify="required" placeholder="请输入课程学分">
             </div>

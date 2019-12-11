@@ -36,7 +36,8 @@ namespace Hogwarts.Admin.Controllers
                     RowId = i + 1,
                     CourseName=courses[i].Cname,
                     CourseId=courses[i].Cno,
-                    CourseScore= courses[i].CScore
+                    CourseScore= courses[i].CScore,
+                    EnglishName= courses[i].EnglishName,
                 });
             }
             return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
@@ -74,7 +75,8 @@ namespace Hogwarts.Admin.Controllers
             {
                 Cno = viewModel.CourseId,
                 Cname = viewModel.CourseName,
-                CScore = viewModel.CourseScore
+                CScore = viewModel.CourseScore,
+                EnglishName=viewModel.EnglishName,
             };
             var result = _courseManager.AddEntity(course);
             if(result!=null)
@@ -82,6 +84,20 @@ namespace Hogwarts.Admin.Controllers
                 return Json("SUCCEED");
             }
             return Json("FALSE");
+        }
+        [HttpPost]
+        public IActionResult GetCourse(string courseInfo)
+        {
+            if (courseInfo == null)
+            {
+                return Json(new {code=1,count=0,msg="FALSE",data=string.Empty });
+            }
+            var course = _courseManager.LoadEntities(x => x.Cno.ToString() == courseInfo || x.Cname == courseInfo || x.EnglishName == courseInfo).FirstOrDefault();
+            if (course != null)
+            {
+                return Json(new { code = 0, count = 1, msg = "SUCCEED", data = string.Empty });
+            }
+            return Json(new { code = 1, count = 0, msg = "FALSE", data = string.Empty });
         }
     }
 }

@@ -23,6 +23,7 @@
             //{field: 'userEmail', title: '用户邮箱', minWidth:200, align:'center',templet:function(d){
             //    return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
             { field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
+            { field: 'englishName', title: 'Course English Name', minWidth: 100, align: "center" },
             { field: 'courseScore', title: '课程学分', minWidth: 100, align: "center" },
             //{ field: 'courseClass', title: '开课院系', minWidth: 100, align: "center" },
             //{ field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
