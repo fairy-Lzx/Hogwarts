@@ -21,7 +21,7 @@ namespace Hogwarts.Data
                 b.ToTable("IdentityRole");
             });
             builder.Entity<ApplicationIdentityUser>().HasOne(l => l.Teacher).WithOne(l => l.IdentityUser).HasForeignKey<ApplicationIdentityUser>(l => l.TId).OnDelete(DeleteBehavior.Cascade);
-            builder.Entity<Teacher>().HasOne(l => l.Course).WithMany(l => l.Teachers).HasForeignKey(l => l.Cno).OnDelete(DeleteBehavior.ClientSetNull);
+            builder.Entity<Teacher>().HasOne(l => l.Course).WithMany(l => l.Teachers).HasForeignKey(l => l.Cno).OnDelete(DeleteBehavior.SetNull);
             builder.Entity<Class>(entity =>
             {
                 entity.HasKey(e => e.ClassId);
@@ -142,7 +142,8 @@ namespace Hogwarts.Data
 
                 entity.Property(e => e.Cno)
                     .HasColumnName("cno")
-                    .HasMaxLength(10);
+                    .HasMaxLength(10)
+                    .IsRequired(false);
 
                 entity.Property(e => e.Sex)
                     .HasColumnName("sex")

@@ -79,7 +79,7 @@ namespace Hogwarts.Data.Migrations
                     sname = table.Column<string>(unicode: false, maxLength: 50, nullable: true),
                     EnglishName = table.Column<string>(nullable: true),
                     sex = table.Column<string>(unicode: false, maxLength: 10, nullable: true),
-                    birthday = table.Column<DateTime>(type: "datetime", nullable: false),
+                    birthday = table.Column<string>(nullable: true),
                     year = table.Column<int>(nullable: true),
                     classId = table.Column<int>(nullable: true),
                     character = table.Column<string>(unicode: false, maxLength: 40, nullable: true),
@@ -106,10 +106,14 @@ namespace Hogwarts.Data.Migrations
                     TId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     t_name = table.Column<string>(unicode: false, maxLength: 30, nullable: true),
+                    NickName = table.Column<string>(nullable: true),
                     EnglishName = table.Column<string>(nullable: true),
                     sex = table.Column<string>(maxLength: 10, nullable: true),
-                    birthday = table.Column<DateTime>(type: "datetime", nullable: true),
-                    cno = table.Column<int>(maxLength: 10, nullable: false)
+                    birthday = table.Column<string>(nullable: true),
+                    cno = table.Column<int>(maxLength: 10, nullable: true),
+                    Province = table.Column<string>(nullable: true),
+                    City = table.Column<string>(nullable: true),
+                    Area = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -119,7 +123,7 @@ namespace Hogwarts.Data.Migrations
                         column: x => x.cno,
                         principalTable: "tb_course",
                         principalColumn: "cno",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -167,7 +171,9 @@ namespace Hogwarts.Data.Migrations
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     TId = table.Column<int>(nullable: false),
-                    RoleName = table.Column<string>(nullable: true)
+                    RoleName = table.Column<string>(nullable: true),
+                    UserFaceImgUrl = table.Column<string>(nullable: true),
+                    UserDescription = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

@@ -299,6 +299,7 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json("FALSE");
         }
+        [HttpGet]
         public async Task<IActionResult> UserInfo(string userName)
         {
             UserInfoViewModel userInfoViewModel=new UserInfoViewModel();
@@ -418,6 +419,21 @@ namespace Hogwarts.Admin.Controllers
                 return Content(user.UserFaceImgUrl);
             }
             return Content("失败");
+        }
+        [HttpPost]
+        public async Task<IActionResult> LoginApi(string userName, string password)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            if (user == null)
+            {
+                return Json("用户不存在");
+            }
+            var result = await _signInManager.PasswordSignInAsync(user, password, false, false);
+            if (result.Succeeded)
+            {
+                return Json("SUCCEED");
+            }
+            return Json("失败");
         }
     }
 }

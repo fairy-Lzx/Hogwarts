@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hogwarts.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191211065202_init1")]
-    partial class init1
+    [Migration("20191211163005_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -83,6 +83,10 @@ namespace Hogwarts.Data.Migrations
                     b.Property<int>("TId");
 
                     b.Property<bool>("TwoFactorEnabled");
+
+                    b.Property<string>("UserDescription");
+
+                    b.Property<string>("UserFaceImgUrl");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
@@ -219,14 +223,22 @@ namespace Hogwarts.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Area");
+
                     b.Property<string>("Birthday")
                         .HasColumnName("birthday");
 
-                    b.Property<int>("Cno")
+                    b.Property<string>("City");
+
+                    b.Property<int?>("Cno")
                         .HasColumnName("cno")
                         .HasMaxLength(10);
 
                     b.Property<string>("EnglishName");
+
+                    b.Property<string>("NickName");
+
+                    b.Property<string>("Province");
 
                     b.Property<string>("Sex")
                         .HasColumnName("sex")
@@ -366,7 +378,8 @@ namespace Hogwarts.Data.Migrations
                 {
                     b.HasOne("Hogwarts.DB.Model.Course", "Course")
                         .WithMany("Teachers")
-                        .HasForeignKey("Cno");
+                        .HasForeignKey("Cno")
+                        .OnDelete(DeleteBehavior.SetNull);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

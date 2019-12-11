@@ -79,8 +79,8 @@
                                 <img src="" class="layui-nav-img userAvatar" width="35" height="35"><cite class="adminName">欢迎 @User.Identity.Name!</cite>
                             </a>
                             <dl class="layui-nav-child">
-                                <dd><a href="javascript:;" data-url="Account/UserInfo?UserName=@User.Identity.Name"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>
-                                <dd><a href="javascript:;" data-url="Account/ChangePwd?UserName=@User.Identity.Name"><i class="seraph icon-xiugai" data-icon="icon-xiugai"></i><cite>修改密码</cite></a></dd>
+                                <dd><a href="javascript:;" data-url="/Account/UserInfo?UserName=@User.Identity.Name"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>
+                                <dd><a href="javascript:;" data-url="/Account/ChangePwd?UserName=@User.Identity.Name"><i class="seraph icon-xiugai" data-icon="icon-xiugai"></i><cite>修改密码</cite></a></dd>
                                 <dd><a href="javascript:;" class="showNotice"><i class="layui-icon">&#xe645;</i><cite>系统公告</cite><span class="layui-badge-dot"></span></a></dd>
                                 <dd pc><a href="javascript:;" class="functionSetting"><i class="layui-icon">&#xe620;</i><cite>功能设定</cite><span class="layui-badge-dot"></span></a></dd>
                                 <dd pc><a href="javascript:;" class="changeSkin"><i class="layui-icon">&#xe61b;</i><cite>更换皮肤</cite></a></dd>
@@ -109,7 +109,7 @@
         <!-- 左侧导航 -->
         <div class="layui-side layui-bg-black">
             <div class="user-photo">
-                <a class="img" title="我的头像"><img src="~/images/logo.jpg" class="userAvatar"></a>
+                <a class="img" title="我的头像"><img src="~/images/logo.jpg" class=""></a>
                 @*<p>你好！<span class="userName">Harry Potter</span>, 欢迎登录</p>*@
             </div>
             <!-- 搜索 -->

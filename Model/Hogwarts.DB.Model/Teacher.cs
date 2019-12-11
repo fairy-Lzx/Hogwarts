@@ -18,7 +18,7 @@ namespace Hogwarts.DB.Model
         public string EnglishName { get; set; }
         public string Sex { get; set; }
         public string Birthday { get; set; }
-        public int Cno { get; set; }
+        public int? Cno { get; set; }
         public virtual Course Course { get; set; }
         public string Province { get; set; }
         public string City { get; set; }

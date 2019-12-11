@@ -6,24 +6,86 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         laytpl = layui.laytpl,
         table = layui.table;
 
+    var pwdVerifyResult = "";
+    function ajaxVerify(data) {
+        $.ajax({
+            url: "/Account/LoginApi",
+            type: "POST",
+            async: "false",
+            data: {
+                UserName: $(".userName").val(),
+                Password: $(".oldPassword").val(),
+            },
+            dataType: "json",
+            success: function (res) {
+                pwdVerifyResult = res;
+                if (res == "SUCCEED") {
+                    $("#oldPasswordLabel").text("密码正确");
+                } else {
+                    $("#oldPasswordLabel").text("密码错误");
+                }
+            }
+        });
+    }
+    ajaxVerify();
+    //按键弹起，后台验证密码
+    $("input.oldPassword").keyup(function (e) {
+        if ($("input[name='oldPassword']").val() == "") {
+            $("#oldPasswordLabel").text("请输入旧密码");
+            return false;
+        }
+        if ($(e.target).val().length >= 6) {
+            ajaxVerify();
+        } else {
+            $("#oldPasswordLabel").text("密码错误");
+        }
+    });
     //添加验证规则
     form.verify({
-        oldPwd : function(value, item){
-            if(value != "123456"){
+        oldPwd: function (value, item) {
+            if (pwdVerifyResult == "失败") {
                 return "密码错误，请重新输入！";
+            } else if (pwdVerifyResult == "用户不存在") {
+                return "用户不存在";
             }
         },
-        newPwd : function(value, item){
-            if(value.length < 6){
+        newPwd: function (value, item) {
+            if (value.length < 6) {
                 return "密码长度不能小于6位";
             }
         },
-        confirmPwd : function(value, item){
-            if(!new RegExp($("#oldPwd").val()).test(value)){
+        confirmPwd: function (value, item) {
+            if (!new RegExp($("#oldPwd").val()).test(value)) {
                 return "两次输入密码不一致，请重新输入！";
             }
         }
     })
+    //修改密码
+    form.on("submit(changePwd)", function (data) {
+        var index = top.layer.msg('提交中，请稍候', { icon: 16, time: false, shade: 0.8 });
+        $.ajax({
+            url: "/Account/ChangePwd",
+            type: "POST",
+            data: {
+                UserName: data.field.userName,
+                OldPassword: data.field.oldPassword,
+                NewPassword: data.field.newPassword
+            },
+            dataType: "json",
+            success: function (res) {
+                top.layer.close(index);
+                if (res == "SUCCEED") {
+                    top.layer.msg("修改成功！");
+                } else {
+                    top.layer.msg("修改失败！");
+                }
+                layer.closeAll("iframe");
+                //刷新父页面
+                parent.location.reload();
+            }
+        });
+        return false;
+    });
 
     //用户等级
     var tableRoles=table.render({
