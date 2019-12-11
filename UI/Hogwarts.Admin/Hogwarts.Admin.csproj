@@ -314,4 +314,9 @@
     <ProjectReference Include="..\..\Repository\Hogwarts.Repository\Hogwarts.Repository.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="wwwroot\model\" />
+  </ItemGroup>
+
 </Project>

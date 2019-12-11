@@ -299,5 +299,112 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json("FALSE");
         }
+        public async Task<IActionResult> UserInfo(string userName)
+        {
+            UserInfoViewModel userInfoViewModel=new UserInfoViewModel();
+            if (userName == null)
+            {
+                return View(userInfoViewModel);
+            }
+            var user = await _userManager.FindByNameAsync(userName);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "用户查询出错");
+                return View(userInfoViewModel);
+            }
+            var userInfo = _userManager.Users.Where(x => x.UserName == userName).Select(x => new
+            {
+                NickName = x.Teacher.NickName,
+                UserName = x.UserName,
+                EnglishName=x.Teacher.EnglishName,
+                UserEmail = x.Email,
+                UserSex = x.Teacher.Sex,
+                UserGrade = x.RoleName,
+                Province = x.Teacher.Province,
+                City = x.Teacher.City,
+                Area = x.Teacher.Area,
+                BirthDate = x.Teacher.Birthday,
+                RealName = x.Teacher.TName,
+                PhoneNumber = x.PhoneNumber,
+                UserDesc = x.UserDescription,
+                UserFaceImgUrl = x.UserFaceImgUrl,
+                CourseName=(x.Teacher.Course==null)?"无授课信息":x.Teacher.Course.Cname,
+            }).FirstOrDefault();
+            userInfoViewModel = new UserInfoViewModel
+            {
+                NickName = userInfo.NickName,
+                EnglishName=userInfo.EnglishName,
+                CourseName = userInfo.CourseName,
+                UserName = userInfo.UserName,
+                UserEmail = userInfo.UserEmail,
+                UserSex = userInfo.UserSex,
+                UserGrade = userInfo.UserGrade,
+                Province = userInfo.Province,
+                City = userInfo.City,
+                Area = userInfo.Area,
+                BirthDate = userInfo.BirthDate,
+                RealName = userInfo.RealName,
+                PhoneNumber = userInfo.PhoneNumber,
+                UserDesc = userInfo.UserDesc,
+                UserFaceImgUrl = userInfo.UserFaceImgUrl
+            };
+            return View(userInfoViewModel);
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateUser(UserInfoViewModel userInfoViewModel)
+        {
+            if (userInfoViewModel == null)
+            {
+                return Json("FALSE");
+            }
+            var user = await _userManager.FindByNameAsync(userInfoViewModel.UserName);
+            if (user == null)
+            {
+                return Json("FALSE");
+            }
+            var userEntity = _userManager.Users.Where(x => x.UserName == user.UserName).Include(x => x.Teacher).FirstOrDefault();
+
+            userEntity.UserDescription = userInfoViewModel.UserDesc;
+            userEntity.Teacher.TName = userInfoViewModel.RealName;
+            userEntity.Teacher.EnglishName = userInfoViewModel.EnglishName;
+            userEntity.Teacher.Province = userInfoViewModel.Province;
+            userEntity.Teacher.City = userInfoViewModel.City;
+            userEntity.Teacher.Area = userInfoViewModel.Area;
+            userEntity.Teacher.Birthday = userInfoViewModel.BirthDate;
+            userEntity.Email = userInfoViewModel.UserEmail;
+            userEntity.Teacher.NickName = userInfoViewModel.NickName;
+            userEntity.PhoneNumber = userInfoViewModel.PhoneNumber;
+            userEntity.Teacher.Sex = userInfoViewModel.UserSex;
+            userEntity.UserFaceImgUrl = userInfoViewModel.UserFaceImgUrl;
+            var result = await _userManager.UpdateAsync(userEntity);
+            if (result.Succeeded)
+            {
+                return Json("SUCCEED");
+            }
+            return Json("FALSE");
+        }
+        public IActionResult ChangePwd(string userName)
+        {
+            return View("ChangePwd", userName);
+        }
+        [HttpPost]
+        public async Task<IActionResult> ChangePwd(string userName, string oldPassword, string newPassword)
+        {
+            if (userName == null || oldPassword == null || newPassword == null)
+            {
+                return Json("FALSE");
+            }
+            var user = await _userManager.FindByNameAsync(userName);
+            if (user == null)
+            {
+                return Json("未查到用户");
+            }
+            var result = await _userManager.ChangePasswordAsync(user, oldPassword, newPassword);
+            if (result.Succeeded)
+            {
+                return Json("SUCCEED");
+            }
+            return Json("失败");
+        }
     }
 }
