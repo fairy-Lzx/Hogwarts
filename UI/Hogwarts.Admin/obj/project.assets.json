@@ -12346,19 +12346,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SPY24\\.nuget\\packages\\": {}
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\UI\\Hogwarts.Admin\\Hogwarts.Admin.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\UI\\Hogwarts.Admin\\Hogwarts.Admin.csproj",
       "projectName": "Hogwarts.Admin",
-      "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\UI\\Hogwarts.Admin\\Hogwarts.Admin.csproj",
-      "packagesPath": "C:\\Users\\SPY24\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\UI\\Hogwarts.Admin\\obj\\",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\UI\\Hogwarts.Admin\\Hogwarts.Admin.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\UI\\Hogwarts.Admin\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\SPY24\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12371,23 +12371,23 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj": {
-              "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj"
+            "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj"
             },
-            "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\Hogwarts.Core.csproj": {
-              "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\Hogwarts.Core.csproj"
+            "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\Hogwarts.Core.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Infrastructure\\Hogwarts.Core\\Hogwarts.Core.csproj"
             },
-            "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj": {
-              "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj"
+            "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.DB.Model\\Hogwarts.DB.Model.csproj"
             },
-            "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.View.Model\\Hogwarts.View.Model.csproj": {
-              "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.View.Model\\Hogwarts.View.Model.csproj"
+            "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.View.Model\\Hogwarts.View.Model.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Model\\Hogwarts.View.Model\\Hogwarts.View.Model.csproj"
             },
-            "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.IRepository\\Hogwarts.IRepository.csproj": {
-              "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.IRepository\\Hogwarts.IRepository.csproj"
+            "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.IRepository\\Hogwarts.IRepository.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.IRepository\\Hogwarts.IRepository.csproj"
             },
-            "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.Repository\\Hogwarts.Repository.csproj": {
-              "projectPath": "C:\\Users\\SPY24\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.Repository\\Hogwarts.Repository.csproj"
+            "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.Repository\\Hogwarts.Repository.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.Repository\\Hogwarts.Repository.csproj"
             }
           }
         }
