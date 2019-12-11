@@ -54,8 +54,8 @@
     $(".search_btn").on("click", function () {
         if ($(".searchVal").val() != '') {
             table.render({
-                elem: '#searchStudentList',
-                url: '/Student/SearchStudents?keyWords=' + $(".searchVal").val(),
+                elem: '#searchGradeList',
+                url: '/Grade/SearchGradeAccurate?keyWords=' + $(".searchAccurateVal").val(),
                 cellMinWidth: 95,
                 page: true,
                 height: "full-125",
@@ -76,25 +76,6 @@
                     { field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
                     { field: 'courseCredit', title: '课程学分', minWidth: 100, align: "center" },
                     { field: 'score', title: '成绩', minWidth: 100, align: "center" },
-                    //{ field: 'courseClass', title: '开课院系', minWidth: 100, align: "center" },
-                    //{ field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
-                    //}
-                    //{ field: 'realName', title: '名字', minWidth: 100, align: "center" },
-                    //{ field: 'englishName', title: '英文名', minWidth: 100, align: "center" },
-                    //{
-                    //    field: 'sex', title: '用户性别', width: 120, align: 'center', templet: function (d) {
-                    //        if (d.sex == null) return "就不告诉你";
-                    //        return d.sex;
-                    //    }
-                    //},
-                    //{
-                    //    field: 'userStatus', title: '用户状态', align: 'center', templet: function (d) {
-                    //        return d.userStatus == true ? "正常使用" : "限制使用";
-                    //    }
-                    //},
-                    //{ field: 'roleName', title: '职位', align: 'center' },
-                    //{field: 'userEndTime', title: '最后登录时间', align:'center',minWidth:150},
-                    //{ title: '操作', minWidth: 175, templet: '#newStudentListBar', fixed: "right", align: "center" }
                 ]]
             });
         } else {

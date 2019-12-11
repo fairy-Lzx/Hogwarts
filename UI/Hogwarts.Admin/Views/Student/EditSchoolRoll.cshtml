@@ -22,12 +22,12 @@
 <body class="childrenBody">
     <form class="layui-form layui-row">
         @*<div class="layui-col-md3 layui-col-xs12 user_right">
-            <div class="layui-upload-list">
-                <img src=@Model.UserFaceImgUrl class="layui-upload-img layui-circle userFaceBtn userFace" id="userFace">
-            </div>
-            <button type="button" class="layui-btn layui-btn-primary userFaceBtn"><i class="layui-icon">&#xe67c;</i> 掐指一算，我要换一个头像了</button>
-            <p>一路单行，只为更强</p>
-        </div>*@
+                <div class="layui-upload-list">
+                    <img src=@Model.UserFaceImgUrl class="layui-upload-img layui-circle userFaceBtn userFace" id="userFace">
+                </div>
+                <button type="button" class="layui-btn layui-btn-primary userFaceBtn"><i class="layui-icon">&#xe67c;</i> 掐指一算，我要换一个头像了</button>
+                <p>一路单行，只为更强</p>
+            </div>*@
         <div class="layui-col-md6 layui-col-xs12">
             <div class="layui-form-item">
                 <label class="layui-form-label">学号</label>
@@ -51,6 +51,18 @@
                 <label class="layui-form-label">英文名</label>
                 <div class="layui-input-block">
                     <input type="text" name="englishName" value="@Model.EnglishName" placeholder="请输入英文名" lay-verify="required" class="layui-input realName">
+                </div>
+            </div>
+            <div class="magb15 layui-col-md4 layui-col-xs12">
+                <label class="layui-form-label">学生属性</label>
+                <div class="layui-input-block">
+                    <select name="character" class="character" id="character" lay-filter="character">
+                        <option value="">请选择特性</option>
+                        <option value="正直">正直</option>
+                        <option value="博学">博学</option>
+                        <option value="勇敢">勇敢</option>
+                        <option value="理智">理智</option>
+                    </select>
                 </div>
             </div>
             <div class="magb15 layui-col-md4 layui-col-xs12">
@@ -85,11 +97,11 @@
                 </div>
             </div>
             @*<div class="layui-form-item">
-            <label class="layui-form-label">手机号码</label>
-            <div class="layui-input-block">
-                <input type="tel" name="phoneNumber" value="@Model.PhoneNumber" placeholder="请输入手机号码" lay-verify="phone" class="layui-input userPhone">
-            </div>
-        </div>*@
+                    <label class="layui-form-label">手机号码</label>
+                    <div class="layui-input-block">
+                        <input type="tel" name="phoneNumber" value="@Model.PhoneNumber" placeholder="请输入手机号码" lay-verify="phone" class="layui-input userPhone">
+                    </div>
+                </div>*@
             <div class="layui-form-item">
                 <label class="layui-form-label">出生年月</label>
                 <div class="layui-input-block">
@@ -145,7 +157,7 @@
     </form>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="~/lib/layui/layui.js"></script>
-    <script type="text/javascript" src="~/js/userInfo.js"></script>
+    <script type="text/javascript" src="~/js/schoolRollInfo.js"></script>
     <script type="text/javascript" src="~/js/cacheUserInfo.js"></script>
     <script type="text/javascript">
         $(function () {

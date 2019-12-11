@@ -23,19 +23,19 @@ namespace Hogwarts.Admin.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> SchoolRolls(int page,int limit)
+        public async Task<IActionResult> SchoolRolls(int page, int limit)
         {
             var students = _studentManager.GetAllEntities().ToList();
-            var schoolRolls =await _studentManager.LoadPageEntities(page, limit, out int totalCount, x => true, x => x.Sno, true).Select(x => new
+            var schoolRolls = await _studentManager.LoadPageEntities(page, limit, out int totalCount, x => true, x => x.Sno, true).Select(x => new
             {
-                StudentId=x.Sno,
-                StudentName=x.Sname,
-                EnglishName=x.EnglishName,
-                Sex=x.Sex,
-                Birthday=x.Birthday,
-                Year=x.Year,
-                ClassName=x.ClassNavigation.ClassName,
-                Character=x.Character,
+                StudentId = x.Sno,
+                StudentName = x.Sname,
+                EnglishName = x.EnglishName,
+                Sex = x.Sex,
+                Birthday = x.Birthday,
+                Year = x.Year,
+                ClassName = x.ClassNavigation.ClassName,
+                Character = x.Character,
             }).ToListAsync();
             if (schoolRolls == null)
             {
@@ -51,7 +51,7 @@ namespace Hogwarts.Admin.Controllers
                     schoolRolls[i].StudentName,
                     schoolRolls[i].EnglishName,
                     schoolRolls[i].Sex,
-                    schoolRolls[i].Birthday,
+                    Birthday = schoolRolls[i].Birthday,
                     schoolRolls[i].Year,
                     schoolRolls[i].ClassName,
                     schoolRolls[i].Character,
@@ -66,7 +66,7 @@ namespace Hogwarts.Admin.Controllers
             {
                 return View(viewModel);
             }
-            var student = _studentManager.LoadEntities(x => x.Sno == StudentId).Include(x=>x.ClassNavigation).FirstOrDefault();
+            var student = _studentManager.LoadEntities(x => x.Sno == StudentId).Include(x => x.ClassNavigation).FirstOrDefault();
             if (student == null)
             {
                 return View(viewModel);
@@ -122,11 +122,16 @@ namespace Hogwarts.Admin.Controllers
         }
         public IActionResult NewStudentList()
         {
-            return View();
+            List<Class> classes = _classManager.GetAllEntities().ToList();
+            if (classes == null)
+            {
+                classes = new List<Class>();
+            }
+            return View(classes);
         }
-        public async Task<IActionResult> NewStudents(int page,int limit)
+        public async Task<IActionResult> NewStudents(int page, int limit)
         {
-            var students =await _studentManager.LoadPageEntities(page, limit, out int totalCount, x => x.Year==DateTime.Now.Year, x => x.Sno, true).Select(x => new
+            var students = await _studentManager.LoadPageEntities(page, limit, out int totalCount, x => x.Year == DateTime.Now.Year, x => x.Sno, true).Select(x => new
             {
                 StudentId = x.Sno,
                 StudentName = x.Sname,
@@ -162,27 +167,23 @@ namespace Hogwarts.Admin.Controllers
         public IActionResult AddStudent(AddStudentViewModel viewModel)
         {
             string StudentId;
-            int ClassId = 0;
-            switch (viewModel.Character)
+            var cla = _classManager.LoadEntities(x => x.ClassId == viewModel.ClassId).FirstOrDefault();
+            if (cla == null)
             {
-                case "正直":
-                    ClassId = 1;
-                    break;
-                case "博学":
-                    ClassId = 2;
-                    break;
-                case "理智":
-                    ClassId = 3;
-                    break;
-                case "勇敢":
-                    ClassId = 4;
-                    break;
+                return Json("FALSE");
             }
-            string yearNow= DateTime.Now.Year.ToString();
-            var lastStudent = _studentManager.LoadEntities(x => x.Year == DateTime.Now.Year && x.ClassId == ClassId).LastOrDefault();
+            string yearNow = DateTime.Now.Year.ToString();
+            var lastStudent = _studentManager.LoadEntities(x => x.Year == DateTime.Now.Year && x.ClassId == viewModel.ClassId).LastOrDefault();
             if (lastStudent == null)
             {
-                StudentId = yearNow +"0"+ ClassId + "01";
+                if (viewModel.ClassId.ToString().Length == 1)
+                {
+                    StudentId = yearNow + "0" + viewModel.ClassId + "01";
+                }
+                else
+                {
+                    StudentId = yearNow + viewModel.ClassId + "01";
+                }
             }
             else
             {
@@ -191,16 +192,17 @@ namespace Hogwarts.Admin.Controllers
             Student student = new Student
             {
                 Sno = Convert.ToInt32(StudentId),
-                ClassId = ClassId,
+                ClassId = viewModel.ClassId,
                 EnglishName = viewModel.EnglishName,
                 Sname = viewModel.StudentName,
                 Pwd = StudentId,
                 Character = viewModel.Character,
                 Year = DateTime.Now.Year,
                 Sex = viewModel.Sex,
+                Birthday = DateTime.MinValue.ToString("yyyy年MM月dd日"),
             };
             var result = _studentManager.AddEntity(student);
-            if (result!=null)
+            if (result != null)
             {
                 return Json("SUCCEED");
             }
@@ -237,22 +239,22 @@ namespace Hogwarts.Admin.Controllers
             {
                 return Json(new { code = 1, msg = "请输入关键字", count = 0, data = string.Empty });
             }
-            var students =await _studentManager.LoadEntities(x => x.Sno.ToString() == keyWords || x.Sname == keyWords || x.Province == keyWords || x.City == keyWords || x.Area == keyWords
-              || x.Birthday.ToString() == keyWords || x.Year.ToString() == keyWords || x.Sex == keyWords || x.EnglishName == keyWords || x.Character == keyWords || x.ClassNavigation.ClassName == keyWords
-              || x.ClassId.ToString() == keyWords).Select(x => new
-              {
-                  StudentId = x.Sno,
-                  StudentName = x.Sname,
-                  EnglishName = x.EnglishName,
-                  Sex = x.Sex,
-                  Birthday = x.Birthday,
-                  Year = x.Year,
-                  ClassName = x.ClassNavigation.ClassName,
-                  Character = x.Character,
-                  Province=x.Province,
-                  City=x.City,
-                  Area=x.Area,
-              }).ToListAsync();
+            var students = await _studentManager.LoadEntities(x => x.Sno.ToString() == keyWords || x.Sname == keyWords || x.Province == keyWords || x.City == keyWords || x.Area == keyWords
+               || x.Birthday.ToString() == keyWords || x.Year.ToString() == keyWords || x.Sex == keyWords || x.EnglishName == keyWords || x.Character == keyWords || x.ClassNavigation.ClassName == keyWords
+               || x.ClassId.ToString() == keyWords).Select(x => new
+               {
+                   StudentId = x.Sno,
+                   StudentName = x.Sname,
+                   EnglishName = x.EnglishName,
+                   Sex = x.Sex,
+                   Birthday = x.Birthday,
+                   Year = x.Year,
+                   ClassName = x.ClassNavigation.ClassName,
+                   Character = x.Character,
+                   Province = x.Province,
+                   City = x.City,
+                   Area = x.Area,
+               }).ToListAsync();
             if (students == null)
             {
                 return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
@@ -283,7 +285,7 @@ namespace Hogwarts.Admin.Controllers
         {
             if (studentId == 0)
             {
-                return Json(new { code = 1, msg = "FALSE", count = 0, data =string.Empty });
+                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
             }
             var student = _studentManager.LoadEntities(x => x.Sno == studentId).FirstOrDefault();
             if (student == null)
@@ -291,6 +293,52 @@ namespace Hogwarts.Admin.Controllers
                 return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
             }
             return Json(new { code = 0, msg = "SUCCEED", count = 1, data = new { StudentName = student.Sname } });
+        }
+        public IActionResult Allocate(string character)
+        {
+            int ClassIndex = 1;
+            switch (character)
+            {
+                case "正直":
+                    ClassIndex = 1;
+                    break;
+                case "博学":
+                    ClassIndex = 2;
+                    break;
+                case "理智":
+                    ClassIndex = 3;
+                    break;
+                case "勇敢":
+                    ClassIndex = 4;
+                    break;
+            }
+            var classes = _classManager.GetAllEntities().ToList();
+            if (classes == null)
+            {
+                return Json(new {code=1,msg="FALSE",count=0,data=string.Empty });
+            }
+            if (ClassIndex > classes.Count)
+            {
+                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
+            return Json(new { code = 0, msg = "SUCCEED", count = 0, data = classes[ClassIndex-1] });
+        }
+        [HttpPost]
+        public IActionResult GetStudentByNane(string StudentName)
+        {
+            if (StudentName == null)
+            {
+                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
+            var student = _studentManager.LoadEntities(x => x.Sname == StudentName || x.EnglishName == StudentName).FirstOrDefault();
+            if (student == null)
+            {
+                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
+            else
+            {
+                return Json(new { code = 0, msg = "SUCCEED", count = 0, data = student });
+            }
         }
     }
 }

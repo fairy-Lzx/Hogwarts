@@ -10,5 +10,6 @@ namespace Hogwarts.View.Model
         public string EnglishName { get; set; }
         public string Sex { get; set; }
         public string Character { get; set; }
+        public int ClassId { get; set; }
     }
 }

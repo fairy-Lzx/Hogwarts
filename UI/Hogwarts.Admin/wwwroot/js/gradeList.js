@@ -122,6 +122,10 @@
 
     form.on("submit(addStudent-btn)", function (data) {
         //弹出loading
+        if ($("#studentName").val() == "自动识别学生名字") {
+            alert("无该学生，请重新输入");
+            return false;
+        }
         var index = top.layer.msg('数据提交中，请稍候', { icon: 16, time: false, shade: 0.8 });
         // 实际使用时的提交信息
         $.ajax({
@@ -309,7 +313,7 @@
                     $("#studentNameLabel").text("成功");
                 }
                 else {
-                    $("#studentName").val("自动识别");
+                    $("#studentName").val("自动识别学生名字");
                     $("#studentIdLabel").text("学号不存在");
                     $("#studentNameLabel").text("学生不存在");
                 }

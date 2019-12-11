@@ -68,7 +68,7 @@ layui.use(['form','layer','upload','laydate',"address"],function(){
                 Province:data.field.province,
                 City: data.field.city,
                 Area: data.field.area,
-                Birthday: data.field.birthday,
+                Birthday: data.field.birthDay,
                 Year: data.field.year,
                 ClassId: data.field.classId,
                 Character: data.field.character,

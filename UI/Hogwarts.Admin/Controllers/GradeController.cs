@@ -13,10 +13,12 @@ namespace Hogwarts.Admin.Controllers
     {
         private readonly IGradeManager _gradeManager;
         private readonly ICourseManager _courseManager;
-        public GradeController(IGradeManager gradeManager, ICourseManager courseManager)
+        private readonly IStudentManager _studentManager;
+        public GradeController(IGradeManager gradeManager, ICourseManager courseManager, IStudentManager studentManager)
         {
             _gradeManager = gradeManager ?? throw new NullReferenceException("IGradeManager服务注入失败");
             _courseManager = courseManager ?? throw new NullReferenceException("IGradeManager服务注入失败");
+            _studentManager = studentManager ?? throw new NullReferenceException("IGradeManager服务注入失败");
         }
         public async Task<IActionResult> GradeList()
         {
@@ -73,7 +75,12 @@ namespace Hogwarts.Admin.Controllers
         }
         public IActionResult AddGrade(Sc viewSc)
         {
-            
+            var student = _studentManager.LoadEntities(x => x.Sno == viewSc.Sno).FirstOrDefault();
+            var course = _courseManager.LoadEntities(x => x.Cno == viewSc.Cno).FirstOrDefault();
+            if (student == null || course == null)
+            {
+                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
             if (viewSc == null)
             {
                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
@@ -135,6 +142,40 @@ namespace Hogwarts.Admin.Controllers
         public IActionResult SearchGrade()
         {
             return View();
+        }
+        public async Task<IActionResult> SearchGradeAccurate(string keyWords)
+        {
+            if (keyWords == null)
+            {
+                return Json(new { code = 1, msg = "请输入关键字", count = 0, data = string.Empty });
+            }
+            var scs =await _gradeManager.LoadEntities(x=>x.StudentNavigation.Sno.ToString().Contains(keyWords) || x.StudentNavigation.Sname == keyWords
+            || x.StudentNavigation.Province == keyWords || x.StudentNavigation.City == keyWords || x.StudentNavigation.Area == keyWords
+                || x.StudentNavigation.Birthday.ToString() == keyWords || x.StudentNavigation.Year.ToString() == keyWords
+                || x.StudentNavigation.Sex == keyWords || x.StudentNavigation.EnglishName == keyWords || x.StudentNavigation.Character == keyWords
+                || x.StudentNavigation.ClassNavigation.ClassName == keyWords
+                || x.StudentNavigation.ClassId.ToString() == keyWords || x.CourseNavigation.Cno.ToString() == keyWords || x.CourseNavigation.Cname == keyWords
+                || x.CourseNavigation.CScore.ToString() == keyWords).Include(x=>x.CourseNavigation).Include(x=>x.StudentNavigation).ToListAsync();
+            if (scs == null)
+            {
+                Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
+            List<object> datas = new List<object>();
+            for (int i = 0; i < scs.Count; i++)
+            {
+                datas.Add(new
+                {
+                    RowId = i + 1,
+                    StudentId = scs[i].Sno,
+                    StudentName = scs[i].StudentNavigation.Sname,
+                    EnglishName = scs[i].StudentNavigation.EnglishName,
+                    CourseId = scs[i].CourseNavigation.Cno,
+                    CourseName = scs[i].CourseNavigation.Cname,
+                    CourseCredit = scs[i].CourseNavigation.CScore,
+                    Score = scs[i].Score
+                });
+            }
+            return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
         }
     }
 }

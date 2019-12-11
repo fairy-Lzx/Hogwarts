@@ -51,10 +51,86 @@
         ]]
     });
 
+    form.on('select(character)', function (data) {
+        if ($("#classId").val() != "") {
+            $("#characterLabel").text("即将去往" + $("#classId option[value='" + $("#classId").val() + "']").text());
+            return false;
+        }
+        if (data.value == "") {
+            $("#characterLabel").text("按属性分配学院");
+            return false;
+        }
+        $.ajax({
+            url: "/Student/Allocate",
+            type: "POST",
+            data: {
+                Character: data.value,
+            },
+            dataType: "json",
+            success: function (res) {
+                if (res.msg == "SUCCEED") {
+                    $("#characterLabel").text("即将去往" + res.data.className);
+                } else {
+                    $("#characterLabel").text("没有对应学院，请添加更多学院，或从下方选择");
+                }
+            }
+        });
+    });
+
+    form.on('select(classId)', function (data) {
+        if ($("#classId").val() != "") {
+            $("#characterLabel").text("即将去往" + $("#classId option[value='" + $("#classId").val() + "']").text());
+            return false;
+        }
+        if ($("#character").val() == "") {
+            $("#characterLabel").text("按属性分配学院");
+            return false;
+        }
+        $.ajax({
+            url: "/Student/Allocate",
+            type: "POST",
+            data: {
+                Character: $("#character").val(),
+            },
+            dataType: "json",
+            success: function (res) {
+                if (res.msg == "SUCCEED") {
+                    $("#characterLabel").text("即将去往" + res.data.className);
+                } else {
+                    $("#characterLabel").text("没有对应学院，请添加更多学院，或从下方选择");
+                }
+            }
+        });
+    });
+
     form.on("submit(addStudent-btn)", function (data) {
+        if ($("#characterLabel").text() == "没有对应学院，请添加更多学院，或从下方选择" || $("#characterLabel").text() == "按属性分配学院") {
+            alert("请重新选择学院或者属性");
+            return false;
+        }
         //弹出loading
         var index = top.layer.msg('数据提交中，请稍候', { icon: 16, time: false, shade: 0.8 });
         // 实际使用时的提交信息
+        var classId;
+        if ($("#classId").val() != "") {
+            classId = $("#classId").val()
+        } else {
+            $.ajax({
+                url: "/Student/Allocate",
+                type: "POST",
+                data: {
+                    Character: $("#character").val(),
+                },
+                dataType: "json",
+                success: function (res) {
+                    if (res.msg == "SUCCEED") {
+                        classId = res.data.classId;
+                    } else {
+                        alert("出错");
+                    }
+                }
+            });
+        }
         $.ajax({
             url: "/Student/AddStudent",
             type: "POST",
@@ -62,7 +138,8 @@
                 StudentName: data.field.studentName,
                 EnglishName: data.field.englishName,
                 Character: data.field.character,
-                Sex: data.field.sex
+                Sex: data.field.sex,
+                ClassId: classId,
             },
             dataType: "json",
             success: function (res) {
@@ -213,5 +290,46 @@
             layer.msg("请选择需要删除的用户");
         }
     })
-
+    $("input[name='studentName']").change(function () {
+        if ($("input[name='studentName']").val() == "") {
+            $("#studentNameLabel").text("中文名");
+            return false;
+        }
+        $.ajax({
+            url: "/Student/GetStudentByNane",
+            type: "POST",
+            data: {
+                StudentName: $(this).val(),
+            },
+            dataType: "json",
+            success: function (res) {
+                if (res.msg == "SUCCEED") {
+                    $("#studentNameLabel").text("已存在该名字的学生，是否是同名不同人，是则继续，否则请重新输入");
+                } else{
+                    $("#studentNameLabel").text("成功!");
+                }
+            }
+        });
+    });
+    $("input[name='englishName']").change(function () {
+        if ($("input[name='englishName']").val() == "") {
+            $("#englishNameLabel").text("EnglishName");
+            return false;
+        }
+        $.ajax({
+            url: "/Student/GetStudentByNane",
+            type: "POST",
+            data: {
+                StudentName: $(this).val(),
+            },
+            dataType: "json",
+            success: function (res) {
+                if (res.msg == "SUCCEED") {
+                    $("#englishNameLabel").text("已存在该名字的学生，是否是同名不同人，是则继续，否则请重新输入");
+                } else {
+                    $("#englishNameLabel").text("SUCCEED");
+                }
+            }
+        });
+    });
 })

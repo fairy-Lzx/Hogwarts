@@ -20,8 +20,8 @@ namespace Hogwarts.Data
             {
                 b.ToTable("IdentityRole");
             });
-            builder.Entity<ApplicationIdentityUser>().HasOne(l => l.Teacher).WithOne(l => l.IdentityUser).HasForeignKey<ApplicationIdentityUser>(l => l.TId);
-            builder.Entity<Teacher>().HasOne(l => l.Course).WithMany(l => l.Teachers).HasForeignKey(l => l.Cno);
+            builder.Entity<ApplicationIdentityUser>().HasOne(l => l.Teacher).WithOne(l => l.IdentityUser).HasForeignKey<ApplicationIdentityUser>(l => l.TId).OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<Teacher>().HasOne(l => l.Course).WithMany(l => l.Teachers).HasForeignKey(l => l.Cno).OnDelete(DeleteBehavior.ClientSetNull);
             builder.Entity<Class>(entity =>
             {
                 entity.HasKey(e => e.ClassId);
@@ -45,7 +45,6 @@ namespace Hogwarts.Data
             builder.Entity<Course>(entity =>
             {
                 entity.HasKey(e => e.Cno);
-
                 entity.ToTable("tb_course");
 
                 entity.Property(e => e.Cno)
@@ -77,13 +76,13 @@ namespace Hogwarts.Data
                 entity.HasOne(d => d.CourseNavigation)
                     .WithMany(p => p.Sc)
                     .HasForeignKey(d => d.Cno)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_tb_SC_tb_course");
 
                 entity.HasOne(d => d.StudentNavigation)
                     .WithMany(p => p.Sc)
                     .HasForeignKey(d => d.Sno)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_tb_SC_tb_student");
             });
 
@@ -98,8 +97,7 @@ namespace Hogwarts.Data
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.Birthday)
-                    .HasColumnName("birthday")
-                    .HasColumnType("datetime");
+                    .HasColumnName("birthday");
 
                 entity.Property(e => e.Character)
                     .HasColumnName("character")
@@ -127,7 +125,7 @@ namespace Hogwarts.Data
 
                 entity.HasOne(d => d.ClassNavigation)
                     .WithMany(p => p.TbStudent)
-                    .HasForeignKey(d => d.ClassId)
+                    .HasForeignKey(d => d.ClassId).OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_tb_student_tb_class");
             });
 
@@ -140,8 +138,7 @@ namespace Hogwarts.Data
                 entity.Property(e => e.TId);
 
                 entity.Property(e => e.Birthday)
-                    .HasColumnName("birthday")
-                    .HasColumnType("datetime");
+                    .HasColumnName("birthday");
 
                 entity.Property(e => e.Cno)
                     .HasColumnName("cno")

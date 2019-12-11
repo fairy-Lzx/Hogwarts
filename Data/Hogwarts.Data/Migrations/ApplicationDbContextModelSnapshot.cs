@@ -169,9 +169,8 @@ namespace Hogwarts.Data.Migrations
 
                     b.Property<string>("Area");
 
-                    b.Property<DateTime?>("Birthday")
-                        .HasColumnName("birthday")
-                        .HasColumnType("datetime");
+                    b.Property<string>("Birthday")
+                        .HasColumnName("birthday");
 
                     b.Property<string>("Character")
                         .HasColumnName("character")
@@ -218,9 +217,8 @@ namespace Hogwarts.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("Birthday")
-                        .HasColumnName("birthday")
-                        .HasColumnType("datetime");
+                    b.Property<string>("Birthday")
+                        .HasColumnName("birthday");
 
                     b.Property<int>("Cno")
                         .HasColumnName("cno")
@@ -343,12 +341,14 @@ namespace Hogwarts.Data.Migrations
                     b.HasOne("Hogwarts.DB.Model.Course", "CourseNavigation")
                         .WithMany("Sc")
                         .HasForeignKey("Cno")
-                        .HasConstraintName("FK_tb_SC_tb_course");
+                        .HasConstraintName("FK_tb_SC_tb_course")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Hogwarts.DB.Model.Student", "StudentNavigation")
                         .WithMany("Sc")
                         .HasForeignKey("Sno")
-                        .HasConstraintName("FK_tb_SC_tb_student");
+                        .HasConstraintName("FK_tb_SC_tb_student")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Hogwarts.DB.Model.Student", b =>
@@ -356,15 +356,15 @@ namespace Hogwarts.Data.Migrations
                     b.HasOne("Hogwarts.DB.Model.Class", "ClassNavigation")
                         .WithMany("TbStudent")
                         .HasForeignKey("ClassId")
-                        .HasConstraintName("FK_tb_student_tb_class");
+                        .HasConstraintName("FK_tb_student_tb_class")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Hogwarts.DB.Model.Teacher", b =>
                 {
                     b.HasOne("Hogwarts.DB.Model.Course", "Course")
                         .WithMany("Teachers")
-                        .HasForeignKey("Cno")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("Cno");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

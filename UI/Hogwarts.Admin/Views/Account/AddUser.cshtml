@@ -65,7 +65,7 @@
                     <select name="usergrade" class="userGrade" id="usergrade" lay-filter="userGrade">
                         @if (Model.UserGrade == null)
                         {
-                            <option value="">请选择职位名称,等级依次升高</option>
+                            <option value="">请选择职位名称,权限依次升高</option>
                         }
                         else
                         {
@@ -74,6 +74,7 @@
                         <option value="游客">游客</option>
                         <option value="新生">新生</option>
                         <option value="学生">学生</option>
+                        <option value="招生办">招生办</option>
                         <option value="教师">教师</option>
                         <option value="教授">教授</option>
                         <option value="院长">院长</option>

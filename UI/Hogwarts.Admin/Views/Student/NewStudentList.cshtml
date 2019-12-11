@@ -1,6 +1,8 @@
 ﻿@{
     Layout = "";
 }
+@using Hogwarts.DB.Model
+@model List<Class>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,56 +21,69 @@
     <form class="layui-form">
         <blockquote class="layui-elem-quote quoteBox">
             <form class="layui-form">
-            <div class="layui-inline">
-                <div class="layui-input-inline">
-                    <input type="text" class="layui-input searchVal" placeholder="请输入搜索的内容" />
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input searchVal" placeholder="请输入搜索的内容" />
+                    </div>
+                    <a class="layui-btn search_btn" data-type="reload">搜索</a>
                 </div>
-                <a class="layui-btn search_btn" data-type="reload">搜索</a>
-            </div>
-            <div class="layui-inline">
-                <a class="layui-btn layui-btn-danger layui-btn-normal delAll_btn">批量删除</a>
-            </div>
+                <div class="layui-inline">
+                    <a class="layui-btn layui-btn-danger layui-btn-normal delAll_btn">批量删除</a>
+                </div>
             </form>
             <hr />
             <div class="layui-form-item">
                 <label class="layui-form-label">学生名字</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="studentName" required lay-verify="required" placeholder="请输入学生名字" autocomplete="off" class="layui-input">
+                    <input type="text" name="studentName" value="" id="studentName" required lay-verify="required" placeholder="请输入学生名字" autocomplete="off" class="layui-input">
                 </div>
-                <div class="layui-form-mid layui-word-aux">中文名</div>
+                <div class="layui-form-mid layui-word-aux" id="studentNameLabel">中文名</div>
             </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">学生英文</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="englishName" required lay-verify="required" placeholder="请输入学生英文名字" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">EnglishName</div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">学生英文</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="englishName" value="" required lay-verify="required" placeholder="请输入学生英文名字" autocomplete="off" class="layui-input">
                 </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">学生属性</label>
-                    <div class="layui-input-inline">
-                        <select name="character" class="character" id="character" lay-filter="character">
-                            <option value="">请选择特性</option>
-                            <option value="正直">正直</option>
-                            <option value="博学">博学</option>
-                            <option value="勇敢">勇敢</option>
-                            <option value="理智">理智</option>
-                        </select>
-                    </div>
+                <div class="layui-form-mid layui-word-aux" id="englishNameLabel">EnglishName</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">学生属性</label>
+                <div class="layui-input-inline">
+                    <select name="character" class="character" id="character" lay-filter="character">
+                        <option value="">请选择特性</option>
+                        <option value="正直">正直</option>
+                        <option value="博学">博学</option>
+                        <option value="勇敢">勇敢</option>
+                        <option value="理智">理智</option>
+                    </select>
                 </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">性别</label>
-                    <div class="layui-input-inline">
-                        <input type="radio" name="sex" value="男" title="男">
-                        <input type="radio" name="sex" value="女" title="女" checked>
-                    </div>
+                <div class="layui-form-mid layui-word-aux" id="characterLabel">按属性分配学院</div>
+            </div>
+            <div class="magb15 layui-col-md4 layui-col-xs12">
+                <label class="layui-form-label">分配学院</label>
+                <div class="layui-input-inline">
+                    <select name="classId" class="classId" id="classId" lay-filter="classId">
+                        <option value="">请选学院,不选则自动选择</option>
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            <option value="@Model[i].ClassId">@Model[i].ClassName</option>
+                        }
+                    </select>
                 </div>
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="addStudent-btn">添加</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                    </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-inline">
+                    <input type="radio" name="sex" value="男" title="男">
+                    <input type="radio" name="sex" value="女" title="女" checked>
                 </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="addStudent-btn">添加</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
         </blockquote>
         <table id="newStudentList" lay-filter="newStudentList"></table>
 
