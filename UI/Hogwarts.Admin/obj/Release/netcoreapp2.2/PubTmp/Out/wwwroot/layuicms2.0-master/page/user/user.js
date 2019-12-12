@@ -28,15 +28,15 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
     //用户等级
     table.render({
         elem: '#userGrade',
-        url : '../../json/userGrade.json',
+        url : '/Role/Roles',
         cellMinWidth : 95,
         cols : [[
             {field:"id", title: 'ID', width: 60, fixed:"left",sort:"true", align:'center', edit: 'text'},
             {field: 'gradeIcon', title: '图标展示', templet:'#gradeIcon', align:'center'},
-            {field: 'gradeName', title: '等级名称', edit: 'text', align:'center'},
-            {field: 'gradeValue', title: '等级值', edit: 'text',sort:"true", align:'center'},
-            {field: 'gradeGold', title: '默认金币', edit: 'text',sort:"true", align:'center'},
-            {field: 'gradePoint', title: '默认积分', edit: 'text',sort:"true", align:'center'},
+            {field: 'gradeName', title: '职位名称', edit: 'text', align:'center'},
+            //{field: 'gradeValue', title: '等级值', edit: 'text',sort:"true", align:'center'},
+            //{field: 'gradeGold', title: '默认金币', edit: 'text',sort:"true", align:'center'},
+            //{field: 'gradePoint', title: '默认积分', edit: 'text',sort:"true", align:'center'},
             {title: '当前状态',minWidth:100, templet:'#gradeBar',fixed:"right",align:"center"}
         ]]
     });

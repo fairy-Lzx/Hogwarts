@@ -1,94 +1,218 @@
 {
-	"contentManagement": [
-		{
-			"title": "文章列表",
-			"icon": "icon-text",
-			"href": "page/news/newsList.html",
-			"spread": false
-		},
-		{
-			"title": "图片管理",
-			"icon": "&#xe634;",
-			"href": "page/img/images.html",
-			"spread": false
-		},
-		{
-			"title": "其他页面",
-			"icon": "&#xe630;",
-			"href": "",
-			"spread": false,
-			"children": [
-				{
-					"title": "404页面",
-					"icon": "&#xe61c;",
-					"href": "page/404.html",
-					"spread": false
-				},
-				{
-					"title": "登录",
-					"icon": "&#xe609;",
-					"href": "page/login/login.html",
-					"spread": false,
-					"target": "_blank"
-				}
-			]
-		}
-	],
-	"memberCenter": [
-		{
-			"title": "用户中心",
-			"icon": "&#xe612;",
-			"href": "page/user/userList.html",
-			"spread": false
-		},
-		{
-			"title": "会员等级",
-			"icon": "icon-vip",
-			"href": "page/user/userGrade.html",
-			"spread": false
-		}
-	],
-	"systemeSttings": [
-		{
-			"title": "系统基本参数",
-			"icon": "&#xe631;",
-			"href": "page/systemSetting/basicParameter.html",
-			"spread": false
-		},{
-			"title": "系统日志",
-			"icon": "icon-log",
-			"href": "page/systemSetting/logs.html",
-			"spread": false
-		},{
-			"title": "友情链接",
-			"icon": "&#xe64c;",
-			"href": "page/systemSetting/linkList.html",
-			"spread": false
-		},{
-			"title": "图标管理",
-			"icon": "&#xe857;",
-			"href": "page/systemSetting/icons.html",
-			"spread": false
-		}
-	],
-	"seraphApi": [
-		{
-			"title": "三级联动模块",
-			"icon": "icon-mokuai",
-			"href": "page/doc/addressDoc.html",
-			"spread": false
-		},{
-			"title": "bodyTab模块",
-			"icon": "icon-mokuai",
-			"href": "page/doc/bodyTabDoc.html",
-			"spread": false
-		},{
-			"title": "三级菜单",
-			"icon": "icon-mokuai",
-			"href": "page/doc/navDoc.html",
-			"spread": false
-		}
-	]
+  "classManagement": [
+    {
+      "title": "学院列表",
+      "icon": "icon-text",
+      "href": "/Class/ClassList",
+      "spread": false
+    },
+    {
+      "title": "其他页面",
+      "icon": "&#xe630;",
+      "href": "",
+      "spread": false,
+      "children": [
+        {
+          "title": "404页面",
+          "icon": "&#xe61c;",
+          "href": "page/404.html",
+          "spread": false
+        },
+        {
+          "title": "登录",
+          "icon": "&#xe609;",
+          "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        }
+      ]
+    }
+  ],
+  "courseManagement": [
+    {
+      "title": "课程列表",
+      "icon": "&#xe612;",
+      "href": "/Course/CourseList",
+      "spread": false
+    },
+    {
+      "title": "其他页面",
+      "icon": "&#xe630;",
+      "href": "",
+      "spread": false,
+      "children": [
+        {
+          "title": "404页面",
+          "icon": "&#xe61c;",
+          "href": "page/404.html",
+          "spread": false
+        },
+        {
+          "title": "登录",
+          "icon": "&#xe609;",
+          "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        }
+      ]
+    }
+  ],
+  "schoolrollManagement": [
+    {
+      "title": "学生学籍信息",
+      "icon": "&#xe631;",
+      "href": "/Student/SchoolRollList",
+      "spread": false
+    },
+    {
+      "title": "其他页面",
+      "icon": "&#xe630;",
+      "href": "",
+      "spread": false,
+      "children": [
+        {
+          "title": "404页面",
+          "icon": "&#xe61c;",
+          "href": "page/404.html",
+          "spread": false
+        },
+        {
+          "title": "登录",
+          "icon": "&#xe609;",
+          "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        }
+      ]
+    }
+  ],
+  "gradeManagement": [
+    {
+      "title": "成绩录入与修改",
+      "icon": "icon-mokuai",
+      "href": "/Grade/GradeList",
+      "spread": false
+    },
+    {
+      "title": "学生成绩查询",
+      "icon": "&#xe612;",
+      "href": "/Grade/SearchGrade",
+      "spread": false
+    },
+    {
+      "title": "其他页面",
+      "icon": "&#xe630;",
+      "href": "",
+      "spread": false,
+      "children": [
+        {
+          "title": "404页面",
+          "icon": "&#xe61c;",
+          "href": "page/404.html",
+          "spread": false
+        },
+        {
+          "title": "登录",
+          "icon": "&#xe609;",
+          "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        }
+      ]
+    }
+  ],
+  "newStudentManagement": [
+    {
+      "title": "新生信息录入",
+      "icon": "icon-mokuai",
+      "href": "/Student/NewStudentList",
+      "spread": false
+    },
+    {
+      "title": "其他页面",
+      "icon": "&#xe630;",
+      "href": "",
+      "spread": false,
+      "children": [
+        {
+          "title": "404页面",
+          "icon": "&#xe61c;",
+          "href": "page/404.html",
+          "spread": false
+        },
+        {
+          "title": "登录",
+          "icon": "&#xe609;",
+          "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        }
+      ]
+    }
+  ],
+
+  "searchStudentInfoManagement": [
+    {
+      "title": "学生信息查询",
+      "icon": "icon-mokuai",
+      "href": "/Student/SearchStudent",
+      "spread": false
+    },
+    {
+      "title": "其他页面",
+      "icon": "&#xe630;",
+      "href": "",
+      "spread": false,
+      "children": [
+        {
+          "title": "404页面",
+          "icon": "&#xe61c;",
+          "href": "page/404.html",
+          "spread": false
+        },
+        {
+          "title": "登录",
+          "icon": "&#xe609;",
+          "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        }
+      ]
+    }
+  ],
+  "userManagement": [
+    {
+      "title": "用户中心",
+      "icon": "&#xe630;",
+      "href": "/Account/UserList",
+      "spread": false
+    },
+    {
+      "title": "用户职位",
+      "icon": "icon-mokuai",
+      "href": "/Role/RoleList",
+      "spread": false
+    },
+    {
+      "title": "其他页面",
+      "icon": "&#xe630;",
+      "href": "",
+      "spread": false,
+      "children": [
+        {
+          "title": "404页面",
+          "icon": "&#xe61c;",
+          "href": "page/404.html",
+          "spread": false
+        },
+        {
+          "title": "登录",
+          "icon": "&#xe609;",
+          "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        }
+      ]
+    }
+  ]
 }
-
-

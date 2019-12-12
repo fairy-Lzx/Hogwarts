@@ -5,6 +5,7 @@
 
 $(function () {
     $(".form-login #btn-login").click(function () {
+        $(".form-login .loading>p").html("");
         var t;
         $(".form-login .loading").css("display", "inline-block");
         t = setInterval(function () {
@@ -45,6 +46,7 @@ $(function () {
     })
 
     $(".form-register #btn-register").click(function () {
+        $(".form-register .loading>p").html("");
         var t;
         $(".form-register .loading").css("display", "inline-block");
         t = setInterval(function () {
@@ -65,7 +67,7 @@ $(function () {
                 UserName: $(".form-register #username").val(),
                 Password: $(".form-register #password").val(),
             },
-            dataType: "text",
+            dataType: "json",
             beforeSend: function (res) {
             },
             success: function (res) {
@@ -73,11 +75,11 @@ $(function () {
                 if (res.code == 0) {
                     clearInterval(t);
                     $(".form-register .loading>p").html("注册成功");
-                    setTimeout(' window.location.href = "/Account/Login"', 1000);
+                    setTimeout(' window.location.href = "/Account/Login"', 500);
                 } else {
                     clearInterval(t);
-                    $(".form-register .loading>p").html("用户已存在");
-                    setTimeout('$(".form-register .loading").css("display", "none")', 2000);
+                    $(".form-register .loading>p").html(res.msg);
+                    setTimeout('$(".form-register .loading").css("display", "none")', 1000);
                 }
             }
         });

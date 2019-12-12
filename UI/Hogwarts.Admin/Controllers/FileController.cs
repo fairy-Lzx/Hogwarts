@@ -41,8 +41,9 @@ namespace Hogwarts.Admin.Controllers
                     fs.Flush();
                 }
                 return Json(new { code = 0, msg = "上传成功",
-                    data = new { src = "https"+"://"+Request.Host.Value+$"/file/upload/images/{dir}/{saveFilename}" } });
-            }
+                    //data = new { src = "https"+"://"+Request.Host.Value+$"/file/upload/images/{dir}/{saveFilename}" } });
+                    data = new { src = "http://94.191.83.150:5000" + $"/file/upload/images/{dir}/{saveFilename}" } });
+                }
             return Json(new { code = 1, msg = "失败", data = new { } });
         }
     }

@@ -25,7 +25,10 @@
       "Hogwarts.Admin/1.0.0": {
         "dependencies": {
           "Hogwarts.Core": "1.0.0",
+          "Hogwarts.DB.Model": "1.0.0",
           "Hogwarts.Data": "1.0.0",
+          "Hogwarts.IRepository": "1.0.0",
+          "Hogwarts.Repository": "1.0.0",
           "Hogwarts.View.Model": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
@@ -273,7 +276,33 @@
           "Hogwarts.DB.Model.dll": {}
         }
       },
+      "Hogwarts.IRepository/1.0.0": {
+        "dependencies": {
+          "Hogwarts.DB.Model": "1.0.0"
+        },
+        "runtime": {
+          "Hogwarts.IRepository.dll": {}
+        },
+        "compile": {
+          "Hogwarts.IRepository.dll": {}
+        }
+      },
+      "Hogwarts.Repository/1.0.0": {
+        "dependencies": {
+          "Hogwarts.Data": "1.0.0",
+          "Hogwarts.IRepository": "1.0.0"
+        },
+        "runtime": {
+          "Hogwarts.Repository.dll": {}
+        },
+        "compile": {
+          "Hogwarts.Repository.dll": {}
+        }
+      },
       "Hogwarts.View.Model/1.0.0": {
+        "dependencies": {
+          "Hogwarts.DB.Model": "1.0.0"
+        },
         "runtime": {
           "Hogwarts.View.Model.dll": {}
         },
@@ -3483,6 +3512,16 @@
       "sha512": ""
     },
     "Hogwarts.DB.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Hogwarts.IRepository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Hogwarts.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

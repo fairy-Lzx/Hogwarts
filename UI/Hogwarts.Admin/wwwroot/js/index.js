@@ -21,6 +21,8 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 				dataStr = data.classManagement;
 				//重新渲染左侧菜单
 				tab.render();
+				console.log(this);
+				console.log($(this));
 			} else if (json == "courseManagement"){
 				dataStr = data.courseManagement;
 				//重新渲染左侧菜单
@@ -53,8 +55,10 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 	$(".topLevelMenus li,.mobileTopLevelMenus dd").click(function(){
 		if($(this).parents(".mobileTopLevelMenus").length != "0"){
 			$(".topLevelMenus li").eq($(this).index()).addClass("layui-this").siblings().removeClass("layui-this");
+			//$(".topLevelMenus li").eq($(this).index()).click();
 		}else{
 			$(".mobileTopLevelMenus dd").eq($(this).index()).addClass("layui-this").siblings().removeClass("layui-this");
+			//$(".mobileTopLevelMenus dd").eq($(this).index()).addClass("layui-this").trigger("click");
 		}
 		$(".layui-layout-admin").removeClass("showMenu");
 		$("body").addClass("site-mobile");
@@ -151,20 +155,6 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 //打开新窗口
 function addTab(_this){
 	tab.tabAdd(_this);
-}
-
-//捐赠弹窗
-function donation(){
-	layer.tab({
-		area : ['260px', '367px'],
-		tab : [{
-			title : "微信",
-			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='images/wechat.jpg'></div>"
-		},{
-			title : "支付宝",
-			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='images/alipay.jpg'></div>"
-		}]
-	})
 }
 
 //图片管理弹窗

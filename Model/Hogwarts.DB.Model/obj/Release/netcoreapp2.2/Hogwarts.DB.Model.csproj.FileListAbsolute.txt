@@ -14,3 +14,11 @@ C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwart
 C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Release\netcoreapp2.2\Hogwarts.DB.Model.AssemblyInfo.cs
 C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Release\netcoreapp2.2\Hogwarts.DB.Model.dll
 C:\Users\SPY24\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Release\netcoreapp2.2\Hogwarts.DB.Model.pdb
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\bin\Release\netcoreapp2.2\Hogwarts.DB.Model.deps.json
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\bin\Release\netcoreapp2.2\Hogwarts.DB.Model.dll
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\bin\Release\netcoreapp2.2\Hogwarts.DB.Model.pdb
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Release\netcoreapp2.2\Hogwarts.DB.Model.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Release\netcoreapp2.2\Hogwarts.DB.Model.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Release\netcoreapp2.2\Hogwarts.DB.Model.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Release\netcoreapp2.2\Hogwarts.DB.Model.dll
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Release\netcoreapp2.2\Hogwarts.DB.Model.pdb
