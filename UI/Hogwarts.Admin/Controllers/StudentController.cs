@@ -62,19 +62,19 @@ namespace Hogwarts.Admin.Controllers
         public async Task<IActionResult> GetAllStudents()
         {
             var students = await _studentManager.GetAllEntities().Select(x => new
-              {
-                  StudentId = x.Sno,
-                  StudentName = x.Sname,
-                  EnglishName = x.EnglishName,
-                  Sex = x.Sex,
-                  Birthday = x.Birthday,
-                  Year = x.Year,
-                  ClassName = x.ClassNavigation.ClassName,
-                  Character = x.Character,
-                  Province = x.Province,
-                  City = x.City,
-                  Area = x.Area,
-              }).ToListAsync();
+            {
+                StudentId = x.Sno,
+                StudentName = x.Sname,
+                EnglishName = x.EnglishName,
+                Sex = x.Sex,
+                Birthday = x.Birthday,
+                Year = x.Year,
+                ClassName = x.ClassNavigation.ClassName,
+                Character = x.Character,
+                Province = x.Province,
+                City = x.City,
+                Area = x.Area,
+            }).ToListAsync();
             if (students == null)
             {
                 return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
@@ -320,15 +320,15 @@ namespace Hogwarts.Admin.Controllers
             {
                 return Json(new { code = 1, msg = "请输入关键字", count = 0, data = string.Empty });
             }
-            var students =await _studentManager.LoadEntities(x => x.Sno.ToString() == keyWords
-               || x.Sname.Contains(keyWords)
-               || ((x.Province == null) ? x.Province == keyWords : x.Province.Contains(keyWords))
-               || ((x.City == null) ? x.City == keyWords : x.City.Contains(keyWords))
-               || ((x.Area == null) ? x.Area == keyWords : x.Area.Contains(keyWords))
-               || x.Birthday.ToString().Contains(keyWords) || x.Year.ToString().Contains(keyWords) || x.Sex == keyWords
-               || x.EnglishName.Contains(keyWords) || x.Character.Contains(keyWords)
-               || x.ClassNavigation.ClassName.Contains(keyWords)
-               || x.ClassId.ToString().Contains(keyWords)
+            var students = await _studentManager.LoadEntities(x => x.Sno.ToString().Contains(keyWords)
+                || x.Sname.Contains(keyWords)
+                || ((x.Province == null) ? x.Province == keyWords : x.Province.Contains(keyWords))
+                || ((x.City == null) ? x.City == keyWords : x.City.Contains(keyWords))
+                || ((x.Area == null) ? x.Area == keyWords : x.Area.Contains(keyWords))
+                || x.Birthday.ToString().Contains(keyWords) || x.Year.ToString().Contains(keyWords) || x.Sex == keyWords
+                || x.EnglishName.Contains(keyWords) || x.Character.Contains(keyWords)
+                || x.ClassNavigation.ClassName.Contains(keyWords)
+                || x.ClassId.ToString().Contains(keyWords)
                ).Select(x => new
                {
                    StudentId = x.Sno,

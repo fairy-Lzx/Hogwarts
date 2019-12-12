@@ -29,24 +29,7 @@
             { field: 'year', title: '入学年份', minWidth: 100, align: "center" },
             { field: 'className', title: '学院名', minWidth: 100, align: "center" },
             { field: 'character', title: '特性', minWidth: 100, align: "center" },
-            //{ field: 'courseClass', title: '开课院系', minWidth: 100, align: "center" },
-            //{ field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
-            //}
-            //{ field: 'realName', title: '名字', minWidth: 100, align: "center" },
-            //{ field: 'englishName', title: '英文名', minWidth: 100, align: "center" },
-            //{
-            //    field: 'sex', title: '用户性别', width: 120, align: 'center', templet: function (d) {
-            //        if (d.sex == null) return "就不告诉你";
-            //        return d.sex;
-            //    }
-            //},
-            //{
-            //    field: 'userStatus', title: '用户状态', align: 'center', templet: function (d) {
-            //        return d.userStatus == true ? "正常使用" : "限制使用";
-            //    }
-            //},
-            //{ field: 'roleName', title: '职位', align: 'center' },
-            //{field: 'userEndTime', title: '最后登录时间', align:'center',minWidth:150},
+
             { title: '操作', minWidth: 175, templet: '#schoolRollListBar', fixed: "right", align: "center" }
         ]]
     });
@@ -112,6 +95,35 @@
         var keywords = "";
         if ($(".searchVal").val() != "") {
             keywords = '?keyWords=' + $(".searchVal").val();
+        } else {
+            table.render({
+                elem: '#schoolRollList',
+                url: '/Student/SchoolRolls',
+                cellMinWidth: 95,
+                page: true,
+                height: "full-125",
+                limits: [10, 15, 20, 25],
+                limit: 10,
+                id: "schoolRollListTable",
+                cols: [[
+                    { type: "checkbox", fixed: "left", width: 50 },
+                    { field: "rowId", title: 'ID', width: 60, fixed: "left", sort: "true", align: 'center', edit: 'text' },
+                    //{field: 'nickName', title: '昵称', minWidth:100, align:"center"},
+                    { field: 'studentId', title: '学号', minWidth: 100, align: "center" },
+                    //{field: 'userEmail', title: '用户邮箱', minWidth:200, align:'center',templet:function(d){
+                    //    return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
+                    { field: 'studentName', title: '学生名', minWidth: 100, align: "center" },
+                    { field: 'englishName', title: '英文名', minWidth: 100, align: "center" },
+                    { field: 'sex', title: '性别', minWidth: 100, align: "center" },
+                    { field: 'birthday', title: '生日', minWidth: 100, align: "center" },
+                    { field: 'year', title: '入学年份', minWidth: 100, align: "center" },
+                    { field: 'className', title: '学院名', minWidth: 100, align: "center" },
+                    { field: 'character', title: '特性', minWidth: 100, align: "center" },
+
+                    { title: '操作', minWidth: 175, templet: '#schoolRollListBar', fixed: "right", align: "center" }
+                ]]
+            });
+            return false;
         }
         table.render({
             elem: '#schoolRollList',

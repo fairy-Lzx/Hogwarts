@@ -131,7 +131,7 @@
             dataType: "json",
             success: function (res) {
                 if (res == "SUCCEED") {
-                    $("input[type=reset]").trigger("click");
+                    $(".btn-reset").click();
                     top.layer.close(index);
                     top.layer.msg("学生添加成功！");
                     layer.closeAll("iframe");
@@ -400,6 +400,7 @@
             }
         });
     });
+
     $("input[name='englishName']").change(function () {
         if ($("input[name='englishName']").val() == "") {
             $("#englishNameLabel").text("EnglishName");

@@ -83,7 +83,7 @@ namespace Hogwarts.Admin.Controllers
             }
             if (viewSc == null)
             {
-               return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
             }
             var sc = _gradeManager.LoadEntities(x => x.Cno == viewSc.Cno && x.Sno == viewSc.Sno).FirstOrDefault();
             if (sc != null)
@@ -107,7 +107,7 @@ namespace Hogwarts.Admin.Controllers
             }
         }
         [HttpPost]
-        public IActionResult GetGrade(int studentId,int courseId)
+        public IActionResult GetGrade(int studentId, int courseId)
         {
             if (studentId == 0 || courseId == 0)
             {
@@ -135,7 +135,7 @@ namespace Hogwarts.Admin.Controllers
             var result = _gradeManager.DeleteEntity(sc);
             if (result)
             {
-                return Json(new { code = 0, msg = "SUCCEED", count = 1, data = string.Empty});
+                return Json(new { code = 0, msg = "SUCCEED", count = 1, data = string.Empty });
             }
             return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
         }
@@ -149,13 +149,74 @@ namespace Hogwarts.Admin.Controllers
             {
                 return Json(new { code = 1, msg = "请输入关键字", count = 0, data = string.Empty });
             }
-            var scs =await _gradeManager.LoadEntities(x=>x.StudentNavigation.Sno.ToString().Contains(keyWords) || x.StudentNavigation.Sname == keyWords
-            || x.StudentNavigation.Province == keyWords || x.StudentNavigation.City == keyWords || x.StudentNavigation.Area == keyWords
-                || x.StudentNavigation.Birthday.ToString() == keyWords || x.StudentNavigation.Year.ToString() == keyWords
-                || x.StudentNavigation.Sex == keyWords || x.StudentNavigation.EnglishName == keyWords || x.StudentNavigation.Character == keyWords
-                || x.StudentNavigation.ClassNavigation.ClassName == keyWords
-                || x.StudentNavigation.ClassId.ToString() == keyWords || x.CourseNavigation.Cno.ToString() == keyWords || x.CourseNavigation.Cname == keyWords
-                || x.CourseNavigation.CScore.ToString() == keyWords).Include(x=>x.CourseNavigation).Include(x=>x.StudentNavigation).ToListAsync();
+            var scs = await _gradeManager.LoadEntities(x => x.StudentNavigation.Sno.ToString().Contains(keyWords) || x.StudentNavigation.Sname == keyWords
+             || x.StudentNavigation.Province == keyWords || x.StudentNavigation.City == keyWords || x.StudentNavigation.Area == keyWords
+                 || x.StudentNavigation.Birthday.ToString() == keyWords || x.StudentNavigation.Year.ToString() == keyWords
+                 || x.StudentNavigation.Sex == keyWords || x.StudentNavigation.EnglishName == keyWords || x.StudentNavigation.Character == keyWords
+                 || x.StudentNavigation.ClassNavigation.ClassName == keyWords
+                 || x.StudentNavigation.ClassId.ToString() == keyWords || x.CourseNavigation.Cno.ToString() == keyWords || x.CourseNavigation.Cname == keyWords
+                 || x.CourseNavigation.CScore.ToString() == keyWords).Include(x => x.CourseNavigation).Include(x => x.StudentNavigation).ToListAsync();
+            if (scs == null)
+            {
+                Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
+            List<object> datas = new List<object>();
+            for (int i = 0; i < scs.Count; i++)
+            {
+                datas.Add(new
+                {
+                    RowId = i + 1,
+                    StudentId = scs[i].Sno,
+                    StudentName = scs[i].StudentNavigation.Sname,
+                    EnglishName = scs[i].StudentNavigation.EnglishName,
+                    CourseId = scs[i].CourseNavigation.Cno,
+                    CourseName = scs[i].CourseNavigation.Cname,
+                    CourseCredit = scs[i].CourseNavigation.CScore,
+                    Score = scs[i].Score
+                });
+            }
+            return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
+        }
+        public async Task<IActionResult> SearchGradeFuzzy(string keyWords)
+        {
+            if (keyWords == null)
+            {
+                return Json(new { code = 1, msg = "请输入关键字", count = 0, data = string.Empty });
+            }
+            var scs = await _gradeManager.LoadEntities(x => x.StudentNavigation.Sno.ToString().Contains(keyWords) || x.StudentNavigation.Sname.Contains(keyWords)
+                 || ((x.StudentNavigation.Province == null) ? x.StudentNavigation.Province == keyWords : x.StudentNavigation.Province.Contains(keyWords))
+                 || ((x.StudentNavigation.City == null) ? x.StudentNavigation.City == keyWords : x.StudentNavigation.City.Contains(keyWords))
+                 || ((x.StudentNavigation.Area == null) ? x.StudentNavigation.Area == keyWords : x.StudentNavigation.Area.Contains(keyWords))
+                 || x.StudentNavigation.Birthday.ToString().Contains(keyWords) || x.StudentNavigation.Year.ToString().Contains(keyWords)
+                 || x.StudentNavigation.Sex == keyWords || x.StudentNavigation.EnglishName.Contains(keyWords) || x.StudentNavigation.Character.Contains(keyWords)
+                 || x.StudentNavigation.ClassNavigation.ClassName.Contains(keyWords)
+                 || x.StudentNavigation.ClassId.ToString().Contains(keyWords)
+                 || x.CourseNavigation.Cno.ToString().Contains(keyWords) || x.CourseNavigation.Cname.Contains(keyWords)
+                 || x.CourseNavigation.CScore.ToString().Contains(keyWords)).Include(x => x.CourseNavigation).Include(x => x.StudentNavigation).ToListAsync();
+            if (scs == null)
+            {
+                Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
+            List<object> datas = new List<object>();
+            for (int i = 0; i < scs.Count; i++)
+            {
+                datas.Add(new
+                {
+                    RowId = i + 1,
+                    StudentId = scs[i].Sno,
+                    StudentName = scs[i].StudentNavigation.Sname,
+                    EnglishName = scs[i].StudentNavigation.EnglishName,
+                    CourseId = scs[i].CourseNavigation.Cno,
+                    CourseName = scs[i].CourseNavigation.Cname,
+                    CourseCredit = scs[i].CourseNavigation.CScore,
+                    Score = scs[i].Score
+                });
+            }
+            return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
+        }
+        public async Task<IActionResult> GetAllGrades()
+        {
+            var scs = await _gradeManager.GetAllEntities().Include(x=>x.CourseNavigation).Include(x=>x.StudentNavigation).ToListAsync();
             if (scs == null)
             {
                 Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
