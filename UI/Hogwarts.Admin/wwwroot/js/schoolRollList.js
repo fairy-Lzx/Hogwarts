@@ -78,7 +78,7 @@
                 layer.close(index);
             });
         } else if (layEvent === 'del') { //删除
-            layer.confirm('确定删除此课程？', { icon: 3, title: '提示信息' }, function (index) {
+            layer.confirm('确定删除此学生学籍信息？', { icon: 3, title: '警告' }, function (index) {
                 //$.get("/Account/DeleteUser",{
                 //    newsId : data.newsId  //将需要删除的newsId作为参数传入
                 //},function(data){
@@ -87,15 +87,22 @@
                 // })
                 var index = top.layer.msg('数据提交中，请稍候', { icon: 16, time: false, shade: 0.8 });
                 $.ajax({
-                    url: "/Course/DeleteCourse",
+                    url: "/Student/DeleteStudent",
                     type: "POST",
                     data: {
-                        CourseId: data.courseId
+                        StudentId: data.studentId,
                     },
                     dataType: "json",
                     success: function (res) {
-                        tableIns.reload();
-                        layer.close(index);
+                        if (res.msg == "SUCCEED") {
+                            tableIns.reload();
+                            layer.close(index);
+                        } else {
+                            layer.msg("删除失败");
+                            tableIns.reload();
+                            layer.close(index);
+                        }
+
                     }
                 })
             });

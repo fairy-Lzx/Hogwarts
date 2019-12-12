@@ -59,6 +59,19 @@
                 </div>
                 <div class="layui-form-mid layui-word-aux" id="characterLabel">按属性分配学院</div>
             </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">入学年份</label>
+                <div class="layui-input-inline">
+                    <select name="year" class="year" id="year" lay-filter="year">
+                        <option value="">若为新生，请别选择此项</option>
+                        @for (int i = 1000; i < DateTime.Now.Year; i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+                </div>
+                <div class="layui-form-mid layui-word-aux" id="characterLabel"><span style="color:red">警告，只有老生才选择此项,选择了这项，则当老生处理</span></div>
+            </div>
             <div class="magb15 layui-col-md4 layui-col-xs12">
                 <label class="layui-form-label">分配学院</label>
                 <div class="layui-input-inline">

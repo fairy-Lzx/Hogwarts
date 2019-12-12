@@ -113,11 +113,13 @@
         // 实际使用时的提交信息
         var classId;
         if ($("#classId").val() != "") {
-            classId = $("#classId").val()
+            classId = $("#classId").val();
+            console.log(classId);
         } else {
             $.ajax({
                 url: "/Student/Allocate",
                 type: "POST",
+                async: false,
                 data: {
                     Character: $("#character").val(),
                 },
@@ -125,6 +127,7 @@
                 success: function (res) {
                     if (res.msg == "SUCCEED") {
                         classId = res.data.classId;
+                        console.log(classId);
                     } else {
                         alert("出错");
                     }
@@ -140,10 +143,12 @@
                 Character: data.field.character,
                 Sex: data.field.sex,
                 ClassId: classId,
+                Year: data.field.year,
             },
             dataType: "json",
             success: function (res) {
                 if (res == "SUCCEED") {
+                    $("input[type=reset]").trigger("click");
                     top.layer.close(index);
                     top.layer.msg("学生添加成功！");
                     layer.closeAll("iframe");

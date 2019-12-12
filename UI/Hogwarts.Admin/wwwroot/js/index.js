@@ -21,38 +21,44 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 				dataStr = data.classManagement;
 				//重新渲染左侧菜单
 				tab.render();
-				console.log(this);
-				console.log($(this));
+				$("ul.layui-nav-tree li:nth-child(2) a").click();
 			} else if (json == "courseManagement"){
 				dataStr = data.courseManagement;
 				//重新渲染左侧菜单
 				tab.render();
+				$("ul.layui-nav-tree li:nth-child(2) a").click();
 			} else if (json == "schoolrollManagement"){
 				dataStr = data.schoolrollManagement;
 				//重新渲染左侧菜单
 				tab.render();
+				$("ul.layui-nav-tree li:nth-child(2) a").click();
 			} else if (json == "gradeManagement"){
 				dataStr = data.gradeManagement;
                 //重新渲染左侧菜单
-                tab.render();
+				tab.render();
+				$("ul.layui-nav-tree li:nth-child(2) a").click();
 			} else if (json == "searchStudentInfoManagement") {
 				dataStr = data.searchStudentInfoManagement;
 				//重新渲染左侧菜单
 				tab.render();
+				$("ul.layui-nav-tree li:nth-child(2) a").click();
 			} else if (json == "userManagement") {
 				dataStr = data.userManagement;
 				//重新渲染左侧菜单
 				tab.render();
+				$("ul.layui-nav-tree li:nth-child(2) a").click();
 			} else if (json == "newStudentManagement") {
 				dataStr = data.newStudentManagement;
 				//重新渲染左侧菜单
 				tab.render();
+				$("ul.layui-nav-tree li:nth-child(2) a").click();
 			}
 		})
 	}
 	//页面加载时判断左侧菜单是否显示
 	//通过顶部菜单获取左侧菜单
-	$(".topLevelMenus li,.mobileTopLevelMenus dd").click(function(){
+	$(".topLevelMenus li,.mobileTopLevelMenus dd").click(function () {
+		//$("ul.layui-nav-tree li:nth-child(1)").removeClass("layui-this");
 		if($(this).parents(".mobileTopLevelMenus").length != "0"){
 			$(".topLevelMenus li").eq($(this).index()).addClass("layui-this").siblings().removeClass("layui-this");
 			//$(".topLevelMenus li").eq($(this).index()).click();
@@ -66,7 +72,6 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 		//渲染顶部窗口
 		tab.tabMove();
 	})
-
 	//隐藏左侧导航
 	$(".hideMenu").click(function(){
 		if($(".topLevelMenus li.layui-this a").data("url")){
@@ -79,7 +84,7 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 	})
 
 	//通过顶部菜单获取左侧二三级菜单   注：此处只做演示之用，实际开发中通过接口传参的方式获取导航数据
-	getData("classManagement");
+	//getData("classManagement");
 
 	//手机设备的简单适配
     $('.site-tree-mobile').on('click', function(){
@@ -98,7 +103,6 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 		}
 		$(this).parent("li").siblings().removeClass("layui-nav-itemed");
 	})
-
 	//清除缓存
 	$(".clearCache").click(function(){
 		window.sessionStorage.clear();
