@@ -59,6 +59,48 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
         }
+        public async Task<IActionResult> GetAllStudents()
+        {
+            var students = await _studentManager.GetAllEntities().Select(x => new
+              {
+                  StudentId = x.Sno,
+                  StudentName = x.Sname,
+                  EnglishName = x.EnglishName,
+                  Sex = x.Sex,
+                  Birthday = x.Birthday,
+                  Year = x.Year,
+                  ClassName = x.ClassNavigation.ClassName,
+                  Character = x.Character,
+                  Province = x.Province,
+                  City = x.City,
+                  Area = x.Area,
+              }).ToListAsync();
+            if (students == null)
+            {
+                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
+            List<object> datas = new List<object>();
+            for (int i = 0; i < students.Count; i++)
+            {
+                datas.Add(new
+                {
+                    RowId = i + 1,
+                    students[i].StudentId,
+                    students[i].StudentName,
+                    students[i].EnglishName,
+                    students[i].Sex,
+                    students[i].Birthday,
+                    students[i].Year,
+                    students[i].ClassName,
+                    students[i].Character,
+                    students[i].Province,
+                    students[i].City,
+                    students[i].Area,
+
+                });
+            }
+            return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
+        }
         public IActionResult EditSchoolRoll(int StudentId)
         {
             SchoolRollViewModel viewModel = new SchoolRollViewModel();
@@ -400,6 +442,28 @@ namespace Hogwarts.Admin.Controllers
                         return Json(new { code = 0, msg = "SUCCEED", count = 0, data = string.Empty });
                     }
                 }
+            }
+            return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+        }
+        [HttpPost]
+        public IActionResult DeleteStudents(List<int> studentIds)
+        {
+            int successCount = 0;
+            if (studentIds != null)
+            {
+                for (int i = 0; i < studentIds.Count; i++)
+                {
+                    var student = _studentManager.LoadEntities(x => x.Sno == studentIds[i]).FirstOrDefault();
+                    if (student != null)
+                    {
+                        var result = _studentManager.DeleteEntity(student);
+                        if (result)
+                        {
+                            successCount++;
+                        }
+                    }
+                }
+                return Json(new { code = 0, msg = "SUCCEED", count = successCount, data = string.Empty });
             }
             return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
         }
