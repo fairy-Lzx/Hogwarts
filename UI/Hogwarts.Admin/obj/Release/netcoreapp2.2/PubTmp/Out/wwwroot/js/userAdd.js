@@ -19,7 +19,8 @@ layui.use(['form','layer'],function(){
                 RoleName: data.field.usergrade,
                 //Email: data.field.useremail,
                 IsInUsing: data.field.userStatus,
-                UserDescription: data.field.userdescription
+                UserDescription: data.field.userdescription,
+                CourseId: data.field.courseId,
             },
             dataType: "json",
             success: function (res) {

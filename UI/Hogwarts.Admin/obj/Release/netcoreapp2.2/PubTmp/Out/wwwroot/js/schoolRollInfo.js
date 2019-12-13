@@ -12,21 +12,7 @@ layui.use(['form','layer','upload','laydate',"address"],function(){
         laydate = layui.laydate,
         address = layui.address;
 
-    //$.ajax({
-    //    url: "/Account/UserInfo",
-    //    type: "POST",
-    //    data
-    //})
-    //上传头像
-    //upload.render({
-    //    elem: '.userFaceBtn',
-    //    url: '/File/UploadImage',
-    //    method: "post",  //此处是为了演示之用，实际使用中请将此删除，默认用post方式提交
-    //    done: function (res, index, upload) {
-    //        $('.userFace').attr('src', res.data.src);
-    //        //$('.thumbBox').css("background", "#fff");
-    //    }
-    //});
+
 
     //添加验证规则
     form.verify({
@@ -83,29 +69,6 @@ layui.use(['form','layer','upload','laydate',"address"],function(){
                 parent.location.reload();
             }
         })
-        //将填写的用户信息存到session以便下次调取
-        //var key,userInfoHtml = '';
-        //userInfoHtml = {
-        //    'realName' : $(".realName").val(),
-        //    'sex' : data.field.sex,
-        //    'userPhone' : $(".userPhone").val(),
-        //    'userBirthday' : $(".userBirthday").val(),
-        //    'province' : data.field.province,
-        //    'city' : data.field.city,
-        //    'area' : data.field.area,
-        //    'userEmail' : $(".userEmail").val(),
-        //    'myself' : $(".myself").val()
-        //};
-        //for(key in data.field){
-        //    if(key.indexOf("like") != -1){
-        //        userInfoHtml[key] = "on";
-        //    }
-        //}
-        //window.sessionStorage.setItem("userInfo",JSON.stringify(userInfoHtml));
-        //setTimeout(function(){
-        //    layer.close(index);
-        //    layer.msg("提交成功！");
-        //},2000);
         return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
     })
 

@@ -144,3 +144,4 @@ C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\UI\Hogwarts.Admin\obj\Release\netcoreapp2.2\Hogwarts.Admin.csproj.CopyComplete
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\UI\Hogwarts.Admin\obj\Release\netcoreapp2.2\Hogwarts.Admin.dll
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\UI\Hogwarts.Admin\obj\Release\netcoreapp2.2\Hogwarts.Admin.pdb
+C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\UI\Hogwarts.Admin\obj\Release\netcoreapp2.2\Razor\Views\Account\AccessDenied.cshtml.g.cs

@@ -29,24 +29,7 @@
             { field: 'year', title: '入学年份', minWidth: 100, align: "center" },
             { field: 'className', title: '学院名', minWidth: 100, align: "center" },
             { field: 'character', title: '特性', minWidth: 100, align: "center" },
-            //{ field: 'courseClass', title: '开课院系', minWidth: 100, align: "center" },
-            //{ field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
-            //}
-            //{ field: 'realName', title: '名字', minWidth: 100, align: "center" },
-            //{ field: 'englishName', title: '英文名', minWidth: 100, align: "center" },
-            //{
-            //    field: 'sex', title: '用户性别', width: 120, align: 'center', templet: function (d) {
-            //        if (d.sex == null) return "就不告诉你";
-            //        return d.sex;
-            //    }
-            //},
-            //{
-            //    field: 'userStatus', title: '用户状态', align: 'center', templet: function (d) {
-            //        return d.userStatus == true ? "正常使用" : "限制使用";
-            //    }
-            //},
-            //{ field: 'roleName', title: '职位', align: 'center' },
-            //{field: 'userEndTime', title: '最后登录时间', align:'center',minWidth:150},
+
             { title: '操作', minWidth: 175, templet: '#newStudentListBar', fixed: "right", align: "center" }
         ]]
     });
@@ -113,11 +96,13 @@
         // 实际使用时的提交信息
         var classId;
         if ($("#classId").val() != "") {
-            classId = $("#classId").val()
+            classId = $("#classId").val();
+            console.log(classId);
         } else {
             $.ajax({
                 url: "/Student/Allocate",
                 type: "POST",
+                async: false,
                 data: {
                     Character: $("#character").val(),
                 },
@@ -125,6 +110,7 @@
                 success: function (res) {
                     if (res.msg == "SUCCEED") {
                         classId = res.data.classId;
+                        console.log(classId);
                     } else {
                         alert("出错");
                     }
@@ -140,10 +126,12 @@
                 Character: data.field.character,
                 Sex: data.field.sex,
                 ClassId: classId,
+                Year: data.field.year,
             },
             dataType: "json",
             success: function (res) {
                 if (res == "SUCCEED") {
+                    $(".btn-reset").click();
                     top.layer.close(index);
                     top.layer.msg("学生添加成功！");
                     layer.closeAll("iframe");
@@ -212,18 +200,98 @@
         }
     });
 
+    $(".searchVal").keyup(function () {
+        var keywords = "";
+        if ($(".searchVal").val() != "") {
+            keywords = '?keyWords=' + $(".searchVal").val();
+        } else {
+            table.render({
+                elem: '#newStudentList',
+                url: '/Student/newStudents',
+                cellMinWidth: 95,
+                page: true,
+                height: "full-125",
+                limits: [10, 15, 20, 25],
+                limit: 10,
+                id: "newStudentListTable",
+                cols: [[
+                    { type: "checkbox", fixed: "left", width: 50 },
+                    { field: "rowId", title: 'ID', width: 60, fixed: "left", sort: "true", align: 'center', edit: 'text' },
+                    //{field: 'nickName', title: '昵称', minWidth:100, align:"center"},
+                    { field: 'studentId', title: '学号', minWidth: 100, align: "center" },
+                    //{field: 'userEmail', title: '用户邮箱', minWidth:200, align:'center',templet:function(d){
+                    //    return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
+                    { field: 'studentName', title: '学生名', minWidth: 100, align: "center" },
+                    { field: 'englishName', title: '英文名', minWidth: 100, align: "center" },
+                    { field: 'sex', title: '性别', minWidth: 100, align: "center" },
+                    //{ field: 'birthday', title: '生日', minWidth: 100, align: "center" },
+                    { field: 'year', title: '入学年份', minWidth: 100, align: "center" },
+                    { field: 'className', title: '学院名', minWidth: 100, align: "center" },
+                    { field: 'character', title: '特性', minWidth: 100, align: "center" },
+
+                    { title: '操作', minWidth: 175, templet: '#newStudentListBar', fixed: "right", align: "center" }
+                ]]
+            });
+            return false;
+        }
+        table.render({
+            elem: '#newStudentList',
+            url: '/Student/FuzzySearchStudents' + keywords,
+            cellMinWidth: 95,
+            page: true,
+            height: "full-125",
+            limits: [10, 15, 20, 25],
+            limit: 10,
+            id: "newStudentListTable",
+            cols: [[
+                { type: "checkbox", fixed: "left", width: 50 },
+                { field: "rowId", title: 'ID', width: 60, fixed: "left", sort: "true", align: 'center', edit: 'text' },
+                //{field: 'nickName', title: '昵称', minWidth:100, align:"center"},
+                { field: 'studentId', title: '学号', minWidth: 100, align: "center" },
+                //{field: 'userEmail', title: '用户邮箱', minWidth:200, align:'center',templet:function(d){
+                //    return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
+                { field: 'studentName', title: '学生名', minWidth: 100, align: "center" },
+                { field: 'englishName', title: '英文名', minWidth: 100, align: "center" },
+                { field: 'sex', title: '性别', minWidth: 100, align: "center" },
+                //{ field: 'birthday', title: '生日', minWidth: 100, align: "center" },
+                { field: 'year', title: '入学年份', minWidth: 100, align: "center" },
+                { field: 'className', title: '学院名', minWidth: 100, align: "center" },
+                { field: 'character', title: '特性', minWidth: 100, align: "center" },
+
+                { title: '操作', minWidth: 175, templet: '#newStudentListBar', fixed: "right", align: "center" }
+            ]]
+        });
+    });
     //搜索【此功能需要后台配合，所以暂时没有动态效果演示】
     $(".search_btn").on("click", function () {
         if ($(".searchVal").val() != '') {
+            table.render({
+                elem: '#newStudentList',
+                url: '/Student/SearchStudents?keyWords=' + $(".searchVal").val(),
+                cellMinWidth: 95,
+                page: true,
+                height: "full-125",
+                limits: [10, 15, 20, 25],
+                limit: 10,
+                id: "newStudentListTable",
+                cols: [[
+                    { type: "checkbox", fixed: "left", width: 50 },
+                    { field: "rowId", title: 'ID', width: 60, fixed: "left", sort: "true", align: 'center', edit: 'text' },
+                    //{field: 'nickName', title: '昵称', minWidth:100, align:"center"},
+                    { field: 'studentId', title: '学号', minWidth: 100, align: "center" },
+                    //{field: 'userEmail', title: '用户邮箱', minWidth:200, align:'center',templet:function(d){
+                    //    return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
+                    { field: 'studentName', title: '学生名', minWidth: 100, align: "center" },
+                    { field: 'englishName', title: '英文名', minWidth: 100, align: "center" },
+                    { field: 'sex', title: '性别', minWidth: 100, align: "center" },
+                    //{ field: 'birthday', title: '生日', minWidth: 100, align: "center" },
+                    { field: 'year', title: '入学年份', minWidth: 100, align: "center" },
+                    { field: 'className', title: '学院名', minWidth: 100, align: "center" },
+                    { field: 'character', title: '特性', minWidth: 100, align: "center" },
 
-            table.reload("newStudentListTable", {
-                page: {
-                    curr: 1 //重新从第 1 页开始
-                },
-                where: {
-                    key: $(".searchVal").val()  //搜索的关键字
-                }
-            })
+                    { title: '操作', minWidth: 175, templet: '#newStudentListBar', fixed: "right", align: "center" }
+                ]]
+            });
         } else {
             layer.msg("请输入搜索的内容");
         }
@@ -271,25 +339,46 @@
 
     //批量删除
     $(".delAll_btn").click(function () {
-        var checkStatus = table.checkStatus('courseListTable'),
+        var checkStatus = table.checkStatus('newStudentListTable'),
             data = checkStatus.data,
-            newsId = [];
+            StudentId = [];
         if (data.length > 0) {
             for (var i in data) {
-                newsId.push(data[i].newsId);
+                StudentId.push(data[i].studentId);
+                console.log(data[i].studentId);
             }
             layer.confirm('确定删除选中的用户？', { icon: 3, title: '提示信息' }, function (index) {
-                // $.get("删除文章接口",{
-                //     newsId : newsId  //将需要删除的newsId作为参数传入
-                // },function(data){
-                tableIns.reload();
-                layer.close(index);
+                $.ajax({
+                    url: "/Student/DeleteStudents",
+                    type: "POST",
+                    data: {
+                        StudentIds: StudentId,
+                    },
+                    success: function (res) {
+                        if (res.count == StudentId.length) {
+                            layer.msg("已成功删除" + res.count + "条数据");
+                            tableIns.reload();
+                            layer.close(index);
+                        } else if (0 < res.count < StudentId.length) {
+                            layer.msg("只删除部分数据，删除了" + res.count + "条数据");
+                            tableIns.reload();
+                            layer.close(index);
+                        } else {
+                            layer.msg("删除失败");
+                            tableIns.reload();
+                            layer.close(index);
+                        }
+                    }
+                })
+
                 // })
             })
         } else {
-            layer.msg("请选择需要删除的用户");
+            layer.msg("请选择需要删除的数据");
         }
     })
+
+
     $("input[name='studentName']").change(function () {
         if ($("input[name='studentName']").val() == "") {
             $("#studentNameLabel").text("中文名");
@@ -311,6 +400,7 @@
             }
         });
     });
+
     $("input[name='englishName']").change(function () {
         if ($("input[name='englishName']").val() == "") {
             $("#englishNameLabel").text("EnglishName");
