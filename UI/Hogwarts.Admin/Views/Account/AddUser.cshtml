@@ -19,18 +19,6 @@
 </head>
 <body class="childrenBody">
     <form class="layui-form" style="width:80%;">
-        @*<div class="layui-form-item layui-row layui-col-xs12">
-            <label class="layui-form-label">名字</label>
-            <div class="layui-input-block">
-                <input type="text" class="layui-input nickName" value="@Model.RealName" name="nickname" lay-verify="required" placeholder="请输入真实名字">
-            </div>
-        </div>
-        <div class="layui-form-item layui-row layui-col-xs12">
-            <label class="layui-form-label">英文名</label>
-            <div class="layui-input-block">
-                <input type="text" class="layui-input nickName" value="@Model.EnglishName" name="nickname" lay-verify="required" placeholder="请输入真实英文名">
-            </div>
-        </div>*@
         <div class="layui-form-item layui-row layui-col-xs12">
             <label class="layui-form-label">账号</label>
             <div class="layui-input-block">
@@ -43,12 +31,6 @@
                 <input type="password" class="layui-input password" name="password" lay-verify="required" placeholder="请输入登录密码">
             </div>
         </div>
-        @*<div class="layui-form-item layui-row layui-col-xs12">
-            <label class="layui-form-label">邮箱</label>
-            <div class="layui-input-block">
-                <input type="text" class="layui-input userEmail" value="@Model.UserEmail" name="useremail" lay-verify="email" placeholder="请输入邮箱">
-            </div>
-        </div>*@
         <div class="layui-row">
             <div class="magb15 layui-col-md4 layui-col-xs12">
                 <label class="layui-form-label">性别</label>
@@ -80,6 +62,28 @@
                         <option value="院长">院长</option>
                         <option value="校长">校长</option>
                         <option value="系统管理员">系统管理员</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">教授课程</label>
+                <div class="layui-input-inline">
+                    <select name="courseId" class="courseId" id="courseId" lay-filter="courseId" lay-verify="">
+                        @if (Model.CourseName != null)
+                        {
+                            <option value="@Model.CourseId">@Model.CourseName</option>
+                        }
+                        else
+                        {
+                            <option value="">请选择课程</option>
+                        }
+                        @if (Model.Courses != null)
+                        {
+                            @for (int i = 0; i < Model.Courses.Count; i++)
+                            {
+                                <option value="@Model.Courses[i].Cno">@Model.Courses[i].Cname</option>
+                            }
+                        }
                     </select>
                 </div>
             </div>

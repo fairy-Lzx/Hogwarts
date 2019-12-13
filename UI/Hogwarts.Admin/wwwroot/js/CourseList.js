@@ -25,24 +25,7 @@
             { field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
             { field: 'englishName', title: 'Course English Name', minWidth: 100, align: "center" },
             { field: 'courseScore', title: '课程学分', minWidth: 100, align: "center" },
-            //{ field: 'courseClass', title: '开课院系', minWidth: 100, align: "center" },
-            //{ field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
-            //}
-            //{ field: 'realName', title: '名字', minWidth: 100, align: "center" },
-            //{ field: 'englishName', title: '英文名', minWidth: 100, align: "center" },
-            //{
-            //    field: 'sex', title: '用户性别', width: 120, align: 'center', templet: function (d) {
-            //        if (d.sex == null) return "就不告诉你";
-            //        return d.sex;
-            //    }
-            //},
-            //{
-            //    field: 'userStatus', title: '用户状态', align: 'center', templet: function (d) {
-            //        return d.userStatus == true ? "正常使用" : "限制使用";
-            //    }
-            //},
-            //{ field: 'roleName', title: '职位', align: 'center' },
-            //{field: 'userEndTime', title: '最后登录时间', align:'center',minWidth:150},
+
             { title: '操作', minWidth: 175, templet: '#courseListBar', fixed: "right", align: "center" }
         ]]
     });
@@ -98,17 +81,86 @@
         }
     });
 
+    $(".searchVal").keyup(function () {
+        var keywords = "";
+        if ($(".searchVal").val() != "") {
+            keywords = '?keyWords=' + $(".searchVal").val();
+        } else {
+            table.render({
+                elem: '#courseList',
+                url: '/Course/SearchCourseFuzzy',
+                cellMinWidth: 95,
+                page: true,
+                height: "full-125",
+                limits: [10, 15, 20, 25],
+                limit: 10,
+                id: "courseListTable",
+                cols: [[
+                    { type: "checkbox", fixed: "left", width: 50 },
+                    { field: "rowId", title: 'ID', width: 60, fixed: "left", sort: "true", align: 'center', edit: 'text' },
+                    //{field: 'nickName', title: '昵称', minWidth:100, align:"center"},
+                    { field: 'courseId', title: '课程编号', minWidth: 100, align: "center" },
+                    //{field: 'userEmail', title: '用户邮箱', minWidth:200, align:'center',templet:function(d){
+                    //    return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
+                    { field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
+                    { field: 'englishName', title: 'Course English Name', minWidth: 100, align: "center" },
+                    { field: 'courseScore', title: '课程学分', minWidth: 100, align: "center" },
+
+                    { title: '操作', minWidth: 175, templet: '#courseListBar', fixed: "right", align: "center" }
+                ]]
+            });
+            return false;
+        }
+        table.render({
+            elem: '#courseList',
+            url: '/Course/SearchCourseFuzzy' + keywords,
+            cellMinWidth: 95,
+            page: true,
+            height: "full-125",
+            limits: [10, 15, 20, 25],
+            limit: 10,
+            id: "courseListTable",
+            cols: [[
+                { type: "checkbox", fixed: "left", width: 50 },
+                { field: "rowId", title: 'ID', width: 60, fixed: "left", sort: "true", align: 'center', edit: 'text' },
+                //{field: 'nickName', title: '昵称', minWidth:100, align:"center"},
+                { field: 'courseId', title: '课程编号', minWidth: 100, align: "center" },
+                //{field: 'userEmail', title: '用户邮箱', minWidth:200, align:'center',templet:function(d){
+                //    return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
+                { field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
+                { field: 'englishName', title: 'Course English Name', minWidth: 100, align: "center" },
+                { field: 'courseScore', title: '课程学分', minWidth: 100, align: "center" },
+
+                { title: '操作', minWidth: 175, templet: '#courseListBar', fixed: "right", align: "center" }
+            ]]
+        });
+    });
     //搜索【此功能需要后台配合，所以暂时没有动态效果演示】
     $(".search_btn").on("click", function () {
         if ($(".searchVal").val() != '') {
-            table.reload("newsListTable", {
-                page: {
-                    curr: 1 //重新从第 1 页开始
-                },
-                where: {
-                    key: $(".searchVal").val()  //搜索的关键字
-                }
-            })
+            table.render({
+                elem: '#courseList',
+                url: '/Course/SearchCourseFuzzy?keyWords=' + $(".searchVal").val(),
+                cellMinWidth: 95,
+                page: true,
+                height: "full-125",
+                limits: [10, 15, 20, 25],
+                limit: 10,
+                id: "courseListTable",
+                cols: [[
+                    { type: "checkbox", fixed: "left", width: 50 },
+                    { field: "rowId", title: 'ID', width: 60, fixed: "left", sort: "true", align: 'center', edit: 'text' },
+                    //{field: 'nickName', title: '昵称', minWidth:100, align:"center"},
+                    { field: 'courseId', title: '课程编号', minWidth: 100, align: "center" },
+                    //{field: 'userEmail', title: '用户邮箱', minWidth:200, align:'center',templet:function(d){
+                    //    return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
+                    { field: 'courseName', title: '课程名', minWidth: 100, align: "center" },
+                    { field: 'englishName', title: 'Course English Name', minWidth: 100, align: "center" },
+                    { field: 'courseScore', title: '课程学分', minWidth: 100, align: "center" },
+
+                    { title: '操作', minWidth: 175, templet: '#courseListBar', fixed: "right", align: "center" }
+                ]]
+            });
         } else {
             layer.msg("请输入搜索的内容");
         }
@@ -118,7 +170,7 @@
     function addUser(edit) {
         var para = "";
         if (typeof (edit) != "undefined") {
-            para = "?UserName=" + edit.userName;
+            para = "?CourseId=" + edit.courseId;
         }
         var index = layui.layer.open({
             title: "添加用户",
@@ -158,21 +210,39 @@
     $(".delAll_btn").click(function () {
         var checkStatus = table.checkStatus('courseListTable'),
             data = checkStatus.data,
-            newsId = [];
+            CourseId = [];
         if (data.length > 0) {
             for (var i in data) {
-                newsId.push(data[i].newsId);
+                CourseId.push(data[i].courseId);
             }
-            layer.confirm('确定删除选中的用户？', { icon: 3, title: '提示信息' }, function (index) {
-                // $.get("删除文章接口",{
-                //     newsId : newsId  //将需要删除的newsId作为参数传入
-                // },function(data){
-                tableIns.reload();
-                layer.close(index);
+            layer.confirm('确定删除选中的课程？', { icon: 3, title: '提示信息' }, function (index) {
+                $.ajax({
+                    url: "/Course/DeleteCourses",
+                    type: "POST",
+                    data: {
+                        CourseIds: CourseId,
+                    },
+                    success: function (res) {
+                        if (res.count == CourseId.length) {
+                            layer.msg("已成功删除" + res.count + "条数据");
+                            tableIns.reload();
+                            layer.close(index);
+                        } else if (0 < res.count < CourseId.length) {
+                            layer.msg("只删除部分数据，删除了" + res.count + "条数据");
+                            tableIns.reload();
+                            layer.close(index);
+                        } else {
+                            layer.msg("删除失败");
+                            tableIns.reload();
+                            layer.close(index);
+                        }
+                    }
+                })
+
                 // })
             })
         } else {
-            layer.msg("请选择需要删除的用户");
+            layer.msg("请选择需要删除的数据");
         }
     })
 

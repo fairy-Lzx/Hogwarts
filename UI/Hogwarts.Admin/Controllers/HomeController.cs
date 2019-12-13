@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Hogwarts.Admin.Controllers
 {
-    //[Authorize]
+    //[Authorize(Roles = "系统管理员")]
+    [Authorize]
     public class HomeController : Controller
     {
         public IActionResult Index()

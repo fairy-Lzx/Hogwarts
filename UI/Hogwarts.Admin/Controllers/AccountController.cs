@@ -1,6 +1,8 @@
 ﻿using Hogwarts.Core;
 using Hogwarts.DB.Model;
+using Hogwarts.IRepository;
 using Hogwarts.View.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,11 +18,16 @@ namespace Hogwarts.Admin.Controllers
         private readonly SignInManager<ApplicationIdentityUser> _signInManager;
         private readonly UserManager<ApplicationIdentityUser> _userManager;
         private readonly RoleManager<ApplicationIdentityRole> _roleManager;
-        public AccountController(SignInManager<ApplicationIdentityUser> signInManager, UserManager<ApplicationIdentityUser> userManager, RoleManager<ApplicationIdentityRole> roleManager)
+        private readonly ICourseManager _courseManager;
+        public AccountController(SignInManager<ApplicationIdentityUser> signInManager,
+            ICourseManager courseManager,
+            UserManager<ApplicationIdentityUser> userManager,
+            RoleManager<ApplicationIdentityRole> roleManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _roleManager = roleManager;
+            _courseManager = courseManager;
         }
         public IActionResult Login()
         {
@@ -54,6 +61,7 @@ namespace Hogwarts.Admin.Controllers
             //return View("Login", userLoginView);
             return JsonHelper.StandardJsonResult(1, 0, "密码错误", new List<object>());
         }
+        [Authorize(Roles = "系统管理员")]
         public IActionResult Register()
         {
             return View();
@@ -134,47 +142,63 @@ namespace Hogwarts.Admin.Controllers
         }
         public async Task<IActionResult> AddUser(string userName)
         {
+            var courses = await _courseManager.GetAllEntities().ToListAsync();
             UserInfoViewModel userInfoViewModel;
             if (userName != null)
             {
                 var user = await _userManager.FindByNameAsync(userName);
-                var teacher = _userManager.Users.Where(x => x.UserName == userName).Select(x=>new { 
+                var teacher = _userManager.Users.Where(x => x.UserName == userName).Select(x => new
+                {
                     x.Teacher.Birthday,
                     x.Teacher.TName,
                     x.Teacher.EnglishName,
                     x.Teacher.Sex,
+                    x.Teacher.Cno,
+                    CourseName = (x.Teacher.Course == null) ? null : x.Teacher.Course.Cname,
                 }).FirstOrDefault();
-                if (user != null&&teacher!=null)
+
+                if (user != null && teacher != null)
                 {
                     userInfoViewModel = new UserInfoViewModel
                     {
                         //NickName = user.NickName,
                         //UserDesc = user.UserDescription,
                         //UserEmail = user.Email,
-                        //UserGrade = user.RoleName,
-                        //UserSex = user.Sex,
-                        //UserName = user.UserName,
                         //UserStatus = user.IsInUsing
-                        BirthDate = teacher.Birthday.ToString(),
+                        BirthDate = (teacher.Birthday == null) ? null : teacher.Birthday.ToString(),
                         RealName = teacher.TName,
                         EnglishName = teacher.EnglishName,
                         UserSex = teacher.Sex,
                         UserGrade = user.RoleName,
                         UserName = user.UserName,
+                        CourseId = teacher.Cno,
+                        CourseName = teacher.CourseName,
+                        Courses = courses,
                     };
                     return View(userInfoViewModel);
                 }
             }
             userInfoViewModel = new UserInfoViewModel();
+            userInfoViewModel.Courses = courses;
             return View(userInfoViewModel);
         }
         [HttpPost]
         public async Task<IActionResult> AddUser(AddUserViewModel addUserViewModel)
         {
+            int? courseId;
+            if (addUserViewModel.CourseId == 0)
+            {
+                courseId = null;
+            }
+            else
+            {
+                courseId = addUserViewModel.CourseId;
+            }
             addUserViewModel.CreateTime = DateTime.Now.ToLocalTime();
             var user = await _userManager.FindByNameAsync(addUserViewModel.UserName);
             if (user == null)
             {
+
                 var result = await _userManager.CreateAsync(new ApplicationIdentityUser
                 {
                     UserName = addUserViewModel.UserName,
@@ -185,9 +209,11 @@ namespace Hogwarts.Admin.Controllers
                     //IsInUsing = addUserViewModel.IsInUsing,
                     RoleName = addUserViewModel.RoleName,
                     //UserDescription = addUserViewModel.UserDescription，
+
                     Teacher = new Teacher
                     {
                         Sex = addUserViewModel.Sex,
+                        Cno = courseId,
                     },
                 }, addUserViewModel.Password);
                 if (result.Succeeded)
@@ -233,11 +259,11 @@ namespace Hogwarts.Admin.Controllers
                 //user.Email = addUserViewModel.Email;
                 //user.NickName = addUserViewModel.NickName;
                 //user.IsInUsing = addUserViewModel.IsInUsing;
-                var userOldRole =await _userManager.GetRolesAsync(user);
-                if(userOldRole.Count>0)
+                var userOldRoles = await _userManager.GetRolesAsync(user);
+                if (userOldRoles.Count > 0)
                 {
-                    var deleteFromRoleResult = await _userManager.RemoveFromRolesAsync(user, userOldRole);
-                    if(!deleteFromRoleResult.Succeeded)
+                    var deleteFromRoleResult = await _userManager.RemoveFromRolesAsync(user, userOldRoles);
+                    if (!deleteFromRoleResult.Succeeded)
                     {
                         return Json("FALSE");
                     }
@@ -246,6 +272,7 @@ namespace Hogwarts.Admin.Controllers
                 user.Teacher = new Teacher
                 {
                     Sex = addUserViewModel.Sex,
+                    Cno = courseId,
                 };
                 var result = await _userManager.UpdateAsync(user);
                 if (result.Succeeded)
@@ -302,7 +329,7 @@ namespace Hogwarts.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> UserInfo(string userName)
         {
-            UserInfoViewModel userInfoViewModel=new UserInfoViewModel();
+            UserInfoViewModel userInfoViewModel = new UserInfoViewModel();
             if (userName == null)
             {
                 return View(userInfoViewModel);
@@ -317,7 +344,7 @@ namespace Hogwarts.Admin.Controllers
             {
                 NickName = x.Teacher.NickName,
                 UserName = x.UserName,
-                EnglishName=x.Teacher.EnglishName,
+                EnglishName = x.Teacher.EnglishName,
                 UserEmail = x.Email,
                 UserSex = x.Teacher.Sex,
                 UserGrade = x.RoleName,
@@ -329,12 +356,12 @@ namespace Hogwarts.Admin.Controllers
                 PhoneNumber = x.PhoneNumber,
                 UserDesc = x.UserDescription,
                 UserFaceImgUrl = x.UserFaceImgUrl,
-                CourseName=(x.Teacher.Course==null)?"无授课信息":x.Teacher.Course.Cname,
+                CourseName = (x.Teacher.Course == null) ? "无授课信息" : x.Teacher.Course.Cname,
             }).FirstOrDefault();
             userInfoViewModel = new UserInfoViewModel
             {
                 NickName = userInfo.NickName,
-                EnglishName=userInfo.EnglishName,
+                EnglishName = userInfo.EnglishName,
                 CourseName = userInfo.CourseName,
                 UserName = userInfo.UserName,
                 UserEmail = userInfo.UserEmail,

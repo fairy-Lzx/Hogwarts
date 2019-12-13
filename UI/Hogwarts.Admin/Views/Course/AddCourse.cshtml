@@ -1,5 +1,7 @@
 ﻿@*@using Hogwarts.View.Model
     @model UserInfoViewModel*@
+@using Hogwarts.DB.Model
+@model Course
 @{
     Layout = "";
 }
@@ -22,33 +24,61 @@
         <div class="layui-form-item layui-row layui-col-xs12">
             <label class="layui-form-label">课程号</label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input courseId" value="" name="courseId" lay-verify="required" placeholder="请输入课程号">
+                @if (Model.Cno == 0)
+                {
+                    <input type="text" class="layui-input courseId" value="" name="courseId" lay-verify="required" placeholder="请输入课程号">
+                }
+                else
+                {
+                    <input type="text" class="layui-input courseId layui-disabled" value="@Model.Cno" name="courseId" disabled lay-verify="required" placeholder="请输入课程号">
+                }
             </div>
             <div class="layui-form-mid layui-word-aux" id="courseIdLabel">课程号</div>
         </div>
         <div class="layui-form-item layui-row layui-col-xs12">
             <label class="layui-form-label">课程名</label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input courseName" name="courseName" lay-verify="required" placeholder="请输入课程名">
+                @if (Model.Cno == 0)
+                {
+                <input type="text" class="layui-input courseName" value="" name="courseName" lay-verify="required" placeholder="请输入课程名">
+                }
+                else
+                {
+            <input type="text" class="layui-input courseName layui-disabled" disabled value="@Model.Cname" name="courseName" lay-verify="required" placeholder="请输入课程名">
+                }
             </div>
             <div class="layui-form-mid layui-word-aux" id="courseNameLabel">课程名</div>
         </div>
         <div class="layui-form-item layui-row layui-col-xs12">
             <label class="layui-form-label">英文名</label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input englishName" name="englishName" lay-verify="required" placeholder="Please Input English Name">
+                @if (Model.Cno == 0)
+                {
+                <input type="text" class="layui-input englishName" name="englishName" value="" lay-verify="required" placeholder="Please Input English Name">
+                }
+                else
+                {
+            <input type="text" class="layui-input englishName layui-disabled" disabled name="englishName" value="@Model.EnglishName" lay-verify="required" placeholder="Please Input English Name">
+                }
             </div>
             <div class="layui-form-mid layui-word-aux" id="englishNameLabel">英文名</div>
         </div>
         <div class="layui-form-item layui-row layui-col-xs12">
             <label class="layui-form-label">课程学分</label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input courseScore" name="courseScore" lay-verify="required" placeholder="请输入课程学分">
+                <input type="text" class="layui-input courseScore" value="@Model.CScore" name="courseScore" lay-verify="required" placeholder="请输入课程学分">
             </div>
         </div>
         <div class="layui-form-item layui-row layui-col-xs12">
             <div class="layui-input-block">
-                <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="addCourse">立即添加</button>
+                @if (Model.Cno == 0)
+                {
+                    <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="addCourse">立即添加</button>
+                }
+                else
+                {
+                    <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="updateCourse">立即修改</button>
+                }
                 <button type="reset" class="layui-btn layui-btn-sm layui-btn-primary">取消</button>
             </div>
         </div>

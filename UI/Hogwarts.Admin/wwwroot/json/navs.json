@@ -24,7 +24,15 @@
           "href": "/Account/Login",
           "spread": false,
           "target": "_blank"
+        },
+        {
+          "title": "注册",
+          "icon": "&#xe609;",
+          "href": "/Account/Register",
+          "spread": false,
+          "target": "_blank"
         }
+
       ]
     }
   ],
@@ -51,6 +59,13 @@
           "title": "登录",
           "icon": "&#xe609;",
           "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        },
+        {
+          "title": "注册",
+          "icon": "&#xe609;",
+          "href": "/Account/Register",
           "spread": false,
           "target": "_blank"
         }
@@ -80,6 +95,13 @@
           "title": "登录",
           "icon": "&#xe609;",
           "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        },
+        {
+          "title": "注册",
+          "icon": "&#xe609;",
+          "href": "/Account/Register",
           "spread": false,
           "target": "_blank"
         }
@@ -117,6 +139,13 @@
           "href": "/Account/Login",
           "spread": false,
           "target": "_blank"
+        },
+        {
+          "title": "注册",
+          "icon": "&#xe609;",
+          "href": "/Account/Register",
+          "spread": false,
+          "target": "_blank"
         }
       ]
     }
@@ -144,6 +173,13 @@
           "title": "登录",
           "icon": "&#xe609;",
           "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        },
+        {
+          "title": "注册",
+          "icon": "&#xe609;",
+          "href": "/Account/Register",
           "spread": false,
           "target": "_blank"
         }
@@ -174,6 +210,13 @@
           "title": "登录",
           "icon": "&#xe609;",
           "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        },
+        {
+          "title": "注册",
+          "icon": "&#xe609;",
+          "href": "/Account/Register",
           "spread": false,
           "target": "_blank"
         }
@@ -209,6 +252,13 @@
           "title": "登录",
           "icon": "&#xe609;",
           "href": "/Account/Login",
+          "spread": false,
+          "target": "_blank"
+        },
+        {
+          "title": "注册",
+          "icon": "&#xe609;",
+          "href": "/Account/Register",
           "spread": false,
           "target": "_blank"
         }

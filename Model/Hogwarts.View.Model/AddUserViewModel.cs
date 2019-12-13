@@ -26,6 +26,7 @@ namespace Hogwarts.View.Model
         /// 登录密码
         /// </summary>
         public string Password { get; set; }
+        public int CourseId { get; set; }
         /// <summary>
         /// 用户邮箱
         /// </summary>

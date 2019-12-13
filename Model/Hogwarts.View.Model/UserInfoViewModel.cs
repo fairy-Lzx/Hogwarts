@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hogwarts.DB.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,10 @@ namespace Hogwarts.View.Model
 {
     public class UserInfoViewModel
     {
+        public UserInfoViewModel()
+        {
+            Courses = new List<Course>();
+        }
         public int UsersId { get; set; }
         public string NickName { get; set; }
         public string UserName { get; set; }
@@ -16,6 +21,7 @@ namespace Hogwarts.View.Model
         public string UserEndTime { get; set; }
         public string EnglishName { get; set; }
         public string UserDesc { get; set; }
+        public int? CourseId { get; set; }
         public string CourseName { get; set; }
         /// <summary>
         /// 家庭地址/省
@@ -45,5 +51,6 @@ namespace Hogwarts.View.Model
         /// 用户头像地址
         /// </summary>
         public string UserFaceImgUrl { get; set; }
+        public List<Course> Courses { get; set; }
     }
 }
