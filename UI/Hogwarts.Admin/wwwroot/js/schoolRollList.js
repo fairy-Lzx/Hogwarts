@@ -34,6 +34,43 @@
         ]]
     });
 
+    //添加用户
+    function EditStudent(edit) {
+        var para = "";
+        if (typeof (edit) != "undefined") {
+            para = "?StudentId=" + edit.studentId;
+        }
+        var index = layui.layer.open({
+            title: "添加用户",
+            type: 2,
+            content: "/Student/EditSchoolRoll" + para,
+            success: function (layero, index) {
+                var body = layui.layer.getChildFrame('body', index);
+                //if (edit) {
+                //    body.find(".nickName").val(edit.nickName);
+                //    body.find(".userName").val(edit.userName);  //登录名
+                //    body.find(".userEmail").val(edit.userEmail);  //邮箱
+                //    body.find(".userSex input[value=" + edit.userSex + "]").attr("checked", "checked");  //性别
+                //    body.find(".userGrade").val(edit.userGrade);  //会员等级
+                //    body.find(".userStatus").val(edit.userStatus);    //用户状态
+                //    body.find(".userDesc").text(edit.userDesc);    //用户简介
+                //    form.render();
+                //}
+                setTimeout(function () {
+                    layui.layer.tips('点击此处返回用户列表', '.layui-layer-setwin .layui-layer-close', {
+                        tips: 3
+                    });
+                }, 500)
+            }
+        })
+        layui.layer.full(index);
+        window.sessionStorage.setItem("index", index);
+        //改变窗口大小时，重置弹窗的宽高，防止超出可视区域（如F12调出debug的操作）
+        $(window).on("resize", function () {
+            layui.layer.full(window.sessionStorage.getItem("index"));
+        })
+    }
+
     table.on('tool(schoolRollList)', function (obj) {
         var layEvent = obj.event,
             data = obj.data;

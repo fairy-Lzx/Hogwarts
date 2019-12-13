@@ -120,6 +120,34 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json(new { code = 0, msg = "SUCCEED", count = 1, data = sc });
         }
+        public async Task<IActionResult> SearchByStudentId(int studentId)
+        {
+            if (studentId == 0)
+            {
+                return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
+            var scs = await _gradeManager.LoadEntities(x=>x.Sno.ToString().Contains(studentId.ToString())).Include(x => x.CourseNavigation).Include(x => x.StudentNavigation).ToListAsync();
+            if (scs == null)
+            {
+                Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+            }
+            List<object> datas = new List<object>();
+            for (int i = 0; i < scs.Count; i++)
+            {
+                datas.Add(new
+                {
+                    RowId = i + 1,
+                    StudentId = scs[i].Sno,
+                    StudentName = scs[i].StudentNavigation.Sname,
+                    EnglishName = scs[i].StudentNavigation.EnglishName,
+                    CourseId = scs[i].CourseNavigation.Cno,
+                    CourseName = scs[i].CourseNavigation.Cname,
+                    CourseCredit = scs[i].CourseNavigation.CScore,
+                    Score = scs[i].Score
+                });
+            }
+            return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
+        }
         [HttpPost]
         public IActionResult DeleteGrade(int studentId, int courseId)
         {
@@ -136,6 +164,28 @@ namespace Hogwarts.Admin.Controllers
             if (result)
             {
                 return Json(new { code = 0, msg = "SUCCEED", count = 1, data = string.Empty });
+            }
+            return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
+        }
+        [HttpPost]
+        public IActionResult DeleteGrades(List<int> studentIds,List<int> courseIds)
+        {
+            int successCount = 0;
+            if (studentIds != null && courseIds != null)
+            {
+                for (int i = 0; i < studentIds.Count; i++)
+                {
+                    var grades = _gradeManager.LoadEntities(x => x.Sno == studentIds[i] && x.Cno == courseIds[i]).FirstOrDefault();
+                    if (grades != null)
+                    {
+                        var result = _gradeManager.DeleteEntity(grades);
+                        if (result)
+                        {
+                            successCount++;
+                        }
+                    }
+                }
+                return Json(new { code = 0, msg = "SUCCEED", count = successCount, data = string.Empty });
             }
             return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
         }
