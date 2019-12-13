@@ -1,5 +1,6 @@
 ﻿using Hogwarts.IRepository;
 using Hogwarts.View.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,6 +10,8 @@ using System.Threading.Tasks;
 
 namespace Hogwarts.Admin.Controllers
 {
+    [Authorize(Roles = "系统管理员,校长")]
+    [Authorize]
     public class ClassController:Controller
     {
         private readonly IClassManager _classManager;

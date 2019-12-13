@@ -41,29 +41,50 @@
                         </dl>
                     </li>
                 </ul>
-                <ul class="layui-nav topLevelMenus" pc>
-                    <li class="layui-nav-item" data-menu="classManagement">
-                        <a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>系别管理</cite></a>
-                    </li>
-                    <li class="layui-nav-item" data-menu="courseManagement" pc>
-                        <a href="javascript:;"><i class="seraph icon-icon10" data-icon="icon-icon10"></i><cite>课程管理</cite></a>
-                    </li>
-                    <li class="layui-nav-item" data-menu="schoolrollManagement" pc>
-                        <a href="javascript:;"><i class="layui-icon" data-icon="&#xe620;">&#xe620;</i><cite>学籍管理</cite></a>
-                    </li>
-                    <li class="layui-nav-item" data-menu="gradeManagement" pc>
-                        <a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>成绩管理</cite></a>
-                    </li>
-                    <li class="layui-nav-item" data-menu="newStudentManagement" pc>
-                        <a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>新生管理系统</cite></a>
-                    </li>
-                    <li class="layui-nav-item" data-menu="searchStudentInfoManagement" pc>
-                        <a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>学生资料查询</cite></a>
-                    </li>
-                    <li class="layui-nav-item" data-menu="userManagement" pc>
-                        <a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>用户管理</cite></a>
-                    </li>
-                </ul>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <ul class="layui-nav topLevelMenus" pc>
+                        @if (User.IsInRole("系统管理员") || User.IsInRole("校长"))
+                        {
+                            <li class="layui-nav-item" data-menu="classManagement">
+                                <a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>系别管理</cite></a>
+                            </li>
+                        }
+                        @if (User.IsInRole("系统管理员") || User.IsInRole("校长") || User.IsInRole("院长"))
+                        {
+                            <li class="layui-nav-item" data-menu="courseManagement" pc>
+                                <a href="javascript:;"><i class="seraph icon-icon10" data-icon="icon-icon10"></i><cite>课程管理</cite></a>
+                            </li>
+                        }
+                        @if (User.IsInRole("系统管理员") || User.IsInRole("校长") || User.IsInRole("院长"))
+                        {
+                            <li class="layui-nav-item" data-menu="schoolrollManagement" pc>
+                                <a href="javascript:;"><i class="layui-icon" data-icon="&#xe620;">&#xe620;</i><cite>学籍管理</cite></a>
+                            </li>
+                        }
+                        @if (User.IsInRole("系统管理员") || User.IsInRole("校长") || User.IsInRole("院长") || User.IsInRole("教授") || User.IsInRole("教师"))
+                        {
+                            <li class="layui-nav-item" data-menu="gradeManagement" pc>
+                                <a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>成绩管理</cite></a>
+                            </li>
+                        }
+                        @if (User.IsInRole("系统管理员") || User.IsInRole("招生办"))
+                        {
+                            <li class="layui-nav-item" data-menu="newStudentManagement" pc>
+                                <a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>新生管理系统</cite></a>
+                            </li>
+                        }
+                        <li class="layui-nav-item" data-menu="searchStudentInfoManagement" pc>
+                            <a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>学生资料查询</cite></a>
+                        </li>
+                        @if (User.IsInRole("系统管理员"))
+                        {
+                            <li class="layui-nav-item" data-menu="userManagement" pc>
+                                <a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>用户管理</cite></a>
+                            </li>
+                        }
+                    </ul>
+                }
                 <!-- 顶部右侧菜单 -->
                 <ul class="layui-nav top_menu">
                     <li class="layui-nav-item" pc>

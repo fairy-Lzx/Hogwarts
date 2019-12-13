@@ -1,5 +1,6 @@
 ﻿using Hogwarts.DB.Model;
 using Hogwarts.View.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,8 @@ using System.Threading.Tasks;
 
 namespace Hogwarts.Admin.Controllers
 {
+    [Authorize(Roles = "系统管理员")]
+    [Authorize]
     public class RoleController : Controller
     {
         private readonly RoleManager<ApplicationIdentityRole> _roleManager;

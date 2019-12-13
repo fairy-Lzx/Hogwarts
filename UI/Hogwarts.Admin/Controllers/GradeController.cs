@@ -1,5 +1,6 @@
 ﻿using Hogwarts.DB.Model;
 using Hogwarts.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Hogwarts.Admin.Controllers
 {
+    [Authorize]
     public class GradeController : Controller
     {
         private readonly IGradeManager _gradeManager;
@@ -20,6 +22,7 @@ namespace Hogwarts.Admin.Controllers
             _courseManager = courseManager ?? throw new NullReferenceException("IGradeManager服务注入失败");
             _studentManager = studentManager ?? throw new NullReferenceException("IGradeManager服务注入失败");
         }
+        [Authorize(Roles = "系统管理员,校长,院长,教授,教师")]
         public async Task<IActionResult> GradeList()
         {
             List<Course> courses = new List<Course>();
@@ -73,6 +76,7 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
         }
+        [Authorize(Roles = "系统管理员,校长,院长,教授,教师")]
         public IActionResult AddGrade(Sc viewSc)
         {
             var student = _studentManager.LoadEntities(x => x.Sno == viewSc.Sno).FirstOrDefault();

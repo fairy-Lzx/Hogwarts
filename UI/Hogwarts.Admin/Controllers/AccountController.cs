@@ -29,6 +29,10 @@ namespace Hogwarts.Admin.Controllers
             _roleManager = roleManager;
             _courseManager = courseManager;
         }
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
         public IActionResult Login()
         {
             return View();
@@ -62,10 +66,13 @@ namespace Hogwarts.Admin.Controllers
             return JsonHelper.StandardJsonResult(1, 0, "密码错误", new List<object>());
         }
         [Authorize(Roles = "系统管理员")]
+        [Authorize]
         public IActionResult Register()
         {
             return View();
         }
+        [Authorize(Roles = "系统管理员")]
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> RegisterApi(UserLoginViewModel viewModel)
         {
@@ -106,11 +113,15 @@ namespace Hogwarts.Admin.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }
+        [Authorize(Roles = "系统管理员")]
+        [Authorize]
         [HttpGet]
         public IActionResult UserList()
         {
             return View();
         }
+        [Authorize(Roles = "系统管理员")]
+        [Authorize]
         public async Task<IActionResult> Users()
         {
             var users = await _userManager.Users.Select(x => new
@@ -140,6 +151,8 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json(new { code = 1, msg = "FALSE", count = 0, data = string.Empty });
         }
+        [Authorize(Roles = "系统管理员")]
+        [Authorize]
         public async Task<IActionResult> AddUser(string userName)
         {
             var courses = await _courseManager.GetAllEntities().ToListAsync();
@@ -182,6 +195,8 @@ namespace Hogwarts.Admin.Controllers
             userInfoViewModel.Courses = courses;
             return View(userInfoViewModel);
         }
+        [Authorize(Roles = "系统管理员")]
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> AddUser(AddUserViewModel addUserViewModel)
         {
@@ -308,6 +323,8 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json("FALSE");
         }
+        [Authorize(Roles = "系统管理员")]
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> DeleteUser(string userName)
         {
@@ -411,10 +428,12 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json("FALSE");
         }
+        [Authorize]
         public IActionResult ChangePwd(string userName)
         {
             return View("ChangePwd", userName);
         }
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> ChangePwd(string userName, string oldPassword, string newPassword)
         {

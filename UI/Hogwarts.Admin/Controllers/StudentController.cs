@@ -1,6 +1,7 @@
 ﻿using Hogwarts.DB.Model;
 using Hogwarts.IRepository;
 using Hogwarts.View.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Hogwarts.Admin.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         private readonly IStudentManager _studentManager;
@@ -19,10 +21,12 @@ namespace Hogwarts.Admin.Controllers
             _studentManager = studentManager ?? throw new NullReferenceException("空引用异常");
             _classManager = classManager ?? throw new NullReferenceException("空引用异常");
         }
+        [Authorize(Roles = "系统管理员,校长,院长")]
         public IActionResult SchoolRollList()
         {
             return View();
         }
+        [Authorize(Roles = "系统管理员,校长,院长")]
         public async Task<IActionResult> SchoolRolls(int page, int limit)
         {
             var students = _studentManager.GetAllEntities().ToList();
@@ -101,6 +105,7 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
         }
+        [Authorize(Roles = "系统管理员,校长,院长")]
         public IActionResult EditSchoolRoll(int StudentId)
         {
             SchoolRollViewModel viewModel = new SchoolRollViewModel();
@@ -133,6 +138,7 @@ namespace Hogwarts.Admin.Controllers
             viewModel.Classes = classes;
             return View(viewModel);
         }
+        [Authorize(Roles = "系统管理员,校长,院长")]
         [HttpPost]
         public IActionResult UpdateSchoolRoll(SchoolRollViewModel viewModel)
         {
@@ -162,6 +168,7 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json("FALSE");
         }
+        [Authorize(Roles = "系统管理员,招生办")]
         public IActionResult NewStudentList()
         {
             List<Class> classes = _classManager.GetAllEntities().ToList();
@@ -171,6 +178,7 @@ namespace Hogwarts.Admin.Controllers
             }
             return View(classes);
         }
+        [Authorize(Roles = "系统管理员,招生办")]
         public async Task<IActionResult> NewStudents(int page, int limit)
         {
             var students = await _studentManager.LoadPageEntities(page, limit, out int totalCount, x => x.Year == DateTime.Now.Year, x => x.Sno, true).Select(x => new
@@ -206,6 +214,7 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
         }
+        [Authorize(Roles = "系统管理员,招生办")]
         public IActionResult AddStudent(AddStudentViewModel viewModel)
         {
             string StudentId;

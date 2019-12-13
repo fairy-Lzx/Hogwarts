@@ -1,6 +1,7 @@
 ﻿using Hogwarts.DB.Model;
 using Hogwarts.IRepository;
 using Hogwarts.View.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +11,8 @@ using System.Threading.Tasks;
 
 namespace Hogwarts.Admin.Controllers
 {
+    [Authorize(Roles = "系统管理员,校长,院长")]
+    [Authorize]
     public class CourseController : Controller
     {
         private readonly ICourseManager _courseManager;
@@ -17,10 +20,12 @@ namespace Hogwarts.Admin.Controllers
         {
             _courseManager = courseManager;
         }
+        [Authorize(Roles = "系统管理员,校长,院长")]
         public IActionResult CourseList()
         {
             return View();
         }
+        [Authorize(Roles = "系统管理员,校长,院长")]
         public async Task<IActionResult> Courses()
         {
             var courses = await _courseManager.GetAllEntities().ToListAsync();
@@ -42,6 +47,7 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
         }
+        [Authorize(Roles = "系统管理员,校长,院长")]
         [HttpPost]
         public IActionResult DeleteCourse(int courseId)
         {
@@ -60,6 +66,7 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json("FALSE");
         }
+        [Authorize(Roles = "系统管理员,校长,院长")]
         public IActionResult AddCourse(int courseId)
         {
             Course course = new Course();
@@ -70,6 +77,7 @@ namespace Hogwarts.Admin.Controllers
             course = _courseManager.LoadEntities(x => x.Cno == courseId).FirstOrDefault();
             return View(course);
         }
+        [Authorize(Roles = "系统管理员,校长,院长")]
         [HttpPost]
         public IActionResult AddCourse(CourseAddViewModel viewModel)
         {
@@ -103,7 +111,7 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json("FALSE");
         }
-
+        [Authorize(Roles = "系统管理员,校长,院长")]
         [HttpPost]
         public IActionResult GetCourse(string courseInfo)
         {
@@ -147,6 +155,7 @@ namespace Hogwarts.Admin.Controllers
             }
             return Json(new { code = 0, msg = "SUCCEED", count = datas.Count, data = datas });
         }
+        [Authorize(Roles = "系统管理员,校长,院长")]
         public IActionResult DeleteCourses(List<int> courseIds)
         {
             int successCount = 0;
