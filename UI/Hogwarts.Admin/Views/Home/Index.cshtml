@@ -30,15 +30,40 @@
                 <ul class="layui-nav mobileTopLevelMenus" mobile>
                     <li class="layui-nav-item" data-menu="contentManagement">
                         <a href="javascript:;"><i class="seraph icon-caidan"></i><cite>Hogwarts</cite></a>
-                        <dl class="layui-nav-child">
-                            <dd class="" data-menu="classManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>系别管理</cite></a></dd>
-                            <dd data-menu="courseManagement"><a href="javascript:;"><i class="seraph icon-icon10" data-icon="icon-icon10"></i><cite>课程管理</cite></a></dd>
-                            <dd data-menu="schoolrollManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe620;">&#xe620;</i><cite>学籍管理</cite></a></dd>
-                            <dd data-menu="gradeManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>成绩管理</cite></a></dd>
-                            <dd data-menu="newStudentManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>新生管理系统</cite></a></dd>
-                            <dd data-menu="searchStudentInfoManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>学生资料查询</cite></a></dd>
-                            <dd data-menu="userManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>用户管理</cite></a></dd>
-                        </dl>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <dl class="layui-nav-child">
+                                @if (User.IsInRole("系统管理员") || User.IsInRole("校长"))
+                                {
+                                    <dd class="" data-menu="classManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>系别管理</cite></a></dd>
+
+                                }
+                                @if (User.IsInRole("系统管理员") || User.IsInRole("校长") || User.IsInRole("院长"))
+                                {
+                                    <dd data-menu="courseManagement"><a href="javascript:;"><i class="seraph icon-icon10" data-icon="icon-icon10"></i><cite>课程管理</cite></a></dd>
+                                }
+                                @if (User.IsInRole("系统管理员") || User.IsInRole("校长") || User.IsInRole("院长"))
+                                {
+                                    <dd data-menu="schoolrollManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe620;">&#xe620;</i><cite>学籍管理</cite></a></dd>
+
+                                }
+                                @if (User.IsInRole("系统管理员") || User.IsInRole("校长") || User.IsInRole("院长") || User.IsInRole("教授") || User.IsInRole("教师"))
+                                {
+                                    <dd data-menu="gradeManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>成绩管理</cite></a></dd>
+
+                                }
+                                @if (User.IsInRole("系统管理员") || User.IsInRole("招生办"))
+                                {
+                                    <dd data-menu="newStudentManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>新生管理系统</cite></a></dd>
+
+                                }
+                                <dd data-menu="searchStudentInfoManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>学生资料查询</cite></a></dd>
+                                @if (User.IsInRole("系统管理员"))
+                                {
+                                    <dd data-menu="userManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>用户管理</cite></a></dd>
+                                }
+                            </dl>
+                        }
                     </li>
                 </ul>
                 @if (User.Identity.IsAuthenticated)
