@@ -35,7 +35,7 @@
                             <dl class="layui-nav-child">
                                 @if (User.IsInRole("系统管理员") || User.IsInRole("校长"))
                                 {
-                                    <dd class="" data-menu="classManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>系别管理</cite></a></dd>
+                                    <dd class="" data-menu="classManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>学院管理</cite></a></dd>
 
                                 }
                                 @if (User.IsInRole("系统管理员") || User.IsInRole("校长") || User.IsInRole("院长"))
@@ -47,7 +47,7 @@
                                     <dd data-menu="schoolrollManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe620;">&#xe620;</i><cite>学籍管理</cite></a></dd>
 
                                 }
-                                @if (User.IsInRole("系统管理员") || User.IsInRole("校长") || User.IsInRole("院长") || User.IsInRole("教授") || User.IsInRole("教师"))
+                                @if (User.IsInRole("系统管理员") || User.IsInRole("校长") || User.IsInRole("院长") ||User.IsInRole("教授") || User.IsInRole("教师"))
                                 {
                                     <dd data-menu="gradeManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe705;">&#xe705;</i><cite>成绩管理</cite></a></dd>
 
@@ -72,7 +72,7 @@
                         @if (User.IsInRole("系统管理员") || User.IsInRole("校长"))
                         {
                             <li class="layui-nav-item" data-menu="classManagement">
-                                <a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>系别管理</cite></a>
+                                <a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>学院管理</cite></a>
                             </li>
                         }
                         @if (User.IsInRole("系统管理员") || User.IsInRole("校长") || User.IsInRole("院长"))
