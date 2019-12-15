@@ -35,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hogwarts.DB.Model", "Model\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hogwarts.View.Model", "Model\Hogwarts.View.Model\Hogwarts.View.Model.csproj", "{E8A44A20-60F3-4215-A901-9192C0B7F658}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestHogwarts", "Test\XUnitTestHogwarts\XUnitTestHogwarts.csproj", "{31961E2B-6088-481A-A9AF-D3FF3F0E194A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{E8A44A20-60F3-4215-A901-9192C0B7F658}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8A44A20-60F3-4215-A901-9192C0B7F658}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8A44A20-60F3-4215-A901-9192C0B7F658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31961E2B-6088-481A-A9AF-D3FF3F0E194A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31961E2B-6088-481A-A9AF-D3FF3F0E194A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31961E2B-6088-481A-A9AF-D3FF3F0E194A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31961E2B-6088-481A-A9AF-D3FF3F0E194A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +97,7 @@ Global
 		{5013942A-635A-4FA3-A833-DEC0B02DB4AD} = {461418CE-3F1A-40B4-9A84-9C5E6B19BF63}
 		{D2444E50-43F6-4423-9578-2F63B14E6E62} = {CFA60531-36A9-4527-8E18-89FF342CCB0E}
 		{E8A44A20-60F3-4215-A901-9192C0B7F658} = {CFA60531-36A9-4527-8E18-89FF342CCB0E}
+		{31961E2B-6088-481A-A9AF-D3FF3F0E194A} = {AB65579B-A111-448F-A458-5E7ED65A84FB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D7AE5B5-2DA2-4B78-8E98-AFFA5C09E220}
