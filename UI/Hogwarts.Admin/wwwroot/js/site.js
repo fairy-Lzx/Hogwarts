@@ -5,6 +5,13 @@
 
 $(function () {
     $(".form-login #btn-login").click(function () {
+        if ($("#username").val() == "") {
+            alert("请输入用户名！");
+            return false;
+        } else if ($("#password").val() == "") {
+            alert("请输入密码！");
+            return false;
+        }
         $(".form-login .loading>p").html("");
         var t;
         $(".form-login .loading").css("display", "inline-block");

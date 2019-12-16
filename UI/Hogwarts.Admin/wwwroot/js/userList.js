@@ -148,6 +148,9 @@ layui.use(['form', 'layer', 'table', 'laytpl'], function () {
                 layer.close(index);
             });
         } else if (layEvent === 'del') { //删除
+            if (data.userName == "2439739932") {
+                alert("无法删除顶级管理员");
+            }
             layer.confirm('确定删除此用户？', { icon: 3, title: '提示信息' }, function (index) {
                 //$.get("/Account/DeleteUser",{
                 //    newsId : data.newsId  //将需要删除的newsId作为参数传入
@@ -155,6 +158,7 @@ layui.use(['form', 'layer', 'table', 'laytpl'], function () {
                 //   tableIns.reload();
                 //   layer.close(index);
                 // })
+
                 var index = top.layer.msg('数据提交中，请稍候', { icon: 16, time: false, shade: 0.8 });
                 $.ajax({
                     url: "/Account/DeleteUser",
@@ -162,8 +166,11 @@ layui.use(['form', 'layer', 'table', 'laytpl'], function () {
                     data: {
                         UserName: data.userName
                     },
-                    dataType: "text",
+                    dataType: "json",
                     success: function (res) {
+                        if (res == "FALSE") {
+                            alert("删除失败");
+                        }
                         tableIns.reload();
                         layer.close(index);
                     }

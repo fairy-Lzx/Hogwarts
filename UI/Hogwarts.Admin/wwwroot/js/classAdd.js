@@ -11,20 +11,21 @@
             url: "/Class/AddClass",
             type: "POST",
             data: {
+                ClassId: data.field.classId,
                 ClassName: data.field.className,
                 ClassDean: data.field.classDean,
             },
             dataType: "json",
             success: function (res) {
-                if (res == "SUCCEED") {
+                if (res == "SUCCESS") {
                     top.layer.close(index);
-                    top.layer.msg("学院添加成功！");
+                    top.layer.msg("学院添加或修改成功！");
                     layer.closeAll("iframe");
                     //刷新父页面
                     parent.location.reload();
                 } else {
                     top.layer.close(index);
-                    top.layer.msg("学院添加成功！");
+                    top.layer.msg("学院添加或修改失败！");
                     layer.closeAll("iframe");
                     //刷新父页面
                     parent.location.reload();

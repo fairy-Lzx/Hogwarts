@@ -1,5 +1,7 @@
 ﻿@*@using Hogwarts.View.Model
 @model UserInfoViewModel*@
+@model Class
+@using Hogwarts.DB.Model
 @{
     Layout = "";
 }
@@ -19,33 +21,41 @@
 </head>
 <body class="childrenBody">
     <form class="layui-form" style="width:80%;">
-        @*<div class="layui-form-item layui-row layui-col-xs12">
-                <label class="layui-form-label">名字</label>
-                <div class="layui-input-block">
-                    <input type="text" class="layui-input nickName" value="@Model.RealName" name="nickname" lay-verify="required" placeholder="请输入真实名字">
-                </div>
+        <div class="layui-form-item layui-row layui-col-xs12">
+            <label class="layui-form-label">学院ID</label>
+            <div class="layui-input-inline">
+                @if (Model.ClassId == 0)
+                {
+                    <input type="text" class="layui-input classId layui-disabled" value="" name="classId" lay-verify="" disabled placeholder="学院Id,不用填自动生成">
+                }
+                else
+                {
+                    <input type="text" class="layui-input classId layui-disabled" value="@Model.ClassId" name="classId" lay-verify="" disabled placeholder="学院Id">
+                }
             </div>
-            <div class="layui-form-item layui-row layui-col-xs12">
-                <label class="layui-form-label">英文名</label>
-                <div class="layui-input-block">
-                    <input type="text" class="layui-input nickName" value="@Model.EnglishName" name="nickname" lay-verify="required" placeholder="请输入真实英文名">
-                </div>
-            </div>*@
+        </div>
         <div class="layui-form-item layui-row layui-col-xs12">
             <label class="layui-form-label">学院名字</label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input className" value="" name="className" lay-verify="required" placeholder="请输入学院名字">
+                <input type="text" class="layui-input className" value="@Model.ClassName" name="className" lay-verify="required" placeholder="请输入学院名字">
             </div>
         </div>
         <div class="layui-form-item layui-row layui-col-xs12">
             <label class="layui-form-label">学院主任</label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input classDean" name="classDean" lay-verify="required" placeholder="请输入学院主任名">
+                <input type="text" class="layui-input classDean" name="classDean" value="@Model.Dean" lay-verify="required" placeholder="请输入学院主任名">
             </div>
         </div>
         <div class="layui-form-item layui-row layui-col-xs12">
             <div class="layui-input-block">
-                <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="addClass">立即添加</button>
+                @if (Model.ClassId == 0)
+                {
+                    <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="addClass">立即添加</button>
+                }
+                else
+                {
+                    <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="addClass">立即修改</button>
+                }
                 <button type="reset" class="layui-btn layui-btn-sm layui-btn-primary">取消</button>
             </div>
         </div>

@@ -328,7 +328,7 @@ namespace Hogwarts.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteUser(string userName)
         {
-            if (userName == null)
+            if (userName == null||userName=="2439739932"||_userManager.Users.Count()==1)
             {
                 return Json("FALSE");
             }
