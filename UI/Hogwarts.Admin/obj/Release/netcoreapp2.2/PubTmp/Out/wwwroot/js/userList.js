@@ -150,6 +150,7 @@ layui.use(['form', 'layer', 'table', 'laytpl'], function () {
         } else if (layEvent === 'del') { //删除
             if (data.userName == "2439739932") {
                 alert("无法删除顶级管理员");
+                return false;
             }
             layer.confirm('确定删除此用户？', { icon: 3, title: '提示信息' }, function (index) {
                 //$.get("/Account/DeleteUser",{

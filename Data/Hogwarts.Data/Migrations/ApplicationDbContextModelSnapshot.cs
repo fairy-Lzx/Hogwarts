@@ -159,6 +159,8 @@ namespace Hogwarts.Data.Migrations
                         .HasMaxLength(36)
                         .IsUnicode(false);
 
+                    b.Property<int>("Tid");
+
                     b.HasKey("Sno", "Cno");
 
                     b.HasIndex("Cno");

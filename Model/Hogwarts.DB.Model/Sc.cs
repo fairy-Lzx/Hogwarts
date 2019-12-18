@@ -8,7 +8,7 @@ namespace Hogwarts.DB.Model
         public int Sno { get; set; }
         public int Cno { get; set; }
         public string Score { get; set; }
-
+        public int Tid { get; set; }
         public virtual Course CourseNavigation { get; set; }
         public virtual Student StudentNavigation { get; set; }
     }
