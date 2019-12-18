@@ -44,8 +44,9 @@ namespace Hogwarts.Admin.Controllers
                 }
                 return Json(new { code = 0, msg = "上传成功",
                     //data = new { src ="http://" + Request.HttpContext.Connection.LocalIpAddress.MapToIPv4().ToString() + ":" + Request.HttpContext.Connection.LocalPort + $" /file/upload/images/{dir}/{saveFilename}" }  });
-                    data = new { src = "https"+"://www.pnhs.xyz"+$"/file/upload/images/{dir}/{saveFilename}" } });
+                    //data = new { src = "https"+"://www.pnhs.xyz"+$"/file/upload/images/{dir}/{saveFilename}" } });
                     //data = new { src = "http://94.191.83.150:5000" + $"/file/upload/images/{dir}/{saveFilename}" } });
+                    data = new { src = $"/file/upload/images/{dir}/{saveFilename}" } });
                     
                 }
             return Json(new { code = 1, msg = "失败", data = new { } });
