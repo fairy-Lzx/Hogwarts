@@ -1,0 +1,33 @@
+C:\Users\MichaelShen\Desktop\下载\Google Chrome Downloads\Hogwarts-master\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.deps.json
+C:\Users\MichaelShen\Desktop\下载\Google Chrome Downloads\Hogwarts-master\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.dll
+C:\Users\MichaelShen\Desktop\下载\Google Chrome Downloads\Hogwarts-master\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.pdb
+C:\Users\MichaelShen\Desktop\下载\Google Chrome Downloads\Hogwarts-master\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.dll
+C:\Users\MichaelShen\Desktop\下载\Google Chrome Downloads\Hogwarts-master\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.pdb
+C:\Users\MichaelShen\Desktop\下载\Google Chrome Downloads\Hogwarts-master\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.csprojAssemblyReference.cache
+C:\Users\MichaelShen\Desktop\下载\Google Chrome Downloads\Hogwarts-master\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.AssemblyInfoInputs.cache
+C:\Users\MichaelShen\Desktop\下载\Google Chrome Downloads\Hogwarts-master\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.AssemblyInfo.cs
+C:\Users\MichaelShen\Desktop\下载\Google Chrome Downloads\Hogwarts-master\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.csproj.CopyComplete
+C:\Users\MichaelShen\Desktop\下载\Google Chrome Downloads\Hogwarts-master\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.dll
+C:\Users\MichaelShen\Desktop\下载\Google Chrome Downloads\Hogwarts-master\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.deps.json
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.csprojAssemblyReference.cache
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.AssemblyInfoInputs.cache
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.AssemblyInfo.cs
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.csproj.CopyComplete
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.pdb
+C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.deps.json
+C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.dll
+C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.View.Model.pdb
+C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.dll
+C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.View.Model\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.pdb
+C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.dll
+C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.View.Model\obj\Debug\netcoreapp2.2\Hogwarts.View.Model.pdb

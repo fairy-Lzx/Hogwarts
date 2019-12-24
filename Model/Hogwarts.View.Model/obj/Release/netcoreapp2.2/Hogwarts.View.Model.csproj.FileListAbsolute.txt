@@ -17,3 +17,14 @@ C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.View.Model\obj\Release\netcoreapp2.2\Hogwarts.View.Model.csproj.CopyComplete
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.View.Model\obj\Release\netcoreapp2.2\Hogwarts.View.Model.dll
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.View.Model\obj\Release\netcoreapp2.2\Hogwarts.View.Model.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\bin\Release\netcoreapp2.2\Hogwarts.View.Model.deps.json
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\bin\Release\netcoreapp2.2\Hogwarts.View.Model.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\bin\Release\netcoreapp2.2\Hogwarts.View.Model.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\bin\Release\netcoreapp2.2\Hogwarts.DB.Model.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\bin\Release\netcoreapp2.2\Hogwarts.DB.Model.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Release\netcoreapp2.2\Hogwarts.View.Model.csprojAssemblyReference.cache
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Release\netcoreapp2.2\Hogwarts.View.Model.AssemblyInfoInputs.cache
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Release\netcoreapp2.2\Hogwarts.View.Model.AssemblyInfo.cs
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Release\netcoreapp2.2\Hogwarts.View.Model.csproj.CopyComplete
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Release\netcoreapp2.2\Hogwarts.View.Model.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Model\Hogwarts.View.Model\obj\Release\netcoreapp2.2\Hogwarts.View.Model.pdb

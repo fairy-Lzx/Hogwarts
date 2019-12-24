@@ -1,0 +1,8 @@
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.IService\bin\Debug\netcoreapp2.2\Hogwarts.IService.deps.json
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.IService\bin\Debug\netcoreapp2.2\Hogwarts.IService.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.IService\bin\Debug\netcoreapp2.2\Hogwarts.IService.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.IService\obj\Debug\netcoreapp2.2\Hogwarts.IService.csprojAssemblyReference.cache
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.IService\obj\Debug\netcoreapp2.2\Hogwarts.IService.AssemblyInfoInputs.cache
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.IService\obj\Debug\netcoreapp2.2\Hogwarts.IService.AssemblyInfo.cs
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.IService\obj\Debug\netcoreapp2.2\Hogwarts.IService.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.IService\obj\Debug\netcoreapp2.2\Hogwarts.IService.pdb

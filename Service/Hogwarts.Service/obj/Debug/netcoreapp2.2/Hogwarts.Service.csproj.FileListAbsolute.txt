@@ -1,0 +1,15 @@
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.Service.deps.json
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.Service.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.Service.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.IRepository.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.IService.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.IRepository.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.IService.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\obj\Debug\netcoreapp2.2\Hogwarts.Service.csprojAssemblyReference.cache
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\obj\Debug\netcoreapp2.2\Hogwarts.Service.AssemblyInfoInputs.cache
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\obj\Debug\netcoreapp2.2\Hogwarts.Service.AssemblyInfo.cs
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\obj\Debug\netcoreapp2.2\Hogwarts.Service.csproj.CopyComplete
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\obj\Debug\netcoreapp2.2\Hogwarts.Service.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Service\Hogwarts.Service\obj\Debug\netcoreapp2.2\Hogwarts.Service.pdb

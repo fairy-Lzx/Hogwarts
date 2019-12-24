@@ -31,3 +31,14 @@ C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\obj\Release\netcoreapp2.2\Hogwarts.Data.csproj.CopyComplete
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\obj\Release\netcoreapp2.2\Hogwarts.Data.dll
 C:\Users\Administrator\Desktop\我的项目\数据库大作业\Hogwarts\Hogwarts\Data\Hogwarts.Data\obj\Release\netcoreapp2.2\Hogwarts.Data.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Data\Hogwarts.Data\bin\Release\netcoreapp2.2\Hogwarts.Data.deps.json
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Data\Hogwarts.Data\bin\Release\netcoreapp2.2\Hogwarts.Data.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Data\Hogwarts.Data\bin\Release\netcoreapp2.2\Hogwarts.Data.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Data\Hogwarts.Data\bin\Release\netcoreapp2.2\Hogwarts.DB.Model.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Data\Hogwarts.Data\bin\Release\netcoreapp2.2\Hogwarts.DB.Model.pdb
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Data\Hogwarts.Data\obj\Release\netcoreapp2.2\Hogwarts.Data.csprojAssemblyReference.cache
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Data\Hogwarts.Data\obj\Release\netcoreapp2.2\Hogwarts.Data.AssemblyInfoInputs.cache
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Data\Hogwarts.Data\obj\Release\netcoreapp2.2\Hogwarts.Data.AssemblyInfo.cs
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Data\Hogwarts.Data\obj\Release\netcoreapp2.2\Hogwarts.Data.csproj.CopyComplete
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Data\Hogwarts.Data\obj\Release\netcoreapp2.2\Hogwarts.Data.dll
+C:\Users\MichaelShen\Desktop\项目\Hogwarts-master\Data\Hogwarts.Data\obj\Release\netcoreapp2.2\Hogwarts.Data.pdb
