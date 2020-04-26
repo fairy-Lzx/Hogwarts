@@ -4451,19 +4451,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\MichaelShen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.Repository\\Hogwarts.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\MichaelShen\\Desktop\\项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.Repository\\Hogwarts.Repository.csproj",
       "projectName": "Hogwarts.Repository",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.Repository\\Hogwarts.Repository.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.Repository\\obj\\",
+      "projectPath": "C:\\Users\\MichaelShen\\Desktop\\项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.Repository\\Hogwarts.Repository.csproj",
+      "packagesPath": "C:\\Users\\MichaelShen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MichaelShen\\Desktop\\项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MichaelShen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4476,11 +4476,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj"
+            "C:\\Users\\MichaelShen\\Desktop\\项目\\数据库大作业\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj": {
+              "projectPath": "C:\\Users\\MichaelShen\\Desktop\\项目\\数据库大作业\\Hogwarts\\Hogwarts\\Data\\Hogwarts.Data\\Hogwarts.Data.csproj"
             },
-            "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.IRepository\\Hogwarts.IRepository.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Desktop\\我的项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.IRepository\\Hogwarts.IRepository.csproj"
+            "C:\\Users\\MichaelShen\\Desktop\\项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.IRepository\\Hogwarts.IRepository.csproj": {
+              "projectPath": "C:\\Users\\MichaelShen\\Desktop\\项目\\数据库大作业\\Hogwarts\\Hogwarts\\Repository\\Hogwarts.IRepository\\Hogwarts.IRepository.csproj"
             }
           }
         }
@@ -4511,7 +4511,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

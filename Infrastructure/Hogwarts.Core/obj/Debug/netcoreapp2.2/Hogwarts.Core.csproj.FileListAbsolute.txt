@@ -22,3 +22,12 @@ C:\Users\Administrator\Desktop\Hogwarts-master\Infrastructure\Hogwarts.Core\obj\
 C:\Users\Administrator\Desktop\Hogwarts-master\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp2.2\Hogwarts.Core.AssemblyInfo.cs
 C:\Users\Administrator\Desktop\Hogwarts-master\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp2.2\Hogwarts.Core.dll
 C:\Users\Administrator\Desktop\Hogwarts-master\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp2.2\Hogwarts.Core.pdb
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\bin\Debug\netcoreapp2.2\Hogwarts.Core.deps.json
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\bin\Debug\netcoreapp2.2\Hogwarts.Core.dll
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\bin\Debug\netcoreapp2.2\Hogwarts.Core.pdb
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp2.2\Hogwarts.Core.csprojAssemblyReference.cache
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp2.2\Hogwarts.Core.csproj.CoreCompileInputs.cache
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp2.2\Hogwarts.Core.AssemblyInfoInputs.cache
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp2.2\Hogwarts.Core.AssemblyInfo.cs
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp2.2\Hogwarts.Core.dll
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Infrastructure\Hogwarts.Core\obj\Debug\netcoreapp2.2\Hogwarts.Core.pdb

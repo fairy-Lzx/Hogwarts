@@ -30,3 +30,12 @@ C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.DB.Model\obj\Debug
 C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.DB.Model\obj\Debug\netcoreapp2.2\Hogwarts.DB.Model.AssemblyInfo.cs
 C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.DB.Model\obj\Debug\netcoreapp2.2\Hogwarts.DB.Model.dll
 C:\Users\Administrator\Desktop\Hogwarts-master\Model\Hogwarts.DB.Model\obj\Debug\netcoreapp2.2\Hogwarts.DB.Model.pdb
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.deps.json
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.dll
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\bin\Debug\netcoreapp2.2\Hogwarts.DB.Model.pdb
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Debug\netcoreapp2.2\Hogwarts.DB.Model.csprojAssemblyReference.cache
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Debug\netcoreapp2.2\Hogwarts.DB.Model.csproj.CoreCompileInputs.cache
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Debug\netcoreapp2.2\Hogwarts.DB.Model.AssemblyInfoInputs.cache
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Debug\netcoreapp2.2\Hogwarts.DB.Model.AssemblyInfo.cs
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Debug\netcoreapp2.2\Hogwarts.DB.Model.dll
+C:\Users\MichaelShen\Desktop\项目\数据库大作业\Hogwarts\Hogwarts\Model\Hogwarts.DB.Model\obj\Debug\netcoreapp2.2\Hogwarts.DB.Model.pdb
